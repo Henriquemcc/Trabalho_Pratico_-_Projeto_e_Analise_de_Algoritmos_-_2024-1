@@ -1,3 +1,5 @@
+[English Version](README.EN.md)
+
 # Trabalho Prático - Projeto e Análise de Algoritmos
 
 ## Enunciado
