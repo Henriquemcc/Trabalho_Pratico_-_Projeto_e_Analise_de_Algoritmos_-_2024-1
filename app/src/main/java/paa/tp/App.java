@@ -3,12 +3,17 @@
  */
 package paa.tp;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import paa.tp.controlador.ControladorJanela;
 
+/**
+ * Classe principal.
+ */
+public class App {
+    /**
+     * Função principal.
+     * @param args Argumentos de linha de comando.
+     */
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        final ControladorJanela controladorJanela = new ControladorJanela();
     }
 }
