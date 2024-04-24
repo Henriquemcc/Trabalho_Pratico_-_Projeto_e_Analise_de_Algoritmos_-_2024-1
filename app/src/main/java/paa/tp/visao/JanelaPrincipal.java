@@ -13,12 +13,17 @@ public class JanelaPrincipal extends JFrame
         /**
          * Menu 'Arquivo'.
          */
-        private final JMenu jmenuArquivo = new JMenu("Arquivo");
+        private final JMenu jMenuArquivo = new JMenu("Arquivo");
+
+        /**
+         * Menu 'Dados'.
+         */
+        private final JMenu jMenuDados = new JMenu("Dados");
 
         /**
          * Menu 'Executar'.
          */
-        private final JMenu jmenuExecutar = new JMenu("Executar");
+        private final JMenu jMenuExecutar = new JMenu("Executar");
 
         // Itens do menu Arquivos
         /**
@@ -27,9 +32,14 @@ public class JanelaPrincipal extends JFrame
         private final JMenuItem jMenuItemAbrirArquivo = new JMenuItem("Abrir");
 
         /**
-         * Item 'Gerar' de 'Arquivo'.
+         * Item 'Salvar' de 'Arquivo'.
          */
-        private final JMenuItem jMenuItemGerarArquivo = new JMenuItem("Gerar");
+        private final JMenuItem jMenuItemSalvarArquivo = new JMenuItem("Salvar");
+
+        /**
+         * Item 'Gerar' de 'Dados'.
+         */
+        private final JMenuItem jMenuItemGerarDados = new JMenuItem("Gerar");
 
         // Itens do menu Executar
         /**
@@ -47,14 +57,16 @@ public class JanelaPrincipal extends JFrame
          */
         public BarraMenus() {
             // Adicionando itens ao menu
-            jmenuArquivo.add(jMenuItemAbrirArquivo);
-            jmenuArquivo.add(jMenuItemGerarArquivo);
-            jmenuExecutar.add(jMenuItemExecutarForcaBruta);
-            jmenuExecutar.add(jMenuItemExecutarBranchAndBound);
+            jMenuArquivo.add(jMenuItemAbrirArquivo);
+            jMenuArquivo.add(jMenuItemSalvarArquivo);
+            jMenuDados.add(jMenuItemGerarDados);
+            jMenuExecutar.add(jMenuItemExecutarForcaBruta);
+            jMenuExecutar.add(jMenuItemExecutarBranchAndBound);
 
             // Adicionando menu
-            add(jmenuArquivo);
-            add(jmenuExecutar);
+            add(jMenuArquivo);
+            add(jMenuDados);
+            add(jMenuExecutar);
         }
     }
 
