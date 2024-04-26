@@ -73,12 +73,9 @@ public class JanelaPrincipal extends JFrame
             add(jMenuExecutar);
 
             // Adicionando action listener nos itens do menu
-            jMenuItemAbrirArquivo.addActionListener(actionEvent -> {
-                controladorJanela.abrirArquivo();
-            });
-            jMenuItemSalvarArquivo.addActionListener(actionEvent -> {
-                controladorJanela.salvarArquivo();
-            });
+            jMenuItemAbrirArquivo.addActionListener(actionEvent -> controladorJanela.abrirArquivo());
+            jMenuItemSalvarArquivo.addActionListener(actionEvent -> controladorJanela.salvarArquivo());
+            jMenuItemGerarDados.addActionListener(actionEvent -> controladorJanela.gerarDadosAleatorios());
         }
     }
 

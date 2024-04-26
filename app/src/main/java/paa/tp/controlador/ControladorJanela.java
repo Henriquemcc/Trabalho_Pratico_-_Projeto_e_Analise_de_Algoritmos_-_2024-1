@@ -3,11 +3,13 @@ package paa.tp.controlador;
 import paa.tp.modelo.ListaPontosCandidatos;
 import paa.tp.visao.FuncoesGraficas;
 import paa.tp.visao.JanelaArquivo;
+import paa.tp.visao.JanelaGerarDados;
 import paa.tp.visao.JanelaPrincipal;
 
 import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
+import java.security.SecureRandom;
 
 /**
  * Controlador de janela.
@@ -62,5 +64,15 @@ public class ControladorJanela {
             JOptionPane.showMessageDialog(janelaPrincipal, String.format("IOException: %s", e), "Erro", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
         }
+    }
+
+    public void gerarDadosAleatorios() {
+        final JanelaGerarDados janelaGerarDados = new JanelaGerarDados(this);
+        janelaGerarDados.setVisible(true);
+        janelaGerarDados.setSize(280, 200);
+    }
+
+    public void gerarDadosAleatorios(final int quantidadeFranquias, final int quantidadeLojasPorFranquia) {
+        listaPontosCandidatos.gerarArquivo(quantidadeFranquias, quantidadeLojasPorFranquia, new SecureRandom());
     }
 }
