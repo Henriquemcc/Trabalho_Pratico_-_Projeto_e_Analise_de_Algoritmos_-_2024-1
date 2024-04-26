@@ -6,7 +6,7 @@ public class FuncoesGraficas {
 
     /**
      * Obtém a resolução 
-     * @return
+     * @return Resolução da tela.
      */
     public static Dimension obterResolucaoTela()
     {

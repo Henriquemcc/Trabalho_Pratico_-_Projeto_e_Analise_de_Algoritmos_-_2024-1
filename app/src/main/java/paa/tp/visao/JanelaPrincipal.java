@@ -79,6 +79,9 @@ public class JanelaPrincipal extends JFrame
         }
     }
 
+    /**
+     * Controlador de janela que instanciou esta classe.
+     */
     private final ControladorJanela controladorJanela;
 
     /**

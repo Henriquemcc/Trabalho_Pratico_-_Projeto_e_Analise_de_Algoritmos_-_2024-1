@@ -5,6 +5,9 @@ import java.awt.*;
 
 public class JanelaArquivo {
 
+    /**
+     * Objeto JFileChooser que será utilizado para exibir janela de abertura de arquivos.
+     */
     private final JFileChooser jFileChooser = new JFileChooser();
 
     /**

@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class ListaPontosCandidatos {
+
+    /**
+     * Array list dos pontos candidatos.
+     */
     private ArrayList<PontoCandidato> pontoCandidatos = new ArrayList<>();
 
     /**

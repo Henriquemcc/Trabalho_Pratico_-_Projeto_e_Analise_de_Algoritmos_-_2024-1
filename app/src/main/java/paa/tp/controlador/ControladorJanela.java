@@ -19,6 +19,9 @@ public class ControladorJanela {
      */
     private final JanelaPrincipal janelaPrincipal = new JanelaPrincipal(this);
 
+    /**
+     * Lista dos pontos candidatos.
+     */
     private final ListaPontosCandidatos listaPontosCandidatos = new ListaPontosCandidatos();
 
     /**
@@ -30,6 +33,9 @@ public class ControladorJanela {
         janelaPrincipal.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
+    /**
+     * Realiza o procedimento de abertura de arquivo.
+     */
     public void abrirArquivo() {
         final JanelaArquivo janelaArquivo = new JanelaArquivo();
         final String caminho = janelaArquivo.abrir(janelaPrincipal);
