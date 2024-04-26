@@ -76,6 +76,9 @@ public class JanelaPrincipal extends JFrame
             jMenuItemAbrirArquivo.addActionListener(actionEvent -> {
                 controladorJanela.abrirArquivo();
             });
+            jMenuItemSalvarArquivo.addActionListener(actionEvent -> {
+                controladorJanela.salvarArquivo();
+            });
         }
     }
 

@@ -49,4 +49,18 @@ public class ControladorJanela {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Realiza o procedimento para salvar arquivo.
+     */
+    public void salvarArquivo() {
+        final JanelaArquivo janelaArquivo = new JanelaArquivo();
+        final String caminho = janelaArquivo.salvar(janelaPrincipal);
+        try {
+            listaPontosCandidatos.salvarArquivo(new File(caminho));
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(janelaPrincipal, String.format("IOException: %s", e), "Erro", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
+    }
 }
