@@ -1,13 +1,17 @@
 package paa.tp.visao;
 
+import paa.tp.controlador.ControladorJanela;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Janela principal do programa.
  */
 public class JanelaPrincipal extends JFrame
 {
-    private static class BarraMenus extends JMenuBar
+    private final class BarraMenus extends JMenuBar
     {
         // Menus
         /**
@@ -67,14 +71,22 @@ public class JanelaPrincipal extends JFrame
             add(jMenuArquivo);
             add(jMenuDados);
             add(jMenuExecutar);
+
+            // Adicionando action listener nos itens do menu
+            jMenuItemAbrirArquivo.addActionListener(actionEvent -> {
+                controladorJanela.abrirArquivo();
+            });
         }
     }
+
+    private final ControladorJanela controladorJanela;
 
     /**
      * Constrói uma nova instância da JanelaPrincipal.
      */
-    public JanelaPrincipal() {
+    public JanelaPrincipal(final ControladorJanela controladorJanela) {
         super("Trabalho Prático - Projeto e Análise de Algoritmos");
+        this.controladorJanela = controladorJanela;
         setJMenuBar(new BarraMenus());
     }
 }

@@ -18,13 +18,13 @@ public class ListaPontosCandidatos {
             try(final ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
                 final Object object = objectInputStream.readObject();
                     if (!(object instanceof ArrayList))
-                        throw new ClassCastException();
+                        throw new ClassCastException("Arquivo Incompatível");
                     final ArrayList<?> objetos = (ArrayList<?>) object;
                     final ArrayList<PontoCandidato> pontoCandidatosLidos = new ArrayList<>();
                     for(Object elemento: objetos)
                     {
                         if (!(elemento instanceof PontoCandidato))
-                            throw new ClassCastException();
+                            throw new ClassCastException("Arquivo Incompatível");
                         pontoCandidatosLidos.add((PontoCandidato) elemento);
                     }
                     pontoCandidatos = pontoCandidatosLidos;
