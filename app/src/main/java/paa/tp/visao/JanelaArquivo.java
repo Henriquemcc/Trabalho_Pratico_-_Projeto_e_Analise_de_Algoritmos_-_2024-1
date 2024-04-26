@@ -12,7 +12,7 @@ public class JanelaArquivo {
      * @param parent Componente pai.
      * @return Caminho completo do arquivo salvo.
      */
-    public String salvar(Component parent) {
+    public String salvar(final Component parent) {
         final int result = jFileChooser.showSaveDialog(parent);
         return (result == JFileChooser.APPROVE_OPTION) ? jFileChooser.getSelectedFile().getAbsolutePath() : null;
     }
@@ -22,7 +22,7 @@ public class JanelaArquivo {
      * @param parent Componente pai.
      * @return Caminho completo do arquivo aberto.
      */
-    public String abrir(Component parent) {
+    public String abrir(final Component parent) {
         final int result = jFileChooser.showOpenDialog(parent);
         return (result == JFileChooser.APPROVE_OPTION) ? jFileChooser.getSelectedFile().getAbsolutePath() : null;
     }

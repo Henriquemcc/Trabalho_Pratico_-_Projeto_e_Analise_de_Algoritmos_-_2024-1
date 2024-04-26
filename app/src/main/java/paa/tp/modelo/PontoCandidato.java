@@ -29,7 +29,7 @@ public class PontoCandidato {
      * @param coordenadaY Coordenada Y.
      * @param custoInstalacao Custo de instalação.
      */
-    public PontoCandidato(int numeroFranquia, int coordenadaX, int coordenadaY, int custoInstalacao)
+    public PontoCandidato(final int numeroFranquia, final int coordenadaX, final int coordenadaY, final int custoInstalacao)
     {
         this.numeroFranquia = numeroFranquia;
         this.coordenadaX = coordenadaX;
