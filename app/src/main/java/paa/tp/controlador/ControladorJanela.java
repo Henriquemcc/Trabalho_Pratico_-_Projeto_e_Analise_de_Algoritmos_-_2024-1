@@ -34,7 +34,7 @@ public class ControladorJanela {
     }
 
     /**
-     * Realiza o procedimento de abertura de arquivo.
+     * Realiza o procedimento para abrir arquivo.
      */
     public void abrirArquivo() {
         final JanelaArquivo janelaArquivo = new JanelaArquivo();
