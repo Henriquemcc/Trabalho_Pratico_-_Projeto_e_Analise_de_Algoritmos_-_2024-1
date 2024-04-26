@@ -1,6 +1,8 @@
 package paa.tp.modelo;
 
-public class PontoCandidato {
+import java.io.Serializable;
+
+public class PontoCandidato implements Serializable {
 
     /**
      * Número da franquia.
