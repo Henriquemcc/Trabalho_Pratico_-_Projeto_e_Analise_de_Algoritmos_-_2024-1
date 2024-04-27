@@ -3,6 +3,9 @@ package paa.tp.visao;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Classe que armazena todos os métodos necessários para a abertura de uma janela para abrir ou salvar arquivos.
+ */
 public class JanelaArquivo {
 
     /**
