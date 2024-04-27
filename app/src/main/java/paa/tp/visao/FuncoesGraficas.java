@@ -2,6 +2,9 @@ package paa.tp.visao;
 
 import java.awt.*;
 
+/**
+ * Classe que armazena todas os métodos estáticos utilizados para a construção de interfaces gráficas.
+ */
 public class FuncoesGraficas {
 
     /**
