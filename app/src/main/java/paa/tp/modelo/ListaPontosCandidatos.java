@@ -4,6 +4,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Classe que armazena os pontos candidatos.
+ */
 public class ListaPontosCandidatos {
 
     /**
