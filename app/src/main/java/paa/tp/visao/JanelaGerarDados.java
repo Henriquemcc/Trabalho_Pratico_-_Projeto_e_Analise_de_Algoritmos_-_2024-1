@@ -5,6 +5,9 @@ import paa.tp.controlador.ControladorJanela;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Janela que exibe opções para gerar dados aleatóriamente.
+ */
 public class JanelaGerarDados extends JFrame {
 
     /**
