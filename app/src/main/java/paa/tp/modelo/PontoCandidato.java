@@ -2,6 +2,9 @@ package paa.tp.modelo;
 
 import java.io.Serializable;
 
+/**
+ * Classe que armazena todos os dados de um ponto candidato.
+ */
 public class PontoCandidato implements Serializable {
 
     /**
