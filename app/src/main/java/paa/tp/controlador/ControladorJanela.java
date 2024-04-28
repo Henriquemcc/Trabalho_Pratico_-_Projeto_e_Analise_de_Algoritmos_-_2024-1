@@ -72,7 +72,7 @@ public class ControladorJanela {
     public void gerarDadosAleatorios() {
         final JanelaGerarDados janelaGerarDados = new JanelaGerarDados(this);
         janelaGerarDados.setVisible(true);
-        janelaGerarDados.setSize(280, 200);
+        janelaGerarDados.setSize(280, 280);
     }
 
     /**
