@@ -2,6 +2,7 @@ package paa.tp.modelo;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -12,30 +13,25 @@ public class ListaPontosCandidatos {
     /**
      * Array list dos pontos candidatos.
      */
-    private ArrayList<PontoCandidato> pontoCandidatos = new ArrayList<>();
+    private ArrayList<PontoCandidato> pontosCandidatos = new ArrayList<>();
 
     /**
      * Abre arquivo contendo os pontos candidatos.
      * @param arquivo Objeto Arquivo a ser lido.
      * @throws IOException Exceção lançada caso ocorra erro de IO.
-     * @throws ClassNotFoundException Exceção lançada caso a classe lida não seja encontrada.
      */
-    public void abrirArquivo(final File arquivo) throws IOException, ClassNotFoundException {
-        try(final FileInputStream fileInputStream = new FileInputStream(arquivo)) {
-            try(final ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
-                final Object object = objectInputStream.readObject();
-                    if (!(object instanceof ArrayList))
-                        throw new ClassCastException("Arquivo Incompatível");
-                    final ArrayList<?> objetos = (ArrayList<?>) object;
-                    final ArrayList<PontoCandidato> pontoCandidatosLidos = new ArrayList<>();
-                    for(Object elemento: objetos)
-                    {
-                        if (!(elemento instanceof PontoCandidato))
-                            throw new ClassCastException("Arquivo Incompatível");
-                        pontoCandidatosLidos.add((PontoCandidato) elemento);
-                    }
-                    pontoCandidatos = pontoCandidatosLidos;
-
+    public void abrirArquivo(final File arquivo) throws IOException {
+        try(final FileReader fileReader = new FileReader(arquivo)) {
+            try(final BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+                String line = bufferedReader.readLine();
+                if (line != null)
+                    pontosCandidatos.clear();
+                while (line != null) {
+                    final String[] dadosPontoCandidato = line.split(" ");
+                    final PontoCandidato pontoCandidato = new PontoCandidato(Integer.parseInt(dadosPontoCandidato[0]), Integer.parseInt(dadosPontoCandidato[1]), Integer.parseInt(dadosPontoCandidato[2]), Integer.parseInt(dadosPontoCandidato[3]));
+                    pontosCandidatos.add(pontoCandidato);
+                    line = bufferedReader.readLine();
+                }
             }
         }
     }
@@ -46,9 +42,11 @@ public class ListaPontosCandidatos {
      * @throws IOException Exceção lançada caso ocorra erro de IO.
      */
     public void salvarArquivo(final File arquivo) throws IOException {
-        try(final FileOutputStream fileOutputStream = new FileOutputStream(arquivo)) {
-            try(final ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
-                objectOutputStream.writeObject(pontoCandidatos);
+        try(final FileWriter fileWriter = new FileWriter(arquivo)) {
+            try(final BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
+                for (final PontoCandidato pontoCandidato: pontosCandidatos) {
+                    bufferedWriter.write(String.format("%d %d %d %d\n", pontoCandidato.getNumeroFranquia(), pontoCandidato.getCoordenadaX(), pontoCandidato.getCoordenadaY(), pontoCandidato.getCustoInstalacao()));
+                }
             }
         }
     }
@@ -69,6 +67,14 @@ public class ListaPontosCandidatos {
                 pontoCandidatosGerados.add(new PontoCandidato(franquia, random.nextInt(), random.nextInt(), random.nextInt()));
             }
         }
-        pontoCandidatos = pontoCandidatosGerados;
+        pontosCandidatos = pontoCandidatosGerados;
+    }
+
+    /**
+     * Obtém todos os pontos candidatos.
+     * @return Lista com todos os pontos candidatos.
+     */
+    public List<PontoCandidato> getPontosCandidatos() {
+        return pontosCandidatos;
     }
 }
