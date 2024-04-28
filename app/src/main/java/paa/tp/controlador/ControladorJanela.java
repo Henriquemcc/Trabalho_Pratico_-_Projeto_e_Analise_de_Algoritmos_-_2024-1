@@ -1,10 +1,8 @@
 package paa.tp.controlador;
 
 import paa.tp.modelo.ListaPontosCandidatos;
-import paa.tp.visao.FuncoesGraficas;
-import paa.tp.visao.JanelaArquivo;
-import paa.tp.visao.JanelaGerarDados;
-import paa.tp.visao.JanelaPrincipal;
+import paa.tp.modelo.algoritmo.otimizacao.ForcaBruta;
+import paa.tp.visao.*;
 
 import javax.swing.*;
 import java.io.File;
@@ -27,6 +25,11 @@ public class ControladorJanela {
     private final ListaPontosCandidatos listaPontosCandidatos = new ListaPontosCandidatos();
 
     /**
+     * Distância mínima entre duas filiais.
+     */
+    private Double distanciaMinima = null;
+
+    /**
      * Constrói uma nova instância de ControladorJanela.
      */
     public ControladorJanela() {
@@ -46,9 +49,6 @@ public class ControladorJanela {
         } catch (IOException e) {
             JOptionPane.showMessageDialog(janelaPrincipal, String.format("IOException: %s", e), "Erro", JOptionPane.ERROR_MESSAGE);
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            JOptionPane.showMessageDialog(janelaPrincipal, String.format("ClassNotFoundException: %s", e), "Erro", JOptionPane.ERROR_MESSAGE);
-            e.printStackTrace();
         }
     }
 
@@ -66,13 +66,52 @@ public class ControladorJanela {
         }
     }
 
+    /**
+     * Realiza o procedimento para gerar dados aleatoriamente, exibindo a janela.
+     */
     public void gerarDadosAleatorios() {
         final JanelaGerarDados janelaGerarDados = new JanelaGerarDados(this);
         janelaGerarDados.setVisible(true);
         janelaGerarDados.setSize(280, 200);
     }
 
+    /**
+     * Realiza o procedimento para gerar dados aleatoriamente, depois de exibir a janela.
+     * @param quantidadeFranquias Quantidade de franquias.
+     * @param quantidadeLojasPorFranquia Quantidade de lojas por franquia.
+     */
     public void gerarDadosAleatorios(final int quantidadeFranquias, final int quantidadeLojasPorFranquia) {
         listaPontosCandidatos.gerarArquivo(quantidadeFranquias, quantidadeLojasPorFranquia, new SecureRandom());
+    }
+
+    /**
+     * Realiza o procedimento para obter a distância mínima entre duas filiais.
+     */
+    public void obterDistanciaMinima() {
+        final JanelaDistanciaMinima janelaDistanciaMinima = new JanelaDistanciaMinima(this);
+        janelaDistanciaMinima.setVisible(true);
+        janelaDistanciaMinima.setSize(280, 280);
+    }
+
+    /**
+     * Executa o algoritmo da força bruta.
+     */
+    public void executarForcaBruta() {
+        if (distanciaMinima == null)
+            obterDistanciaMinima();
+        else {
+            final ForcaBruta forcaBruta = new ForcaBruta(listaPontosCandidatos.getPontosCandidatos(), distanciaMinima);
+            forcaBruta.executar();
+            System.out.println("Melhor solução = " + forcaBruta.getMelhorSolucao());
+            // Falta implementar a parte gráfica
+        }
+    }
+
+    /**
+     * Altera o valor da variável distância mínima.
+     * @param distanciaMinima Novo valor para a variável distância mínima.
+     */
+    public void setDistanciaMinima(Double distanciaMinima) {
+        this.distanciaMinima = distanciaMinima;
     }
 }

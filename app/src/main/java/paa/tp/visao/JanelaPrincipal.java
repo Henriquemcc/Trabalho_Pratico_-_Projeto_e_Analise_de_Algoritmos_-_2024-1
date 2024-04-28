@@ -3,8 +3,6 @@ package paa.tp.visao;
 import paa.tp.controlador.ControladorJanela;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Janela principal do programa.
@@ -40,10 +38,16 @@ public class JanelaPrincipal extends JFrame
          */
         private final JMenuItem jMenuItemSalvarArquivo = new JMenuItem("Salvar");
 
+        // Itens do menu Dados
         /**
          * Item 'Gerar' de 'Dados'.
          */
         private final JMenuItem jMenuItemGerarDados = new JMenuItem("Gerar");
+
+        /**
+         * Item 'Distância Mínima' de 'Dados'.
+         */
+        private final JMenuItem jMenuItemDistanciaMinima = new JMenuItem("Distancia Minima");
 
         // Itens do menu Executar
         /**
@@ -64,6 +68,7 @@ public class JanelaPrincipal extends JFrame
             jMenuArquivo.add(jMenuItemAbrirArquivo);
             jMenuArquivo.add(jMenuItemSalvarArquivo);
             jMenuDados.add(jMenuItemGerarDados);
+            jMenuDados.add(jMenuItemDistanciaMinima);
             jMenuExecutar.add(jMenuItemExecutarForcaBruta);
             jMenuExecutar.add(jMenuItemExecutarBranchAndBound);
 
@@ -76,6 +81,8 @@ public class JanelaPrincipal extends JFrame
             jMenuItemAbrirArquivo.addActionListener(actionEvent -> controladorJanela.abrirArquivo());
             jMenuItemSalvarArquivo.addActionListener(actionEvent -> controladorJanela.salvarArquivo());
             jMenuItemGerarDados.addActionListener(actionEvent -> controladorJanela.gerarDadosAleatorios());
+            jMenuItemDistanciaMinima.addActionListener(actionEvent -> controladorJanela.obterDistanciaMinima());
+            jMenuItemExecutarForcaBruta.addActionListener(actionEvent -> controladorJanela.executarForcaBruta());
         }
     }
 
