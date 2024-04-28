@@ -27,17 +27,18 @@ public class JanelaGerarDados extends JFrame {
 
     /**
      * Constrói uma nova instância da classe JanelaGerarDados.
+     * @param controladorJanela Controlador da janela que instanciou esta classe.
      */
     public JanelaGerarDados(final ControladorJanela controladorJanela) {
         // Configurando a ação a ser executada pelo botão OK
         jButtonOk.addActionListener(actionEvent -> {
             try {
                 controladorJanela.gerarDadosAleatorios(Integer.parseInt(jTextFieldQuantidadeFranquias.jTextField.getText()), Integer.parseInt(jTextFieldQuantidadeLojasPorFranquia.jTextField.getText()));
+                dispose();
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(this, String.format("NumberFormatException: %s", e), "Erro", JOptionPane.ERROR_MESSAGE);
                 e.printStackTrace();
             }
-            dispose();
         });
 
         // Configurando o Layout
