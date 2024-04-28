@@ -13,7 +13,7 @@ public class JanelaDistanciaMinima extends JFrame {
     /**
      * Campo de texto para a distância mínima entre duas filiais.
      */
-    private final IncreaseDecreaseJTextField jTextFieldDistanciaMinima = new IncreaseDecreaseJTextField("Distância mínima", 0);
+    private final IncreaseDecreaseJTextField jTextFieldDistanciaMinima = new IncreaseDecreaseJTextField("Distância mínima", 0.0);
 
     /**
      * JButton OK.
