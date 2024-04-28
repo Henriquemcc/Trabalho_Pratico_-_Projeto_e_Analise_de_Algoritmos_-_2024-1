@@ -73,4 +73,18 @@ public class PontoCandidato implements Serializable {
     public int getCustoInstalacao() {
         return custoInstalacao;
     }
+
+    /**
+     * Converte o ponto candidato em uma string.
+     * @return String com as informações do ponto candidato.
+     */
+    @Override
+    public String toString() {
+        return "PontoCandidato{" +
+                "numeroFranquia=" + numeroFranquia +
+                ", coordenadaX=" + coordenadaX +
+                ", coordenadaY=" + coordenadaY +
+                ", custoInstalacao=" + custoInstalacao +
+                '}';
+    }
 }
