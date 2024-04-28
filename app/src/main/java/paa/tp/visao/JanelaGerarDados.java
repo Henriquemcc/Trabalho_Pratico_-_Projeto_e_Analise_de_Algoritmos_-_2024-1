@@ -26,10 +26,16 @@ public class JanelaGerarDados extends JFrame {
     private final JButton jButtonOk = new JButton("OK");
 
     /**
+     * JButton Cancelar.
+     */
+    private final JButton jButtonCancelar = new JButton("Cancelar");
+
+    /**
      * Constrói uma nova instância da classe JanelaGerarDados.
      * @param controladorJanela Controlador da janela que instanciou esta classe.
      */
     public JanelaGerarDados(final ControladorJanela controladorJanela) {
+
         // Configurando a ação a ser executada pelo botão OK
         jButtonOk.addActionListener(actionEvent -> {
             try {
@@ -41,12 +47,16 @@ public class JanelaGerarDados extends JFrame {
             }
         });
 
+        // Configurando a ação a ser executada pelo botão Cancelar
+        jButtonCancelar.addActionListener(actionEvent -> dispose());
+
         // Configurando o Layout
-        setLayout(new GridLayout(3, 1));
+        setLayout(new GridLayout(4, 1));
 
         // Adicionando elementos
         add(jTextFieldQuantidadeFranquias);
         add(jTextFieldQuantidadeLojasPorFranquia);
         add(jButtonOk);
+        add(jButtonCancelar);
     }
 }
