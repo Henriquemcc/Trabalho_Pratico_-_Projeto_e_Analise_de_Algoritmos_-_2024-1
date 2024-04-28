@@ -13,12 +13,12 @@ public class JanelaGerarDados extends JFrame {
     /**
      * Campo de texto para a quantidade de franquias.
      */
-    private final IntegerIncreaseDecreaseJTextField jTextFieldQuantidadeFranquias = new IntegerIncreaseDecreaseJTextField("Quantidade Franquias", 1);
+    private final IncreaseDecreaseJTextField jTextFieldQuantidadeFranquias = new IncreaseDecreaseJTextField("Quantidade Franquias", 1);
 
     /**
      * Campo de texto para a quantidade de lojas por franquia.
      */
-    private final IntegerIncreaseDecreaseJTextField jTextFieldQuantidadeLojasPorFranquia = new IntegerIncreaseDecreaseJTextField("Quantidade de Lojas por Franquia", 1);
+    private final IncreaseDecreaseJTextField jTextFieldQuantidadeLojasPorFranquia = new IncreaseDecreaseJTextField("Quantidade de Lojas por Franquia", 1);
 
     /**
      * JButton OK.
