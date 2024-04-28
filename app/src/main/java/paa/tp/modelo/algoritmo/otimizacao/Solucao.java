@@ -53,7 +53,6 @@ public class Solucao {
                     if (distancia < distanciaMinima)
                         distanciaMinima = distancia;
                 }
-
     }
 
     /**
@@ -78,6 +77,14 @@ public class Solucao {
      */
     public double getDistanciaMinima() {
         return distanciaMinima;
+    }
+
+    /**
+     * Obtém a quantidade de pontos escolhidos.
+     * @return Quantidade de pontos escolhidos.
+     */
+    public int getQuantidadePontos() {
+        return pontosCandidatosEscolhidos.size();
     }
 
     /**
