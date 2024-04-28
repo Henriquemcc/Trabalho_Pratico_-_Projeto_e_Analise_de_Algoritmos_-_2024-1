@@ -42,7 +42,7 @@ public class JanelaPrincipal extends JFrame
         /**
          * Item 'Gerar' de 'Dados'.
          */
-        private final JMenuItem jMenuItemGerarDados = new JMenuItem("Gerar");
+        private final JMenuItem jMenuItemGerarDadosEntrada = new JMenuItem("Gerar dados de entrada aleatoriamente");
 
         /**
          * Item 'Distância Mínima' de 'Dados'.
@@ -67,7 +67,7 @@ public class JanelaPrincipal extends JFrame
             // Adicionando itens ao menu
             jMenuArquivo.add(jMenuItemAbrirArquivo);
             jMenuArquivo.add(jMenuItemSalvarArquivo);
-            jMenuDados.add(jMenuItemGerarDados);
+            jMenuDados.add(jMenuItemGerarDadosEntrada);
             jMenuDados.add(jMenuItemDistanciaMinima);
             jMenuExecutar.add(jMenuItemExecutarForcaBruta);
             jMenuExecutar.add(jMenuItemExecutarBranchAndBound);
@@ -80,7 +80,7 @@ public class JanelaPrincipal extends JFrame
             // Adicionando action listener nos itens do menu
             jMenuItemAbrirArquivo.addActionListener(actionEvent -> controladorJanela.abrirArquivo());
             jMenuItemSalvarArquivo.addActionListener(actionEvent -> controladorJanela.salvarArquivo());
-            jMenuItemGerarDados.addActionListener(actionEvent -> controladorJanela.gerarDadosAleatorios());
+            jMenuItemGerarDadosEntrada.addActionListener(actionEvent -> controladorJanela.gerarDadosAleatorios());
             jMenuItemDistanciaMinima.addActionListener(actionEvent -> controladorJanela.obterDistanciaMinima());
             jMenuItemExecutarForcaBruta.addActionListener(actionEvent -> controladorJanela.executarForcaBruta());
         }
