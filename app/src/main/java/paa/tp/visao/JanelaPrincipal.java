@@ -9,6 +9,9 @@ import javax.swing.*;
  */
 public class JanelaPrincipal extends JFrame
 {
+    /**
+     * Barra de menus da janela principal.
+     */
     private final class BarraMenus extends JMenuBar
     {
         // Menus
