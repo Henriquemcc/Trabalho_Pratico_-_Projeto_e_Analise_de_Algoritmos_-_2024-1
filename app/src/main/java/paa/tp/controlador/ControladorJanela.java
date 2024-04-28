@@ -27,7 +27,7 @@ public class ControladorJanela {
     /**
      * Distância mínima entre duas filiais.
      */
-    private Double distanciaMinima = null;
+    private double distanciaMinima = 0;
 
     /**
      * Constrói uma nova instância de ControladorJanela.
@@ -97,14 +97,10 @@ public class ControladorJanela {
      * Executa o algoritmo da força bruta.
      */
     public void executarForcaBruta() {
-        if (distanciaMinima == null)
-            obterDistanciaMinima();
-        else {
-            final ForcaBruta forcaBruta = new ForcaBruta(listaPontosCandidatos.getPontosCandidatos(), distanciaMinima);
-            forcaBruta.executar();
-            System.out.println("Melhor solução = " + forcaBruta.getMelhorSolucao());
-            // Falta implementar a parte gráfica
-        }
+        final ForcaBruta forcaBruta = new ForcaBruta(listaPontosCandidatos.getPontosCandidatos(), distanciaMinima);
+        forcaBruta.executar();
+        System.out.println("Melhor solução = " + forcaBruta.getMelhorSolucao());
+        // Falta implementar a parte gráfica
     }
 
     /**
@@ -113,5 +109,13 @@ public class ControladorJanela {
      */
     public void setDistanciaMinima(Double distanciaMinima) {
         this.distanciaMinima = distanciaMinima;
+    }
+
+    /**
+     * Obtém o valor da variável distância mínima.
+     * @return Valor da variável distância mínima.
+     */
+    public double getDistanciaMinima() {
+        return this.distanciaMinima;
     }
 }
