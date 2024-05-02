@@ -2,6 +2,7 @@ package paa.tp.controlador;
 
 import paa.tp.modelo.ListaPontosCandidatos;
 import paa.tp.modelo.algoritmo.otimizacao.ForcaBruta;
+import paa.tp.modelo.algoritmo.otimizacao.Solucao;
 import paa.tp.visao.*;
 
 import javax.swing.*;
@@ -23,6 +24,11 @@ public class ControladorJanela {
      * Lista dos pontos candidatos.
      */
     private final ListaPontosCandidatos listaPontosCandidatos = new ListaPontosCandidatos();
+
+    /**
+     * Solução para o problema dos pontos.
+     */
+    private Solucao solucao;
 
     /**
      * Distância mínima entre duas filiais.
@@ -99,8 +105,9 @@ public class ControladorJanela {
     public void executarForcaBruta() {
         final ForcaBruta forcaBruta = new ForcaBruta(listaPontosCandidatos.getPontosCandidatos(), distanciaMinima);
         forcaBruta.executar();
+        solucao = forcaBruta.getMelhorSolucao();
         System.out.println("Melhor solução = " + forcaBruta.getMelhorSolucao());
-        // Falta implementar a parte gráfica
+        janelaPrincipal.getAreaDesenho().repaint();
     }
 
     /**
@@ -117,5 +124,13 @@ public class ControladorJanela {
      */
     public double getDistanciaMinima() {
         return this.distanciaMinima;
+    }
+
+    /**
+     * Obtém a solução para o problema.
+     * @return Solução para o problema.
+     */
+    public Solucao getSolucao() {
+        return solucao;
     }
 }
