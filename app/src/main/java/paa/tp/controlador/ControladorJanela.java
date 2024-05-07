@@ -108,6 +108,9 @@ public class ControladorJanela {
         solucao = forcaBruta.getMelhorSolucao();
         System.out.println("Melhor solução = " + forcaBruta.getMelhorSolucao());
         janelaPrincipal.getAreaDesenho().repaint();
+        final JanelaResultados janelaResultados = new JanelaResultados(solucao);
+        janelaResultados.setVisible(true);
+        janelaResultados.pack();
     }
 
     /**
