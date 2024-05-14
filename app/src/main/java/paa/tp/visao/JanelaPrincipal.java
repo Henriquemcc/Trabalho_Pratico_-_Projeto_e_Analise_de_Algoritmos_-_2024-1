@@ -22,14 +22,14 @@ public class JanelaPrincipal extends JFrame
     {
         // Menus
         /**
-         * Menu 'Arquivo'.
-         */
-        private final JMenu jMenuArquivo = new JMenu("Arquivo");
-
-        /**
          * Menu 'Dados'.
          */
         private final JMenu jMenuDados = new JMenu("Dados");
+
+        /**
+         * Menu 'Parâmetros'.
+         */
+        private final JMenu jMenuParametros = new JMenu("Parâmetros");
 
         /**
          * Menu 'Executar'.
@@ -51,7 +51,7 @@ public class JanelaPrincipal extends JFrame
         /**
          * Item 'Gerar' de 'Dados'.
          */
-        private final JMenuItem jMenuItemGerarDadosEntrada = new JMenuItem("Gerar dados de entrada aleatoriamente");
+        private final JMenuItem jMenuItemGerarDadosEntrada = new JMenuItem("Gerar aleatoriamente");
 
         /**
          * Item 'Distância Mínima' de 'Dados'.
@@ -74,16 +74,18 @@ public class JanelaPrincipal extends JFrame
          */
         public BarraMenus() {
             // Adicionando itens ao menu
-            jMenuArquivo.add(jMenuItemAbrirArquivo);
-            jMenuArquivo.add(jMenuItemSalvarArquivo);
+            jMenuDados.add(jMenuItemAbrirArquivo);
+            jMenuDados.add(jMenuItemSalvarArquivo);
             jMenuDados.add(jMenuItemGerarDadosEntrada);
-            jMenuDados.add(jMenuItemDistanciaMinima);
+
+            jMenuParametros.add(jMenuItemDistanciaMinima);
+
             jMenuExecutar.add(jMenuItemExecutarForcaBruta);
             jMenuExecutar.add(jMenuItemExecutarBranchAndBound);
 
             // Adicionando menu
-            add(jMenuArquivo);
             add(jMenuDados);
+            add(jMenuParametros);
             add(jMenuExecutar);
 
             // Adicionando action listener nos itens do menu
