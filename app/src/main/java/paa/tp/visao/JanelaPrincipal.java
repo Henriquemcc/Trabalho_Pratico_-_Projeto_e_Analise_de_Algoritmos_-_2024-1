@@ -3,13 +3,12 @@ package paa.tp.visao;
 import paa.tp.controlador.ControladorJanela;
 import paa.tp.modelo.PontoCandidato;
 import paa.tp.modelo.algoritmo.otimizacao.Solucao;
-
 import javax.swing.*;
 import java.awt.*;
-import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+import static paa.tp.visao.GerarCor.gerarCor;
+
 
 /**
  * Janela principal do programa.
@@ -103,30 +102,6 @@ public class JanelaPrincipal extends JFrame
     public final class AreaDesenho extends JPanel
     {
         /**
-         * Número inteiro gerado aleatóriamente a ser utilizado para a geração da seed.
-         */
-        private final long randomInteger = (new SecureRandom()).nextInt();
-
-        /**
-         * Gera uma cor com base o índice e na divisão do espectro de cores.
-         * @param indice Índice para ser utilizado como seed do random.
-         * @return Cor gerada com base nas variáveis índice e divisão.
-         */
-        private Color gerarCor(final int indice) {
-
-            // Random a ser utilizado na geração do RGB das cores
-            final Random random = new Random(indice + randomInteger);
-
-            // Gerando o RGB
-            final int vermelho = random.nextInt(255);
-            final int verde = random.nextInt(255);
-            final int azul = random.nextInt(255);
-
-            // Criando e retornando a nova cor
-            return new Color(vermelho, verde, azul);
-        }
-
-        /**
          * Desenha os pontos no JPanel.
          * @param g Objeto gráfico do Java.
          */
@@ -177,8 +152,7 @@ public class JanelaPrincipal extends JFrame
                 for (final PontoCandidato p: pontosCandidatosEscolhidos) {
 
                     // Obtendo a cor
-                    final int indiceCor = franquias.indexOf(p.getNumeroFranquia()) + 1;
-                    final Color cor = gerarCor(indiceCor);
+                    final Color cor = gerarCor(p.getNumeroFranquia());
                     g.setColor(cor);
 
                     // Obtendo as posições
