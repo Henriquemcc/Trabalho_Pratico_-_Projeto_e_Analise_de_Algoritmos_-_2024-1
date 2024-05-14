@@ -38,12 +38,12 @@ public class JanelaPrincipal extends JFrame
 
         // Itens do menu Arquivos
         /**
-         * Item 'Abrir' de 'Arquivo'.
+         * Item 'Abrir' de 'Dados'.
          */
         private final JMenuItem jMenuItemAbrirArquivo = new JMenuItem("Abrir");
 
         /**
-         * Item 'Salvar' de 'Arquivo'.
+         * Item 'Salvar' de 'Dados'.
          */
         private final JMenuItem jMenuItemSalvarArquivo = new JMenuItem("Salvar");
 
@@ -54,7 +54,7 @@ public class JanelaPrincipal extends JFrame
         private final JMenuItem jMenuItemGerarDadosEntrada = new JMenuItem("Gerar aleatoriamente");
 
         /**
-         * Item 'Distância Mínima' de 'Dados'.
+         * Item 'Distância Mínima' de 'Parâmetros'.
          */
         private final JMenuItem jMenuItemDistanciaMinima = new JMenuItem("Distancia Minima");
 
