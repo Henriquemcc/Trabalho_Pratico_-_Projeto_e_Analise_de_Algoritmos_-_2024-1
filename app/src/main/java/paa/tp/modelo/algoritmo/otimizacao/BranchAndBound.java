@@ -20,21 +20,14 @@ public class BranchAndBound extends Algoritmo{
 
     @Override
     public void executar() {
-        executar(0, new Solucao(new ArrayList<>()));
+        final ArrayList<PontoCandidato> copiaPontoCandidatos = new ArrayList<>(listaPontosCandidatos.size());
+        copiaPontoCandidatos.addAll(listaPontosCandidatos);
+        executar(0, new Solucao(copiaPontoCandidatos));
     }
 
-    /**
-     * Executa o algoritmo Branch and Bound recursivamente.
-     * @param indice Índice da Lista de pontos candidatos a ser adicionado á lista dos pontos escolhidos.
-     * @param solucao Solução anterior.
-     */
     private void executar(final int indice, final Solucao solucao) {
 
-        // Lançando exceção se o valor de solucao for nulo
-        if (solucao == null)
-            throw new NullPointerException("O valor do parâmetro 'Solucao' não pode ser nulo");
-
-        // Alterando o maior elemento
+        // Adicionando o elemento atual à melhor solução
         /**
          * IF
          * - Verificando se o elemento avaliado atende as restrições.
@@ -46,25 +39,17 @@ public class BranchAndBound extends Algoritmo{
         if (solucao.getDistanciaMinima() >= distanciaMinima && (melhorSolucao == null || solucao.getPontosCandidatosEscolhidos().size() > melhorSolucao.getPontosCandidatosEscolhidos().size() || (solucao.getPontosCandidatosEscolhidos().size() == melhorSolucao.getPontosCandidatosEscolhidos().size() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal())))
             melhorSolucao = solucao;
 
-        /**
-         * IF
-         * Condição de parada da recursão.
-         */
-        if (indice < listaPontosCandidatos.size())
+        // Removendo elementos
+        else if (indice < listaPontosCandidatos.size())
         {
-            // Adicionando o elemento atual
-            final List<PontoCandidato> pontosCandidatosSolucao = solucao.getPontosCandidatosEscolhidos();
-            final ArrayList<PontoCandidato> pontosCandidatosNovaSolucao = new ArrayList<>(pontosCandidatosSolucao.size());
-            pontosCandidatosNovaSolucao.addAll(pontosCandidatosSolucao);
-            pontosCandidatosNovaSolucao.add(listaPontosCandidatos.get(indice));
-            final Solucao novaSolucao = new Solucao(pontosCandidatosNovaSolucao);
-            executar(indice+1, novaSolucao);
+            // Removendo o elemento atual
+            final ArrayList<PontoCandidato> copiaPontosCandidatos = new ArrayList<>(solucao.getPontosCandidatosEscolhidos().size());
+            copiaPontosCandidatos.addAll(solucao.getPontosCandidatosEscolhidos());
+            copiaPontosCandidatos.remove(indice);
+            executar(indice+1, new Solucao(copiaPontosCandidatos));
 
-            // Pulando o elemento atual
-            executar(indice+1, new Solucao(solucao.getPontosCandidatosEscolhidos()));
+            // Não removendo o elemento atual
+            executar(indice+1, solucao);
         }
-
     }
-
-
 }
