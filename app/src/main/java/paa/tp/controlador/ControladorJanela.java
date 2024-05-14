@@ -114,6 +114,9 @@ public class ControladorJanela {
         janelaResultados.pack();
     }
 
+    /**
+     * Executa o algoritmo Branch and Bound.
+     */
     public void executarBranchAndBound() {
         final BranchAndBound branchAndBound = new BranchAndBound(listaPontosCandidatos.getPontosCandidatos(), distanciaMinima);
         branchAndBound.executar();
