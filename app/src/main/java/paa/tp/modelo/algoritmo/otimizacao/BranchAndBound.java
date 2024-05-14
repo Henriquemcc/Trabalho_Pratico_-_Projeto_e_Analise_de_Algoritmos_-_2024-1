@@ -45,7 +45,7 @@ public class BranchAndBound extends Algoritmo{
             // Removendo o elemento atual
             final ArrayList<PontoCandidato> copiaPontosCandidatos = new ArrayList<>(solucao.getPontosCandidatosEscolhidos().size());
             copiaPontosCandidatos.addAll(solucao.getPontosCandidatosEscolhidos());
-            copiaPontosCandidatos.remove(indice);
+            copiaPontosCandidatos.remove(listaPontosCandidatos.get(indice));
             executar(indice+1, new Solucao(copiaPontosCandidatos));
 
             // Não removendo o elemento atual
