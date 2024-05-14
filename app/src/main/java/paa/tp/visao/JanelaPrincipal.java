@@ -93,6 +93,7 @@ public class JanelaPrincipal extends JFrame
             jMenuItemGerarDadosEntrada.addActionListener(actionEvent -> controladorJanela.gerarDadosAleatorios());
             jMenuItemDistanciaMinima.addActionListener(actionEvent -> controladorJanela.obterDistanciaMinima());
             jMenuItemExecutarForcaBruta.addActionListener(actionEvent -> controladorJanela.executarForcaBruta());
+            jMenuItemExecutarBranchAndBound.addActionListener(actionEvent -> controladorJanela.executarBranchAndBound());
         }
     }
 

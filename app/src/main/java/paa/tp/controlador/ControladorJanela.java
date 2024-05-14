@@ -1,6 +1,7 @@
 package paa.tp.controlador;
 
 import paa.tp.modelo.ListaPontosCandidatos;
+import paa.tp.modelo.algoritmo.otimizacao.BranchAndBound;
 import paa.tp.modelo.algoritmo.otimizacao.ForcaBruta;
 import paa.tp.modelo.algoritmo.otimizacao.Solucao;
 import paa.tp.visao.*;
@@ -106,7 +107,18 @@ public class ControladorJanela {
         final ForcaBruta forcaBruta = new ForcaBruta(listaPontosCandidatos.getPontosCandidatos(), distanciaMinima);
         forcaBruta.executar();
         solucao = forcaBruta.getMelhorSolucao();
-        System.out.println("Melhor solução = " + forcaBruta.getMelhorSolucao());
+        System.out.println("Melhor solução = " + solucao);
+        janelaPrincipal.getAreaDesenho().repaint();
+        final JanelaResultados janelaResultados = new JanelaResultados(solucao);
+        janelaResultados.setVisible(true);
+        janelaResultados.pack();
+    }
+
+    public void executarBranchAndBound() {
+        final BranchAndBound branchAndBound = new BranchAndBound(listaPontosCandidatos.getPontosCandidatos(), distanciaMinima);
+        branchAndBound.executar();
+        solucao = branchAndBound.getMelhorSolucao();
+        System.out.println("Melhor solução = " + solucao);
         janelaPrincipal.getAreaDesenho().repaint();
         final JanelaResultados janelaResultados = new JanelaResultados(solucao);
         janelaResultados.setVisible(true);
