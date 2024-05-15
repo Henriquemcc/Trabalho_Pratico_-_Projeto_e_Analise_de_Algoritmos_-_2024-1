@@ -34,3 +34,16 @@ application {
     // Define the main class for the application.
     mainClass = "paa.tp.App"
 }
+
+tasks {
+    withType<Jar> {
+        manifest {
+            attributes["Main-Class"] = application.mainClass.get()
+            duplicatesStrategy = DuplicatesStrategy.INCLUDE
+        }
+
+        configurations["compileClasspath"].forEach { file: File ->
+            from(zipTree(file.absoluteFile))
+        }
+    }
+}
