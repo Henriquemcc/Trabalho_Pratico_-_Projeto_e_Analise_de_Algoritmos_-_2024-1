@@ -7,7 +7,14 @@ import paa.tp.modelo.PontoCandidato;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Testa o algoritmo da força bruta.
+ */
 public class ForcaBrutaTest extends TestCase {
+
+    /**
+     * Realiza o caso de teste da entrada passada pelo professor sem nenhuma restrição (distância mínima).
+     */
     @Test
     public void testExemploProfessor() {
         final List<PontoCandidato> pontosCandidatos = new ArrayList<>();
