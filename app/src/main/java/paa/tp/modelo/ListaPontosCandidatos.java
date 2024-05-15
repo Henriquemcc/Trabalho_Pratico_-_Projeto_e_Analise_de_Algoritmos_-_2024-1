@@ -64,7 +64,7 @@ public class ListaPontosCandidatos {
         {
             for (int loja = 0; loja < quantidadeLojasPorFranquia; loja++)
             {
-                pontoCandidatosGerados.add(new PontoCandidato(franquia, random.nextInt(), random.nextInt(), random.nextInt()));
+                pontoCandidatosGerados.add(new PontoCandidato(franquia+1, random.nextInt(1000), random.nextInt(1000), random.nextInt(1000000)));
             }
         }
         pontosCandidatos = pontoCandidatosGerados;
