@@ -1,6 +1,7 @@
 package paa.tp.modelo;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Classe que armazena todos os dados de um ponto candidato.
@@ -86,5 +87,27 @@ public class PontoCandidato implements Serializable {
                 ", coordenadaY=" + coordenadaY +
                 ", custoInstalacao=" + custoInstalacao +
                 '}';
+    }
+
+    /**
+     * Verifica se dois pontos candidatos são iguais.
+     * @param o Outro ponto candidato a ser comparado com este.
+     * @return Valor booleano indicando se os dois pontos são iguais.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PontoCandidato that = (PontoCandidato) o;
+        return numeroFranquia == that.numeroFranquia && coordenadaX == that.coordenadaX && coordenadaY == that.coordenadaY && custoInstalacao == that.custoInstalacao;
+    }
+
+    /**
+     * Obtém o código hash do Ponto Candidato.
+     * @return Código hash do Ponto Candidato.
+     */
+    @Override
+    public int hashCode() {
+        return Objects.hash(numeroFranquia, coordenadaX, coordenadaY, custoInstalacao);
     }
 }
