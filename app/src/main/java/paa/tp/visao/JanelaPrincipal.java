@@ -139,10 +139,11 @@ public class JanelaPrincipal extends JFrame
                 }
 
                 // Posição do painel
-                final int posicaoMenorVerticalPainel = 0;
-                final int posicaoMenorHorizontalPainel = 0;
-                final int posicaoMaiorHorizontalPainel = this.getWidth();
-                final int posicaoMaiorVerticalPainel = this.getHeight();
+                final int raioPonto = 10;
+                final int posicaoMenorVerticalPainel = 0 + raioPonto;
+                final int posicaoMenorHorizontalPainel = 0 + raioPonto;
+                final int posicaoMaiorHorizontalPainel = getWidth() - raioPonto;
+                final int posicaoMaiorVerticalPainel = getHeight() - raioPonto;
 
                 // Altura e largura do painel e dos pontos
                 final double larguraPainel = posicaoMaiorHorizontalPainel - posicaoMenorHorizontalPainel;
@@ -162,7 +163,7 @@ public class JanelaPrincipal extends JFrame
                     final int posicaoY = (int) Math.floor(alturaPainel * (p.getCoordenadaY() - posicaoMenorVerticalPontos) / alturaPontos);
 
                     // Desenhando os pontos
-                    g.fillOval(posicaoX, posicaoY, 10, 10);
+                    g.fillOval(posicaoX, posicaoY, raioPonto, raioPonto);
                 }
             }
         }
