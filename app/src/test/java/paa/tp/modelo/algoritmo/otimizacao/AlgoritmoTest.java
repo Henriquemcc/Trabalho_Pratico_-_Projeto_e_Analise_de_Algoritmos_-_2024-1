@@ -40,7 +40,7 @@ public class AlgoritmoTest extends TestCase {
         for (int franquia = 0; franquia < numeroFranquias; franquia++)
             for (int filial = 0; filial < numeroFiliaisPorFranquia; filial++)
                 pontosCandidatos.add(new PontoCandidato(franquia + 1, random.nextInt(1000), random.nextInt(1000), random.nextInt(1000000)));
-        final int distanciaMinima = 10;
+        final int distanciaMinima = random.nextInt(1000);
         final ForcaBruta forcaBruta = new ForcaBruta(pontosCandidatos, distanciaMinima);
         forcaBruta.executar();
         final BranchAndBound branchAndBound = new BranchAndBound(pontosCandidatos, distanciaMinima);
