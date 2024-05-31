@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Classe abstrata do algoritmo para resolver o problema de otimização.
  */
-abstract class Algoritmo {
+public abstract class Algoritmo {
 
     /**
      * Lista de pontos candidatos a serem filiais.
