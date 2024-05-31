@@ -32,8 +32,8 @@ public class ForcaBruta extends Algoritmo {
             final Stack<Integer> pilhaPosicaoAnalisada = new Stack<>();
 
             // Adicionando primeiros elementos na pilha
-            pilhaPontosEscolhidos.add(new ArrayList<>(listaPontosCandidatos));
-            pilhaPosicaoAnalisada.add(0);
+            pilhaPontosEscolhidos.push(new ArrayList<>(listaPontosCandidatos));
+            pilhaPosicaoAnalisada.push(0);
 
             // Enquanto as pilhas não estiverem vazias serão geradas as combinações
             while (!pilhaPosicaoAnalisada.isEmpty() || !pilhaPontosEscolhidos.isEmpty()) {
