@@ -51,13 +51,30 @@ public class AlgoritmoTest extends TestCase {
      * Realiza o caso de teste da entrada passada pelo professor com meia restrição (distância mínima).
      */
     public void testExemploProfessorMeiaRestricao() {
+
+        // Definindo os dados de entrada
         final List<PontoCandidato> pontosCandidatos = getPontoCandidatosExemploProfessor();
         final int distanciaMinima = 150;
+
+        // Executando o Branch and Bound
         final BranchAndBound branchAndBound = new BranchAndBound(pontosCandidatos, distanciaMinima);
+        final long tempoInicioBranchAndBound = System.nanoTime();
         branchAndBound.executar();
+        final long tempoFimBranchAndBound = System.nanoTime();
+
+        // Executando o Força Bruta
         final ForcaBruta forcaBruta = new ForcaBruta(pontosCandidatos, distanciaMinima);
+        final long tempoInicioForcaBruta = System.nanoTime();
         forcaBruta.executar();
+        final long tempoFimForcaBruta = System.nanoTime();
+
+        // Verificando se a solução dos dois algoritmos são iguais
         assertEquals(forcaBruta.getMelhorSolucao().getPontosCandidatosEscolhidos(), branchAndBound.getMelhorSolucao().getPontosCandidatosEscolhidos());
+
+        // Verificando se o tempo de execução do Branch and Bound é menor que o Força Bruta
+        final long tempoGastoBranchAndBound = tempoFimBranchAndBound - tempoInicioBranchAndBound;
+        final long tempoGastoForcaBruta = tempoFimForcaBruta - tempoInicioForcaBruta;
+        assertTrue(tempoGastoForcaBruta > tempoGastoBranchAndBound);
     }
 
     /**
