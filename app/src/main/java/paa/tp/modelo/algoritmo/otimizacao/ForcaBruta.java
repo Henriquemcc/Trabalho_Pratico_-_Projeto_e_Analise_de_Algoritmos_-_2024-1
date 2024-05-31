@@ -2,10 +2,7 @@ package paa.tp.modelo.algoritmo.otimizacao;
 
 import paa.tp.modelo.PontoCandidato;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Classe responsável por executar o algoritmo da força bruta.
@@ -26,44 +23,35 @@ public class ForcaBruta extends Algoritmo {
      */
     @Override
     public void executar() {
-        // Obtendo todas as soluções
-        final Map<Integer, List<Solucao>> solucoes = gerarSolucoes();
 
-        // Obtendo a melhor solução
-        melhorSolucao = null;
-        for (int quantidadeElementosCombinados = listaPontosCandidatos.size(); quantidadeElementosCombinados > 0; quantidadeElementosCombinados--) {
+        // Iterando sobre diferentes tamanho de soluções
+        for (int tamanhoCombinacao = listaPontosCandidatos.size(); tamanhoCombinacao > 0 && melhorSolucao == null; tamanhoCombinacao--) {
 
-            // Saindo do laço caso já tenha sido encontrado uma melhor solução
-            if (melhorSolucao != null)
-                break;
+            // Pilha que será utilizada para transformar o problema recursivo em iterativo
+            final Stack<List<PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
 
-            // Obtendo todas as soluções possíveis para esta quantidade de elementos combinados
-            final List<Solucao> solucoesCujaQuantidadeElementosCombinadosSejaI = solucoes.get(quantidadeElementosCombinados);
+            // Adicionando primeiros elementos na pilha
+            pilhaPontosEscolhidos.push(new ArrayList<>(listaPontosCandidatos));
 
-            // Identificando qual dessas soluções é a melhor solução
-            if (solucoesCujaQuantidadeElementosCombinadosSejaI != null) for (final Solucao solucao: solucoesCujaQuantidadeElementosCombinadosSejaI) {
+            // Enquanto as pilhas não estiverem vazias serão geradas as combinações
+            while (!pilhaPontosEscolhidos.isEmpty()) {
+                final List<PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
 
-                // Verificando se atende a restrição de distância mínima, e se é melhor que a melhor solução encontrada anteriormente
-                if (solucao.getDistanciaMinima() >= distanciaMinima && (melhorSolucao == null || solucao.getCustoTotal() < melhorSolucao.getCustoTotal()))
-                    melhorSolucao = solucao;
+                // Fim da (pseudo) recursão
+                if (pontosEscolhidos.size() == tamanhoCombinacao) {
+                    final Solucao solucao = new Solucao(pontosEscolhidos);
+                    if (solucao.getDistanciaMinima() >= distanciaMinima && (melhorSolucao == null || solucao.getPontosCandidatosEscolhidos().size() > melhorSolucao.getPontosCandidatosEscolhidos().size() || (solucao.getPontosCandidatosEscolhidos().size() == melhorSolucao.getPontosCandidatosEscolhidos().size() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal())))
+                        melhorSolucao = solucao;
+                }
+
+                // Removendo pontos
+                else if (!pontosEscolhidos.isEmpty()) for (int i = 0; i < pontosEscolhidos.size(); i++) {
+                    final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
+                    novosPontosEscolhidos.remove(novosPontosEscolhidos.get(i));
+                    pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+                }
             }
         }
-    }
-
-    /**
-     * Gera todas as soluções possíveis.
-     * @return Map das soluções para a quantidade de elementos combinados.
-     */
-    private Map<Integer, List<Solucao>> gerarSolucoes() {
-        final HashMap<Integer, List<Solucao>> mapQuantidadeElementosCombinadosSolucoes = new HashMap<>();
-        for (int i = 1; i <= listaPontosCandidatos.size(); i++) {
-            final Combinacoes<PontoCandidato> combinacoes = new Combinacoes<PontoCandidato>(listaPontosCandidatos, i);
-            final ArrayList<Solucao> solucoes = new ArrayList<>();
-            for (final List<PontoCandidato> combinacao: combinacoes.getCombinacoes())
-                solucoes.add(new Solucao(combinacao));
-            mapQuantidadeElementosCombinadosSolucoes.put(i, solucoes);
-        }
-        return mapQuantidadeElementosCombinadosSolucoes;
     }
 
 

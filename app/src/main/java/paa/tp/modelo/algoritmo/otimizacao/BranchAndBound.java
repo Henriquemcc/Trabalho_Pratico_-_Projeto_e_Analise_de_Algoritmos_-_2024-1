@@ -4,6 +4,7 @@ import paa.tp.modelo.PontoCandidato;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * Algoritmo Branch and Bound.
@@ -20,36 +21,41 @@ public class BranchAndBound extends Algoritmo{
 
     @Override
     public void executar() {
-        final ArrayList<PontoCandidato> copiaPontoCandidatos = new ArrayList<>(listaPontosCandidatos.size());
-        copiaPontoCandidatos.addAll(listaPontosCandidatos);
-        executar(0, new Solucao(copiaPontoCandidatos));
-    }
 
-    private void executar(final int indice, final Solucao solucao) {
+        // Pilhas que serão utilizadas para transformar o problema recursivo em iterativo
+        final Stack<List<PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
+        final Stack<Integer> pilhaIndice = new Stack<>();
 
-        // Adicionando o elemento atual à melhor solução
-        /**
-         * IF
-         * - Verificando se o elemento avaliado atende as restrições.
-         *   Inserindo se:
-         *    - não houver melhor solução,
-         *    - a quantidade de pontos do elemento avaliado é maior que a quantidade de pontos da melhor solução,
-         *    - o custo do elemento avaliado é menor que o custo da melhor solução (e a quantidade de elementos da solução avaliada for igual da melhor solução).
-         */
-        if (solucao.getDistanciaMinima() >= distanciaMinima && (melhorSolucao == null || solucao.getPontosCandidatosEscolhidos().size() > melhorSolucao.getPontosCandidatosEscolhidos().size() || (solucao.getPontosCandidatosEscolhidos().size() == melhorSolucao.getPontosCandidatosEscolhidos().size() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal())))
-            melhorSolucao = solucao;
+        // Adicionando primeiros elementos na pilha
+        pilhaPontosEscolhidos.push(new ArrayList<>(listaPontosCandidatos));
+        pilhaIndice.push(0);
 
-        // Removendo elementos
-        else if (indice < listaPontosCandidatos.size())
-        {
-            // Removendo o elemento atual
-            final ArrayList<PontoCandidato> copiaPontosCandidatos = new ArrayList<>(solucao.getPontosCandidatosEscolhidos().size());
-            copiaPontosCandidatos.addAll(solucao.getPontosCandidatosEscolhidos());
-            copiaPontosCandidatos.remove(listaPontosCandidatos.get(indice));
-            executar(indice+1, new Solucao(copiaPontosCandidatos));
+        // Enquanto as pilhas não estiverem vazias serão analisados os elementos
+        while (!pilhaIndice.isEmpty() || ! pilhaPontosEscolhidos.isEmpty()) {
+            final int indice = pilhaIndice.pop();
+            final List<PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
 
-            // Não removendo o elemento atual
-            executar(indice+1, solucao);
+            final Solucao solucao = new Solucao(pontosEscolhidos);
+
+            // Fim da (pseudo) recursão
+            if (solucao.getDistanciaMinima() >= distanciaMinima && (melhorSolucao == null || solucao.getPontosCandidatosEscolhidos().size() > melhorSolucao.getPontosCandidatosEscolhidos().size() || (solucao.getPontosCandidatosEscolhidos().size() == melhorSolucao.getPontosCandidatosEscolhidos().size() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal())))
+                melhorSolucao = solucao;
+
+            // Removendo pontos
+            else if (indice < listaPontosCandidatos.size()) {
+
+                // Removendo o elemento atual
+                final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
+                novosPontosEscolhidos.remove(listaPontosCandidatos.get(indice));
+                pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+                pilhaIndice.push(indice+1);
+
+                // Não removendo o elemento atual
+                pilhaPontosEscolhidos.push(pontosEscolhidos);
+                pilhaIndice.push(indice+1);
+
+            }
         }
+
     }
 }
