@@ -112,7 +112,7 @@ public class ControladorJanela {
         System.out.println("Melhor solução = " + solucao);
         janelaPrincipal.getAreaDesenho().repaint();
         final long tempoGasto = tempoFim - tempoInicio;
-        System.out.printf("Tempo gasto: %dns", tempoGasto);
+        System.out.printf("Tempo gasto: %dns\n", tempoGasto);
         final JanelaResultados janelaResultados = new JanelaResultados(solucao, tempoGasto);
         janelaResultados.setVisible(true);
         janelaResultados.pack();
@@ -130,7 +130,7 @@ public class ControladorJanela {
         System.out.println("Melhor solução = " + solucao);
         janelaPrincipal.getAreaDesenho().repaint();
         final long tempoGasto = tempoFim - tempoInicio;
-        System.out.printf("Tempo gasto: %dns", tempoGasto);
+        System.out.printf("Tempo gasto: %dns\n", tempoGasto);
         final JanelaResultados janelaResultados = new JanelaResultados(solucao, tempoGasto);
         janelaResultados.setVisible(true);
         janelaResultados.pack();
