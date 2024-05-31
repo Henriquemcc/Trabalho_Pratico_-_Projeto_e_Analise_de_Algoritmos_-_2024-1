@@ -105,11 +105,13 @@ public class ControladorJanela {
      */
     public void executarForcaBruta() {
         final ForcaBruta forcaBruta = new ForcaBruta(listaPontosCandidatos.getPontosCandidatos(), distanciaMinima);
+        final long tempoInicio = System.currentTimeMillis();
         forcaBruta.executar();
+        final long tempoFim = System.currentTimeMillis();
         solucao = forcaBruta.getMelhorSolucao();
         System.out.println("Melhor solução = " + solucao);
         janelaPrincipal.getAreaDesenho().repaint();
-        final JanelaResultados janelaResultados = new JanelaResultados(solucao);
+        final JanelaResultados janelaResultados = new JanelaResultados(solucao, tempoFim - tempoInicio);
         janelaResultados.setVisible(true);
         janelaResultados.pack();
     }
@@ -119,11 +121,13 @@ public class ControladorJanela {
      */
     public void executarBranchAndBound() {
         final BranchAndBound branchAndBound = new BranchAndBound(listaPontosCandidatos.getPontosCandidatos(), distanciaMinima);
+        final long tempoInicio = System.currentTimeMillis();
         branchAndBound.executar();
+        final long tempoFim = System.currentTimeMillis();
         solucao = branchAndBound.getMelhorSolucao();
         System.out.println("Melhor solução = " + solucao);
         janelaPrincipal.getAreaDesenho().repaint();
-        final JanelaResultados janelaResultados = new JanelaResultados(solucao);
+        final JanelaResultados janelaResultados = new JanelaResultados(solucao, tempoFim - tempoInicio);
         janelaResultados.setVisible(true);
         janelaResultados.pack();
     }
