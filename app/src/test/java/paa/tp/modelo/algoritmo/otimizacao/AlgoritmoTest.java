@@ -111,14 +111,33 @@ public class AlgoritmoTest extends TestCase {
      * Realiza o caso de teste da entrada passada pelo professor sem nenhuma restrição (distância mínima).
      */
     public void testExemploProfessorNenhumaRestricao() {
+
+        // Definindo os dados de entrada
         final List<PontoCandidato> pontosCandidatos = getPontoCandidatosExemploProfessor();
         final int distanciaMinima = 0;
+
+        // Executando o Branch and Bound
         final BranchAndBound branchAndBound = new BranchAndBound(pontosCandidatos, distanciaMinima);
+        final long tempoInicioBranchAndBound = System.nanoTime();
         branchAndBound.executar();
+        final long tempoFimBranchAndBound = System.nanoTime();
+
+        // Verificando se a solução do Branch and Bound está correta
         assertEquals(branchAndBound.getMelhorSolucao().getPontosCandidatosEscolhidos(), pontosCandidatos);
+
+        // Executando o Força Bruta
         final ForcaBruta forcaBruta = new ForcaBruta(pontosCandidatos, distanciaMinima);
+        final long tempoInicioForcaBruta = System.nanoTime();
         forcaBruta.executar();
+        final long tempoFimForcaBruta = System.nanoTime();
+
+        // Verificando se a solução do Força Bruta está correta
         assertEquals(forcaBruta.getMelhorSolucao().getPontosCandidatosEscolhidos(), pontosCandidatos);
+
+        // Verificando se o tempo de execução do Branch and Bound é menor que o Força Bruta
+        final long tempoGastoBranchAndBound = tempoFimBranchAndBound - tempoInicioBranchAndBound;
+        final long tempoGastoForcaBruta = tempoFimForcaBruta - tempoInicioForcaBruta;
+        assertTrue(tempoGastoForcaBruta > tempoGastoBranchAndBound);
     }
 
     /**
