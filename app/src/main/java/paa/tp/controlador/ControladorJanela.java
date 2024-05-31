@@ -111,7 +111,9 @@ public class ControladorJanela {
         solucao = forcaBruta.getMelhorSolucao();
         System.out.println("Melhor solução = " + solucao);
         janelaPrincipal.getAreaDesenho().repaint();
-        final JanelaResultados janelaResultados = new JanelaResultados(solucao, tempoFim - tempoInicio);
+        final long tempoGasto = tempoFim - tempoInicio;
+        System.out.printf("Tempo gasto: %dms", tempoGasto);
+        final JanelaResultados janelaResultados = new JanelaResultados(solucao, tempoGasto);
         janelaResultados.setVisible(true);
         janelaResultados.pack();
     }
@@ -127,7 +129,9 @@ public class ControladorJanela {
         solucao = branchAndBound.getMelhorSolucao();
         System.out.println("Melhor solução = " + solucao);
         janelaPrincipal.getAreaDesenho().repaint();
-        final JanelaResultados janelaResultados = new JanelaResultados(solucao, tempoFim - tempoInicio);
+        final long tempoGasto = tempoFim - tempoInicio;
+        System.out.printf("Tempo gasto: %dms", tempoGasto);
+        final JanelaResultados janelaResultados = new JanelaResultados(solucao, tempoGasto);
         janelaResultados.setVisible(true);
         janelaResultados.pack();
     }
