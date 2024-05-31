@@ -106,7 +106,7 @@ public class ControladorLinhaComando {
             {
                 if (args[++i].toLowerCase().contains("branch-and-bound"))
                     algoritmo = BranchAndBound.class;
-                else if (args[++i].toLowerCase().contains("forca-bruta"))
+                else if (args[i].toLowerCase().contains("forca-bruta"))
                     algoritmo = ForcaBruta.class;
             }
         }
