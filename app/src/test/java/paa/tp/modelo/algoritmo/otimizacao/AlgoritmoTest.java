@@ -14,20 +14,6 @@ import java.util.Random;
 public class AlgoritmoTest extends TestCase {
 
     /**
-     * Realiza caso de teste aleatório comparando os algoritmos Branch and Bound e Força Bruta.
-     */
-    public void testAlgoritmosAleatoriamente() {
-        testarAleatoriamente(new Random());
-    }
-
-    /**
-     * Realiza caso de teste completamente aleatório (Secure Random) comparando os algoritmos Branch and Bound e Força Bruta.
-     */
-    public void testAlgoritmosAleatoriamenteSeguro() {
-        testarAleatoriamente(new SecureRandom());
-    }
-
-    /**
      * Teste aleatoriamente, comparando os algoritmos Branch and Bound e Força Bruta.
      * @param random Random a ser utilizado para gerar os casos de teste.
      */
@@ -173,6 +159,20 @@ public class AlgoritmoTest extends TestCase {
         pontosCandidatos.add(new PontoCandidato(4, 220, 220, 400));
         pontosCandidatos.add(new PontoCandidato(4, 300, 300, 1000));
         return pontosCandidatos;
+    }
+
+    /**
+     * Realiza caso de teste aleatório comparando os algoritmos Branch and Bound e Força Bruta.
+     */
+    public void testAlgoritmosAleatoriamente() {
+        testarAleatoriamente(new Random());
+    }
+
+    /**
+     * Realiza caso de teste completamente aleatório (Secure Random) comparando os algoritmos Branch and Bound e Força Bruta.
+     */
+    public void testAlgoritmosAleatoriamenteSeguro() {
+        testarAleatoriamente(new SecureRandom());
     }
 
 }
