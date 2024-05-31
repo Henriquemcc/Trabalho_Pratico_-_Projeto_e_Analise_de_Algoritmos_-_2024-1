@@ -4,6 +4,9 @@
 package paa.tp;
 
 import paa.tp.controlador.ControladorJanela;
+import paa.tp.controlador.ControladorLinhaComando;
+
+import java.io.IOException;
 
 /**
  * Classe principal.
@@ -13,7 +16,14 @@ public class App {
      * Função principal.
      * @param args Argumentos de linha de comando.
      */
-    public static void main(String[] args) {
-        final ControladorJanela controladorJanela = new ControladorJanela();
+    public static void main(String[] args) throws Exception {
+
+        // Executando linha de comando
+        if (args.length > 0)
+            new ControladorLinhaComando(args);
+
+        // Executando janela
+        else
+            new ControladorJanela();
     }
 }
