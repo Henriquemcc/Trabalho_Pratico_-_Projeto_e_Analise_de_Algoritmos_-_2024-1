@@ -30,6 +30,9 @@ public class JanelaResultados extends JFrame {
         // Criando o JPanel para ser a área de exibição do resultado
         final JPanel areaExibicaoResultado = new JPanel();
 
+        // Configurando o LayOut
+        areaExibicaoResultado.setLayout(new BoxLayout(areaExibicaoResultado, BoxLayout.Y_AXIS));
+
         // Criando a tabela da solução
         final String[] nomesColunas = {"Número franquia", "Coordenada X", "Coordenada Y", "Custo", "Cor"};
         final List<PontoCandidato> pontosCandidatosEscolhidos = solucao.getPontosCandidatosEscolhidos();
@@ -56,7 +59,7 @@ public class JanelaResultados extends JFrame {
         final JTable jTable = new JTable(model);
 
         // Adicionando tabela
-        areaExibicaoResultado.add(jTable);
+        areaExibicaoResultado.add(new JScrollPane(jTable));
 
         // Criando a área de texto para exibir o tempo gasto
         final JTextArea jTextAreaTempoGasto = new JTextArea(String.format("Tempo gasto: %dns", tempoGasto));
