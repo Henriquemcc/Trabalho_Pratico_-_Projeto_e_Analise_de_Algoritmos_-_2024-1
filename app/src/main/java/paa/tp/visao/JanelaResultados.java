@@ -4,7 +4,9 @@ import paa.tp.modelo.PontoCandidato;
 import paa.tp.modelo.algoritmo.otimizacao.Solucao;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.List;
@@ -73,7 +75,7 @@ public class JanelaResultados extends JFrame {
                 dados[i][4] = new ImageIcon(bufferedImage);
             }
             final DefaultTableModel model = new DefaultTableModel(dados, nomesColunas) {
-                public Class getColumnClass(int column) {
+                public Class<?> getColumnClass(int column) {
                     return getValueAt(0, column).getClass();
                 }
             };
