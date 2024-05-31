@@ -37,7 +37,7 @@ public class ForcaBruta extends Algoritmo {
             while (!pilhaPontosEscolhidos.isEmpty()) {
                 final List<PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
 
-                // Fim da recursão
+                // Fim da (pseudo) recursão
                 if (pontosEscolhidos.size() == tamanhoCombinacao) {
                     final Solucao solucao = new Solucao(pontosEscolhidos);
                     if (solucao.getDistanciaMinima() >= distanciaMinima && (melhorSolucao == null || solucao.getPontosCandidatosEscolhidos().size() > melhorSolucao.getPontosCandidatosEscolhidos().size() || (solucao.getPontosCandidatosEscolhidos().size() == melhorSolucao.getPontosCandidatosEscolhidos().size() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal())))
