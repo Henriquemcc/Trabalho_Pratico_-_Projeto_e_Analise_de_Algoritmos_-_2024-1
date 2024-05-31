@@ -48,6 +48,19 @@ public class AlgoritmoTest extends TestCase {
     }
 
     /**
+     * Realiza o caso de teste da entrada passada pelo professor com meia restrição (distância mínima).
+     */
+    public void testExemploProfessorMeiaRestricao() {
+        final List<PontoCandidato> pontosCandidatos = getPontoCandidatosExemploProfessor();
+        final int distanciaMinima = 150;
+        final BranchAndBound branchAndBound = new BranchAndBound(pontosCandidatos, distanciaMinima);
+        branchAndBound.executar();
+        final ForcaBruta forcaBruta = new ForcaBruta(pontosCandidatos, distanciaMinima);
+        forcaBruta.executar();
+        assertEquals(forcaBruta.getMelhorSolucao().getPontosCandidatosEscolhidos(), branchAndBound.getMelhorSolucao().getPontosCandidatosEscolhidos());
+    }
+
+    /**
      * Realiza o caso de teste da entrada passada pelo professor com a máxima restrição (distância mínima).
      */
     public void testExemploProfessorRestricaoMaxima() {
