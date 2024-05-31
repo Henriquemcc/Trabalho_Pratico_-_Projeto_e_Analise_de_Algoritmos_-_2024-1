@@ -32,19 +32,35 @@ public class AlgoritmoTest extends TestCase {
      * @param random Random a ser utilizado para gerar os casos de teste.
      */
     private void testarAleatoriamente(final Random random) {
-        final List<PontoCandidato> pontosCandidatos = new ArrayList<>();
 
+        // Definindo os dados de entrada
+        final List<PontoCandidato> pontosCandidatos = new ArrayList<>();
         final int numeroFranquias = 10;
         final int numeroFiliaisPorFranquia = 2;
         for (int franquia = 0; franquia < numeroFranquias; franquia++)
             for (int filial = 0; filial < numeroFiliaisPorFranquia; filial++)
                 pontosCandidatos.add(new PontoCandidato(franquia + 1, random.nextInt(1000), random.nextInt(1000), random.nextInt(1000000)));
         final int distanciaMinima = random.nextInt(1000);
+
+        // Executando o Força Bruta
         final ForcaBruta forcaBruta = new ForcaBruta(pontosCandidatos, distanciaMinima);
+        final long tempoInicioForcaBruta = System.nanoTime();
         forcaBruta.executar();
+        final long tempoFimForcaBruta = System.nanoTime();
+
+        // Executando o Branch and Bound
         final BranchAndBound branchAndBound = new BranchAndBound(pontosCandidatos, distanciaMinima);
+        final long tempoInicioBranchAndBound = System.nanoTime();
         branchAndBound.executar();
+        final long tempoFimBranchAndBound = System.nanoTime();
+
+        // Verificando se a solução dos dois algoritmos são iguais
         assertEquals(forcaBruta.getMelhorSolucao(), branchAndBound.getMelhorSolucao());
+
+        // Verificando se o tempo de execução do Branch and Bound é menor que o Força Bruta
+        final long tempoGastoBranchAndBound = tempoFimBranchAndBound - tempoInicioBranchAndBound;
+        final long tempoGastoForcaBruta = tempoFimForcaBruta - tempoInicioForcaBruta;
+        assertTrue(tempoGastoForcaBruta > tempoGastoBranchAndBound);
     }
 
     /**
