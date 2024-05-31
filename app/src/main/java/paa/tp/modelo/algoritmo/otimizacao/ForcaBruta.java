@@ -29,15 +29,12 @@ public class ForcaBruta extends Algoritmo {
 
             // Pilha que será utilizada para transformar o problema recursivo em iterativo
             final Stack<List<PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
-            final Stack<Integer> pilhaPosicaoAnalisada = new Stack<>();
 
             // Adicionando primeiros elementos na pilha
             pilhaPontosEscolhidos.push(new ArrayList<>(listaPontosCandidatos));
-            pilhaPosicaoAnalisada.push(0);
 
             // Enquanto as pilhas não estiverem vazias serão geradas as combinações
-            while (!pilhaPosicaoAnalisada.isEmpty() || !pilhaPontosEscolhidos.isEmpty()) {
-                final int posicaoAnalisada = pilhaPosicaoAnalisada.pop();
+            while (!pilhaPontosEscolhidos.isEmpty()) {
                 final List<PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
 
                 // Fim da recursão
@@ -48,11 +45,10 @@ public class ForcaBruta extends Algoritmo {
                 }
 
                 // Removendo pontos
-                else for (int i = posicaoAnalisada; i < listaPontosCandidatos.size(); i++) {
+                else if (!pontosEscolhidos.isEmpty()) for (int i = 0; i < pontosEscolhidos.size(); i++) {
                     final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
-                    novosPontosEscolhidos.remove(listaPontosCandidatos.get(i));
+                    novosPontosEscolhidos.remove(novosPontosEscolhidos.get(i));
                     pilhaPontosEscolhidos.push(novosPontosEscolhidos);
-                    pilhaPosicaoAnalisada.push(posicaoAnalisada+1);
                 }
             }
         }
