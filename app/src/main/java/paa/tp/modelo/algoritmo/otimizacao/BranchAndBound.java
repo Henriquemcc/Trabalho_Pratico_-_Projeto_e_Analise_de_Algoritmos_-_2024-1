@@ -22,7 +22,7 @@ public class BranchAndBound extends Algoritmo{
     @Override
     public void executar() {
 
-        // Pilha que será utilizado para transformar o problema recursivo em iterativo
+        // Pilhas que serão utilizadas para transformar o problema recursivo em iterativo
         final Stack<List<PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
         final Stack<Integer> pilhaIndice = new Stack<>();
 
