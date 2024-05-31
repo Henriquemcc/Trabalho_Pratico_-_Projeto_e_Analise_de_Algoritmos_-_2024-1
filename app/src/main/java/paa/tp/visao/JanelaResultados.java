@@ -4,7 +4,9 @@ import paa.tp.modelo.PontoCandidato;
 import paa.tp.modelo.algoritmo.otimizacao.Solucao;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.List;
@@ -12,40 +14,30 @@ import java.util.List;
 import static paa.tp.visao.GerarCor.gerarCor;
 
 /**
- * Janel que mostra os resultados da execução dos algoritmos.
+ * Janela que mostra os resultados da execução dos algoritmos.
  */
 public class JanelaResultados extends JFrame {
 
     /**
-     * Solução do problema a ser exibida.
+     * Cria a área de exibição de resultados.
+     *
+     * @param solucao    Solução a ser mostrada.
+     * @param tempoGasto Tempo gasto para resolver o problema
+     * @return Um JPanel com a solução e o tempo gasto.
      */
-    private final Solucao solucao;
+    private JPanel criarAreaExibicaoResultado(final Solucao solucao, final long tempoGasto) {
 
-    /**
-     * Tabela utilizada para mostrar os resultados.
-     */
-    private final JTable jTable;
+        // Criando o JPanel para ser a área de exibição do resultado
+        final JPanel areaExibicaoResultado = new JPanel();
 
-    /**
-     * Scroll Pane que conterá a tabela.
-     */
-    private final JScrollPane jScrollPane;
+        // Configurando o LayOut
+        areaExibicaoResultado.setLayout(new BoxLayout(areaExibicaoResultado, BoxLayout.Y_AXIS));
 
-    /**
-     * Constrói uma nova instância da classe JanelaResultados.
-     * @param solucao Solução a ser exibida
-     */
-    public JanelaResultados(final Solucao solucao) {
-        super("Resultado");
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        this.solucao = solucao;
-
-        // Criando a tabela
+        // Criando a tabela da solução
         final String[] nomesColunas = {"Número franquia", "Coordenada X", "Coordenada Y", "Custo", "Cor"};
         final List<PontoCandidato> pontosCandidatosEscolhidos = solucao.getPontosCandidatosEscolhidos();
         final Object[][] dados = new Object[pontosCandidatosEscolhidos.size()][5];
-        for (int i = 0; i < pontosCandidatosEscolhidos.size(); i++)
-        {
+        for (int i = 0; i < pontosCandidatosEscolhidos.size(); i++) {
             dados[i][0] = String.valueOf(pontosCandidatosEscolhidos.get(i).getNumeroFranquia());
             dados[i][1] = String.valueOf(pontosCandidatosEscolhidos.get(i).getCoordenadaX());
             dados[i][2] = String.valueOf(pontosCandidatosEscolhidos.get(i).getCoordenadaY());
@@ -60,12 +52,38 @@ public class JanelaResultados extends JFrame {
             dados[i][4] = new ImageIcon(bufferedImage);
         }
         final DefaultTableModel model = new DefaultTableModel(dados, nomesColunas) {
-          public Class getColumnClass(int column) {
-              return getValueAt(0, column).getClass();
-          }
+            public Class<?> getColumnClass(int column) {
+                return getValueAt(0, column).getClass();
+            }
         };
-        jTable = new JTable(model);
-        jScrollPane = new JScrollPane(jTable);
-        add(jScrollPane);
+        final JTable jTable = new JTable(model);
+
+        // Adicionando tabela
+        areaExibicaoResultado.add(new JScrollPane(jTable));
+
+        // Criando a área de texto para exibir o tempo gasto
+        final JTextArea jTextAreaTempoGasto = new JTextArea(String.format("Tempo gasto: %dns", tempoGasto));
+        jTextAreaTempoGasto.setEditable(false);
+
+        // Adicionando texto
+        areaExibicaoResultado.add(jTextAreaTempoGasto);
+
+        return areaExibicaoResultado;
+    }
+
+    /**
+     * Constrói uma nova instância da classe JanelaResultados.
+     *
+     * @param solucao    Solução a ser exibida.
+     * @param tempoGasto Tempo gasto para resolver o problema (em nano segundo).
+     */
+    public JanelaResultados(final Solucao solucao, final long tempoGasto) {
+
+        // Configurando a janela
+        super("Resultado");
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+        // Criando a área de exibição de resultado e a adicionando ao JScrollPane este ao JFrame
+        add(new JScrollPane(criarAreaExibicaoResultado(solucao, tempoGasto)));
     }
 }

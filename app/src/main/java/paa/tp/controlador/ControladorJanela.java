@@ -105,11 +105,15 @@ public class ControladorJanela {
      */
     public void executarForcaBruta() {
         final ForcaBruta forcaBruta = new ForcaBruta(listaPontosCandidatos.getPontosCandidatos(), distanciaMinima);
+        final long tempoInicio = System.nanoTime();
         forcaBruta.executar();
+        final long tempoFim = System.nanoTime();
         solucao = forcaBruta.getMelhorSolucao();
         System.out.println("Melhor solução = " + solucao);
         janelaPrincipal.getAreaDesenho().repaint();
-        final JanelaResultados janelaResultados = new JanelaResultados(solucao);
+        final long tempoGasto = tempoFim - tempoInicio;
+        System.out.printf("Tempo gasto: %dns\n", tempoGasto);
+        final JanelaResultados janelaResultados = new JanelaResultados(solucao, tempoGasto);
         janelaResultados.setVisible(true);
         janelaResultados.pack();
     }
@@ -119,11 +123,15 @@ public class ControladorJanela {
      */
     public void executarBranchAndBound() {
         final BranchAndBound branchAndBound = new BranchAndBound(listaPontosCandidatos.getPontosCandidatos(), distanciaMinima);
+        final long tempoInicio = System.nanoTime();
         branchAndBound.executar();
+        final long tempoFim = System.nanoTime();
         solucao = branchAndBound.getMelhorSolucao();
         System.out.println("Melhor solução = " + solucao);
         janelaPrincipal.getAreaDesenho().repaint();
-        final JanelaResultados janelaResultados = new JanelaResultados(solucao);
+        final long tempoGasto = tempoFim - tempoInicio;
+        System.out.printf("Tempo gasto: %dns\n", tempoGasto);
+        final JanelaResultados janelaResultados = new JanelaResultados(solucao, tempoGasto);
         janelaResultados.setVisible(true);
         janelaResultados.pack();
     }
