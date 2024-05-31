@@ -1,7 +1,6 @@
 package paa.tp.modelo.algoritmo.otimizacao;
 
 import junit.framework.TestCase;
-import org.junit.Test;
 import paa.tp.modelo.PontoCandidato;
 
 import java.security.SecureRandom;
@@ -51,7 +50,22 @@ public class AlgoritmoTest extends TestCase {
     /**
      * Realiza o caso de teste da entrada passada pelo professor sem nenhuma restrição (distância mínima).
      */
-    public void testExemploProfessor() {
+    public void testExemploProfessorNenhumaRestricao() {
+        final List<PontoCandidato> pontosCandidatos = getPontoCandidatosExemploProfessor();
+        final int distanciaMinima = 0;
+        final BranchAndBound branchAndBound = new BranchAndBound(pontosCandidatos, distanciaMinima);
+        branchAndBound.executar();
+        assertEquals(branchAndBound.getMelhorSolucao().getPontosCandidatosEscolhidos(), pontosCandidatos);
+        final ForcaBruta forcaBruta = new ForcaBruta(pontosCandidatos, distanciaMinima);
+        forcaBruta.executar();
+        assertEquals(forcaBruta.getMelhorSolucao().getPontosCandidatosEscolhidos(), pontosCandidatos);
+    }
+
+    /**
+     * Obtém os pontos candidatos do exemplo do professor.
+     * @return Pontos candidatos do exemplo do professor.
+     */
+    private static List<PontoCandidato> getPontoCandidatosExemploProfessor() {
         final List<PontoCandidato> pontosCandidatos = new ArrayList<>();
         pontosCandidatos.add(new PontoCandidato(1, 50, 150, 2000));
         pontosCandidatos.add(new PontoCandidato(1, 150, 150, 1000));
@@ -63,12 +77,7 @@ public class AlgoritmoTest extends TestCase {
         pontosCandidatos.add(new PontoCandidato(3, 150, 300, 700));
         pontosCandidatos.add(new PontoCandidato(4, 220, 220, 400));
         pontosCandidatos.add(new PontoCandidato(4, 300, 300, 1000));
-        final int distanciaMinima = 0;
-        final BranchAndBound branchAndBound = new BranchAndBound(pontosCandidatos, distanciaMinima);
-        branchAndBound.executar();
-        assertEquals(branchAndBound.getMelhorSolucao().getPontosCandidatosEscolhidos(), pontosCandidatos);
-        final ForcaBruta forcaBruta = new ForcaBruta(pontosCandidatos, distanciaMinima);
-        forcaBruta.executar();
+        return pontosCandidatos;
     }
 
 }
