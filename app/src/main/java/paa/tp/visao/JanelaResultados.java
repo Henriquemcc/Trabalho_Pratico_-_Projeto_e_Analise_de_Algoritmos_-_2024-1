@@ -43,7 +43,7 @@ public class JanelaResultados extends JFrame {
         /**
          * Constrói uma nova instância da classe AreaExibicaoResultado.
          * @param solucao Solução a ser exibida.
-         * @param tempoGasto Tempo gasto para resolver o problema.
+         * @param tempoGasto Tempo gasto para resolver o problema (em nano segundo).
          */
         public AreaExibicaoResultado(final Solucao solucao, final long tempoGasto) {
 
@@ -83,7 +83,7 @@ public class JanelaResultados extends JFrame {
             add(jTable);
 
             // Criando a área de texto para exibir o tempo gasto
-            jTextAreaTempoGasto = new JTextArea(String.format("Tempo gasto: %dms", tempoGasto));
+            jTextAreaTempoGasto = new JTextArea(String.format("Tempo gasto: %dns", tempoGasto));
             jTextAreaTempoGasto.setEditable(false);
 
             // Adicionando texto
@@ -105,7 +105,7 @@ public class JanelaResultados extends JFrame {
     /**
      * Constrói uma nova instância da classe JanelaResultados.
      * @param solucao Solução a ser exibida.
-     * @param tempoGasto Tempo gasto para resolver o problema.
+     * @param tempoGasto Tempo gasto para resolver o problema (em nano segundo).
      */
     public JanelaResultados(final Solucao solucao, final long tempoGasto) {
 
