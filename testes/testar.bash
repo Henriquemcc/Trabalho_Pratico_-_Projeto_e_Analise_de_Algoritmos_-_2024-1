@@ -18,7 +18,7 @@ for (( i = 0; i < 3; i++ )); do
       for distancia_minima in "${distancias_minimas[@]}" ; do
           for algoritmo in "${algoritmos[@]}" ; do
               echo "$arquivo $distancia_minima $algoritmo"
-              java -jar app.jar --calcular-tempo --arquivo-dados "$arquivo" --distancia-minima "$distancia_minima" --algoritmo "$algoritmo" > "resultados/$arquivo-$distancia_minima-$algoritmo.$(date "+%d-%m-%Y_%H:%M:%S").txt"
+              java -jar app.jar --calcular-tempo --arquivo-dados "$arquivo" --distancia-minima "$distancia_minima" --algoritmo "$algoritmo" >> "resultados/$arquivo-$distancia_minima-$algoritmo.txt" 2>&1
           done
       done
   done
