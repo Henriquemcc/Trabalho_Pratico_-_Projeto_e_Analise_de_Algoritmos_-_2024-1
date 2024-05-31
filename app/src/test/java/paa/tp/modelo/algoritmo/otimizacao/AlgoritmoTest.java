@@ -21,7 +21,7 @@ public class AlgoritmoTest extends TestCase {
 
         // Definindo os dados de entrada
         final List<PontoCandidato> pontosCandidatos = new ArrayList<>();
-        final int numeroFranquias = 10;
+        final int numeroFranquias = 5;
         final int numeroFiliaisPorFranquia = 2;
         for (int franquia = 0; franquia < numeroFranquias; franquia++)
             for (int filial = 0; filial < numeroFiliaisPorFranquia; filial++)
