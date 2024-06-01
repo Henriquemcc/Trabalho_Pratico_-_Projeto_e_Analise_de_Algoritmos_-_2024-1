@@ -1,145 +1,361 @@
 Número de Franquias,Número de Lojas por franquia,Distância Mínima,Algoritmo,Tempo de Execução,Arquivo de Dados
-5,2,0,Força Bruta,1068160,5_franquias_2_lojas.txt
-5,2,0,Branch and Bound,709278,5_franquias_2_lojas.txt
-5,2,1,Força Bruta,844842,5_franquias_2_lojas.txt
-5,2,1,Branch and Bound,758183,5_franquias_2_lojas.txt
-5,2,2,Força Bruta,735211,5_franquias_2_lojas.txt
-5,2,2,Branch and Bound,675679,5_franquias_2_lojas.txt
-5,2,4,Força Bruta,842559,5_franquias_2_lojas.txt
-5,2,4,Branch and Bound,801227,5_franquias_2_lojas.txt
-5,2,8,Força Bruta,990016,5_franquias_2_lojas.txt
-5,2,8,Branch and Bound,1085108,5_franquias_2_lojas.txt
-5,2,16,Força Bruta,703063,5_franquias_2_lojas.txt
-5,2,16,Branch and Bound,917933,5_franquias_2_lojas.txt
-5,2,32,Força Bruta,735707,5_franquias_2_lojas.txt
-5,2,32,Branch and Bound,708098,5_franquias_2_lojas.txt
-5,2,64,Força Bruta,891763,5_franquias_2_lojas.txt
-5,2,64,Branch and Bound,1069511,5_franquias_2_lojas.txt
-5,2,128,Força Bruta,1368540,5_franquias_2_lojas.txt
-5,2,128,Branch and Bound,16119555,5_franquias_2_lojas.txt
-5,2,256,Força Bruta,12261272,5_franquias_2_lojas.txt
-5,2,256,Branch and Bound,15073763,5_franquias_2_lojas.txt
-5,2,512,Força Bruta,116851623,5_franquias_2_lojas.txt
-5,2,512,Branch and Bound,10068911,5_franquias_2_lojas.txt
-5,2,1024,Força Bruta,690486337,5_franquias_2_lojas.txt
-5,2,1024,Branch and Bound,10479101,5_franquias_2_lojas.txt
-,,0,Força Bruta,826641,exemplo_professor.txt
-,,0,Branch and Bound,738412,exemplo_professor.txt
-,,1,Força Bruta,750507,exemplo_professor.txt
-,,1,Branch and Bound,760594,exemplo_professor.txt
-,,2,Força Bruta,757181,exemplo_professor.txt
-,,2,Branch and Bound,697337,exemplo_professor.txt
-,,4,Força Bruta,1048697,exemplo_professor.txt
-,,4,Branch and Bound,824963,exemplo_professor.txt
-,,8,Força Bruta,1076789,exemplo_professor.txt
-,,8,Branch and Bound,716544,exemplo_professor.txt
-,,16,Força Bruta,998338,exemplo_professor.txt
-,,16,Branch and Bound,725612,exemplo_professor.txt
-,,32,Força Bruta,2049441,exemplo_professor.txt
-,,32,Branch and Bound,14069807,exemplo_professor.txt
-,,64,Força Bruta,10139327,exemplo_professor.txt
-,,64,Branch and Bound,15385434,exemplo_professor.txt
-,,128,Força Bruta,227125584,exemplo_professor.txt
-,,128,Branch and Bound,10781153,exemplo_professor.txt
-,,256,Força Bruta,616059394,exemplo_professor.txt
-,,256,Branch and Bound,15838868,exemplo_professor.txt
-,,512,Força Bruta,1136061787,exemplo_professor.txt
-,,512,Branch and Bound,12560224,exemplo_professor.txt
-,,1024,Força Bruta,1039738986,exemplo_professor.txt
-,,1024,Branch and Bound,11870667,exemplo_professor.txt
-5,2,0,Força Bruta,977388,5_franquias_2_lojas.txt
-5,2,0,Branch and Bound,1137461,5_franquias_2_lojas.txt
-5,2,1,Força Bruta,1141415,5_franquias_2_lojas.txt
-5,2,1,Branch and Bound,1040077,5_franquias_2_lojas.txt
-5,2,2,Força Bruta,1177364,5_franquias_2_lojas.txt
-5,2,2,Branch and Bound,946839,5_franquias_2_lojas.txt
-5,2,4,Força Bruta,684052,5_franquias_2_lojas.txt
-5,2,4,Branch and Bound,1226677,5_franquias_2_lojas.txt
-5,2,8,Força Bruta,863745,5_franquias_2_lojas.txt
-5,2,8,Branch and Bound,1019064,5_franquias_2_lojas.txt
-5,2,16,Força Bruta,1052370,5_franquias_2_lojas.txt
-5,2,16,Branch and Bound,923825,5_franquias_2_lojas.txt
-5,2,32,Força Bruta,1166943,5_franquias_2_lojas.txt
-5,2,32,Branch and Bound,903863,5_franquias_2_lojas.txt
-5,2,64,Força Bruta,758119,5_franquias_2_lojas.txt
-5,2,64,Branch and Bound,1028532,5_franquias_2_lojas.txt
-5,2,128,Força Bruta,1581933,5_franquias_2_lojas.txt
-5,2,128,Branch and Bound,13315236,5_franquias_2_lojas.txt
-5,2,256,Força Bruta,8053903,5_franquias_2_lojas.txt
-5,2,256,Branch and Bound,11854223,5_franquias_2_lojas.txt
-5,2,512,Força Bruta,134510730,5_franquias_2_lojas.txt
-5,2,512,Branch and Bound,9247436,5_franquias_2_lojas.txt
-5,2,1024,Força Bruta,681369510,5_franquias_2_lojas.txt
-5,2,1024,Branch and Bound,10268085,5_franquias_2_lojas.txt
-,,0,Força Bruta,796812,exemplo_professor.txt
-,,0,Branch and Bound,921776,exemplo_professor.txt
-,,1,Força Bruta,917708,exemplo_professor.txt
-,,1,Branch and Bound,1002196,exemplo_professor.txt
-,,2,Força Bruta,825458,exemplo_professor.txt
-,,2,Branch and Bound,777823,exemplo_professor.txt
-,,4,Força Bruta,897334,exemplo_professor.txt
-,,4,Branch and Bound,823178,exemplo_professor.txt
-,,8,Força Bruta,743218,exemplo_professor.txt
-,,8,Branch and Bound,933724,exemplo_professor.txt
-,,16,Força Bruta,1186285,exemplo_professor.txt
-,,16,Branch and Bound,1586126,exemplo_professor.txt
-,,32,Força Bruta,1825127,exemplo_professor.txt
-,,32,Branch and Bound,16451861,exemplo_professor.txt
-,,64,Força Bruta,7823920,exemplo_professor.txt
-,,64,Branch and Bound,13141845,exemplo_professor.txt
-,,128,Força Bruta,125250929,exemplo_professor.txt
-,,128,Branch and Bound,12535345,exemplo_professor.txt
-,,256,Força Bruta,579267459,exemplo_professor.txt
-,,256,Branch and Bound,11851416,exemplo_professor.txt
-,,512,Força Bruta,1264480583,exemplo_professor.txt
-,,512,Branch and Bound,10151104,exemplo_professor.txt
-,,1024,Força Bruta,1080394748,exemplo_professor.txt
-,,1024,Branch and Bound,10779424,exemplo_professor.txt
-5,2,0,Força Bruta,954516,5_franquias_2_lojas.txt
-5,2,0,Branch and Bound,905321,5_franquias_2_lojas.txt
-5,2,1,Força Bruta,820221,5_franquias_2_lojas.txt
-5,2,1,Branch and Bound,795710,5_franquias_2_lojas.txt
-5,2,2,Força Bruta,1135024,5_franquias_2_lojas.txt
-5,2,2,Branch and Bound,775729,5_franquias_2_lojas.txt
-5,2,4,Força Bruta,680334,5_franquias_2_lojas.txt
-5,2,4,Branch and Bound,900991,5_franquias_2_lojas.txt
-5,2,8,Força Bruta,1345788,5_franquias_2_lojas.txt
-5,2,8,Branch and Bound,837009,5_franquias_2_lojas.txt
-5,2,16,Força Bruta,1153021,5_franquias_2_lojas.txt
-5,2,16,Branch and Bound,1071473,5_franquias_2_lojas.txt
-5,2,32,Força Bruta,771144,5_franquias_2_lojas.txt
-5,2,32,Branch and Bound,953620,5_franquias_2_lojas.txt
-5,2,64,Força Bruta,1221874,5_franquias_2_lojas.txt
-5,2,64,Branch and Bound,1085592,5_franquias_2_lojas.txt
-5,2,128,Força Bruta,1620237,5_franquias_2_lojas.txt
-5,2,128,Branch and Bound,13122914,5_franquias_2_lojas.txt
-5,2,256,Força Bruta,9768221,5_franquias_2_lojas.txt
-5,2,256,Branch and Bound,13088133,5_franquias_2_lojas.txt
-5,2,512,Força Bruta,156241248,5_franquias_2_lojas.txt
-5,2,512,Branch and Bound,11522722,5_franquias_2_lojas.txt
-5,2,1024,Força Bruta,596626113,5_franquias_2_lojas.txt
-5,2,1024,Branch and Bound,13663940,5_franquias_2_lojas.txt
-,,0,Força Bruta,778181,exemplo_professor.txt
-,,0,Branch and Bound,827532,exemplo_professor.txt
-,,1,Força Bruta,1040644,exemplo_professor.txt
-,,1,Branch and Bound,852575,exemplo_professor.txt
-,,2,Força Bruta,1126663,exemplo_professor.txt
-,,2,Branch and Bound,1106399,exemplo_professor.txt
-,,4,Força Bruta,902057,exemplo_professor.txt
-,,4,Branch and Bound,743685,exemplo_professor.txt
-,,8,Força Bruta,918251,exemplo_professor.txt
-,,8,Branch and Bound,1083035,exemplo_professor.txt
-,,16,Força Bruta,829423,exemplo_professor.txt
-,,16,Branch and Bound,895937,exemplo_professor.txt
-,,32,Força Bruta,2161467,exemplo_professor.txt
-,,32,Branch and Bound,17052392,exemplo_professor.txt
-,,64,Força Bruta,8073896,exemplo_professor.txt
-,,64,Branch and Bound,12901047,exemplo_professor.txt
-,,128,Força Bruta,184042957,exemplo_professor.txt
-,,128,Branch and Bound,31728514,exemplo_professor.txt
-,,256,Força Bruta,867777457,exemplo_professor.txt
-,,256,Branch and Bound,15640993,exemplo_professor.txt
-,,512,Força Bruta,1221384420,exemplo_professor.txt
-,,512,Branch and Bound,16897473,exemplo_professor.txt
-,,1024,Força Bruta,1136177725,exemplo_professor.txt
-,,1024,Branch and Bound,19331853,exemplo_professor.txt
+2,2,0,Força Bruta,685530,2_franquias_2_lojas.txt
+2,2,0,Branch and Bound,575672,2_franquias_2_lojas.txt
+2,2,1,Força Bruta,633800,2_franquias_2_lojas.txt
+2,2,1,Branch and Bound,564724,2_franquias_2_lojas.txt
+2,2,2,Força Bruta,625080,2_franquias_2_lojas.txt
+2,2,2,Branch and Bound,574729,2_franquias_2_lojas.txt
+2,2,4,Força Bruta,566318,2_franquias_2_lojas.txt
+2,2,4,Branch and Bound,569706,2_franquias_2_lojas.txt
+2,2,8,Força Bruta,549268,2_franquias_2_lojas.txt
+2,2,8,Branch and Bound,548082,2_franquias_2_lojas.txt
+2,2,16,Força Bruta,670045,2_franquias_2_lojas.txt
+2,2,16,Branch and Bound,987874,2_franquias_2_lojas.txt
+2,2,32,Força Bruta,689146,2_franquias_2_lojas.txt
+2,2,32,Branch and Bound,924561,2_franquias_2_lojas.txt
+2,2,64,Força Bruta,643733,2_franquias_2_lojas.txt
+2,2,64,Branch and Bound,1139037,2_franquias_2_lojas.txt
+2,2,128,Força Bruta,772207,2_franquias_2_lojas.txt
+2,2,128,Branch and Bound,902477,2_franquias_2_lojas.txt
+2,2,256,Força Bruta,693688,2_franquias_2_lojas.txt
+2,2,256,Branch and Bound,901595,2_franquias_2_lojas.txt
+2,2,512,Força Bruta,756834,2_franquias_2_lojas.txt
+2,2,512,Branch and Bound,1000862,2_franquias_2_lojas.txt
+2,2,1024,Força Bruta,998999,2_franquias_2_lojas.txt
+2,2,1024,Branch and Bound,1008383,2_franquias_2_lojas.txt
+2,5,0,Força Bruta,678143,2_franquias_5_lojas.txt
+2,5,0,Branch and Bound,629091,2_franquias_5_lojas.txt
+2,5,1,Força Bruta,706124,2_franquias_5_lojas.txt
+2,5,1,Branch and Bound,675408,2_franquias_5_lojas.txt
+2,5,2,Força Bruta,650179,2_franquias_5_lojas.txt
+2,5,2,Branch and Bound,708839,2_franquias_5_lojas.txt
+2,5,4,Força Bruta,748660,2_franquias_5_lojas.txt
+2,5,4,Branch and Bound,688381,2_franquias_5_lojas.txt
+2,5,8,Força Bruta,659587,2_franquias_5_lojas.txt
+2,5,8,Branch and Bound,673788,2_franquias_5_lojas.txt
+2,5,16,Força Bruta,714637,2_franquias_5_lojas.txt
+2,5,16,Branch and Bound,761280,2_franquias_5_lojas.txt
+2,5,32,Força Bruta,621417,2_franquias_5_lojas.txt
+2,5,32,Branch and Bound,644725,2_franquias_5_lojas.txt
+2,5,64,Força Bruta,632683,2_franquias_5_lojas.txt
+2,5,64,Branch and Bound,704091,2_franquias_5_lojas.txt
+2,5,128,Força Bruta,677511,2_franquias_5_lojas.txt
+2,5,128,Branch and Bound,963359,2_franquias_5_lojas.txt
+2,5,256,Força Bruta,39055024,2_franquias_5_lojas.txt
+2,5,256,Branch and Bound,8782408,2_franquias_5_lojas.txt
+2,5,512,Força Bruta,206761525,2_franquias_5_lojas.txt
+2,5,512,Branch and Bound,11503600,2_franquias_5_lojas.txt
+2,5,1024,Força Bruta,747749946,2_franquias_5_lojas.txt
+2,5,1024,Branch and Bound,8747987,2_franquias_5_lojas.txt
+3,3,0,Força Bruta,645862,3_franquias_3_lojas.txt
+3,3,0,Branch and Bound,612919,3_franquias_3_lojas.txt
+3,3,1,Força Bruta,634276,3_franquias_3_lojas.txt
+3,3,1,Branch and Bound,663076,3_franquias_3_lojas.txt
+3,3,2,Força Bruta,657096,3_franquias_3_lojas.txt
+3,3,2,Branch and Bound,608978,3_franquias_3_lojas.txt
+3,3,4,Força Bruta,651166,3_franquias_3_lojas.txt
+3,3,4,Branch and Bound,674845,3_franquias_3_lojas.txt
+3,3,8,Força Bruta,740829,3_franquias_3_lojas.txt
+3,3,8,Branch and Bound,602798,3_franquias_3_lojas.txt
+3,3,16,Força Bruta,607175,3_franquias_3_lojas.txt
+3,3,16,Branch and Bound,657431,3_franquias_3_lojas.txt
+3,3,32,Força Bruta,663836,3_franquias_3_lojas.txt
+3,3,32,Branch and Bound,624598,3_franquias_3_lojas.txt
+3,3,64,Força Bruta,600466,3_franquias_3_lojas.txt
+3,3,64,Branch and Bound,614197,3_franquias_3_lojas.txt
+3,3,128,Força Bruta,607913,3_franquias_3_lojas.txt
+3,3,128,Branch and Bound,689983,3_franquias_3_lojas.txt
+3,3,256,Força Bruta,5022720,3_franquias_3_lojas.txt
+3,3,256,Branch and Bound,6562784,3_franquias_3_lojas.txt
+3,3,512,Força Bruta,38356628,3_franquias_3_lojas.txt
+3,3,512,Branch and Bound,8644043,3_franquias_3_lojas.txt
+3,3,1024,Força Bruta,157699768,3_franquias_3_lojas.txt
+3,3,1024,Branch and Bound,5960950,3_franquias_3_lojas.txt
+5,2,0,Força Bruta,688753,5_franquias_2_lojas.txt
+5,2,0,Branch and Bound,787187,5_franquias_2_lojas.txt
+5,2,1,Força Bruta,697293,5_franquias_2_lojas.txt
+5,2,1,Branch and Bound,886893,5_franquias_2_lojas.txt
+5,2,2,Força Bruta,945009,5_franquias_2_lojas.txt
+5,2,2,Branch and Bound,882315,5_franquias_2_lojas.txt
+5,2,4,Força Bruta,669265,5_franquias_2_lojas.txt
+5,2,4,Branch and Bound,667154,5_franquias_2_lojas.txt
+5,2,8,Força Bruta,634975,5_franquias_2_lojas.txt
+5,2,8,Branch and Bound,622568,5_franquias_2_lojas.txt
+5,2,16,Força Bruta,672705,5_franquias_2_lojas.txt
+5,2,16,Branch and Bound,802873,5_franquias_2_lojas.txt
+5,2,32,Força Bruta,867247,5_franquias_2_lojas.txt
+5,2,32,Branch and Bound,1277595,5_franquias_2_lojas.txt
+5,2,64,Força Bruta,690398,5_franquias_2_lojas.txt
+5,2,64,Branch and Bound,920154,5_franquias_2_lojas.txt
+5,2,128,Força Bruta,1367950,5_franquias_2_lojas.txt
+5,2,128,Branch and Bound,10290821,5_franquias_2_lojas.txt
+5,2,256,Força Bruta,6534642,5_franquias_2_lojas.txt
+5,2,256,Branch and Bound,9564489,5_franquias_2_lojas.txt
+5,2,512,Força Bruta,84202695,5_franquias_2_lojas.txt
+5,2,512,Branch and Bound,8972876,5_franquias_2_lojas.txt
+5,2,1024,Força Bruta,458549519,5_franquias_2_lojas.txt
+5,2,1024,Branch and Bound,9496221,5_franquias_2_lojas.txt
+,,0,Força Bruta,850451,exemplo_professor.txt
+,,0,Branch and Bound,717425,exemplo_professor.txt
+,,1,Força Bruta,614884,exemplo_professor.txt
+,,1,Branch and Bound,660675,exemplo_professor.txt
+,,2,Força Bruta,742955,exemplo_professor.txt
+,,2,Branch and Bound,665203,exemplo_professor.txt
+,,4,Força Bruta,625823,exemplo_professor.txt
+,,4,Branch and Bound,899610,exemplo_professor.txt
+,,8,Força Bruta,761983,exemplo_professor.txt
+,,8,Branch and Bound,1151069,exemplo_professor.txt
+,,16,Força Bruta,758105,exemplo_professor.txt
+,,16,Branch and Bound,996645,exemplo_professor.txt
+,,32,Força Bruta,1376531,exemplo_professor.txt
+,,32,Branch and Bound,9211877,exemplo_professor.txt
+,,64,Força Bruta,7438894,exemplo_professor.txt
+,,64,Branch and Bound,9998656,exemplo_professor.txt
+,,128,Força Bruta,99200847,exemplo_professor.txt
+,,128,Branch and Bound,8445437,exemplo_professor.txt
+,,256,Força Bruta,455683771,exemplo_professor.txt
+,,256,Branch and Bound,9425093,exemplo_professor.txt
+,,512,Força Bruta,863105624,exemplo_professor.txt
+,,512,Branch and Bound,9815552,exemplo_professor.txt
+,,1024,Força Bruta,799028314,exemplo_professor.txt
+,,1024,Branch and Bound,9415049,exemplo_professor.txt
+2,2,0,Força Bruta,507152,2_franquias_2_lojas.txt
+2,2,0,Branch and Bound,516737,2_franquias_2_lojas.txt
+2,2,1,Força Bruta,525702,2_franquias_2_lojas.txt
+2,2,1,Branch and Bound,726214,2_franquias_2_lojas.txt
+2,2,2,Força Bruta,494917,2_franquias_2_lojas.txt
+2,2,2,Branch and Bound,508082,2_franquias_2_lojas.txt
+2,2,4,Força Bruta,695956,2_franquias_2_lojas.txt
+2,2,4,Branch and Bound,722978,2_franquias_2_lojas.txt
+2,2,8,Força Bruta,612311,2_franquias_2_lojas.txt
+2,2,8,Branch and Bound,961342,2_franquias_2_lojas.txt
+2,2,16,Força Bruta,853725,2_franquias_2_lojas.txt
+2,2,16,Branch and Bound,1163768,2_franquias_2_lojas.txt
+2,2,32,Força Bruta,1177062,2_franquias_2_lojas.txt
+2,2,32,Branch and Bound,1210566,2_franquias_2_lojas.txt
+2,2,64,Força Bruta,766505,2_franquias_2_lojas.txt
+2,2,64,Branch and Bound,1407923,2_franquias_2_lojas.txt
+2,2,128,Força Bruta,691817,2_franquias_2_lojas.txt
+2,2,128,Branch and Bound,913833,2_franquias_2_lojas.txt
+2,2,256,Força Bruta,714498,2_franquias_2_lojas.txt
+2,2,256,Branch and Bound,976659,2_franquias_2_lojas.txt
+2,2,512,Força Bruta,1053615,2_franquias_2_lojas.txt
+2,2,512,Branch and Bound,1125357,2_franquias_2_lojas.txt
+2,2,1024,Força Bruta,1345968,2_franquias_2_lojas.txt
+2,2,1024,Branch and Bound,970381,2_franquias_2_lojas.txt
+2,5,0,Força Bruta,611961,2_franquias_5_lojas.txt
+2,5,0,Branch and Bound,881775,2_franquias_5_lojas.txt
+2,5,1,Força Bruta,802967,2_franquias_5_lojas.txt
+2,5,1,Branch and Bound,817004,2_franquias_5_lojas.txt
+2,5,2,Força Bruta,629267,2_franquias_5_lojas.txt
+2,5,2,Branch and Bound,653181,2_franquias_5_lojas.txt
+2,5,4,Força Bruta,1025940,2_franquias_5_lojas.txt
+2,5,4,Branch and Bound,632397,2_franquias_5_lojas.txt
+2,5,8,Força Bruta,706153,2_franquias_5_lojas.txt
+2,5,8,Branch and Bound,679082,2_franquias_5_lojas.txt
+2,5,16,Força Bruta,821100,2_franquias_5_lojas.txt
+2,5,16,Branch and Bound,947571,2_franquias_5_lojas.txt
+2,5,32,Força Bruta,843159,2_franquias_5_lojas.txt
+2,5,32,Branch and Bound,700641,2_franquias_5_lojas.txt
+2,5,64,Força Bruta,935187,2_franquias_5_lojas.txt
+2,5,64,Branch and Bound,834560,2_franquias_5_lojas.txt
+2,5,128,Força Bruta,682746,2_franquias_5_lojas.txt
+2,5,128,Branch and Bound,703586,2_franquias_5_lojas.txt
+2,5,256,Força Bruta,45681161,2_franquias_5_lojas.txt
+2,5,256,Branch and Bound,10118375,2_franquias_5_lojas.txt
+2,5,512,Força Bruta,231994613,2_franquias_5_lojas.txt
+2,5,512,Branch and Bound,8345814,2_franquias_5_lojas.txt
+2,5,1024,Força Bruta,908683896,2_franquias_5_lojas.txt
+2,5,1024,Branch and Bound,14556918,2_franquias_5_lojas.txt
+3,3,0,Força Bruta,629874,3_franquias_3_lojas.txt
+3,3,0,Branch and Bound,659953,3_franquias_3_lojas.txt
+3,3,1,Força Bruta,1071596,3_franquias_3_lojas.txt
+3,3,1,Branch and Bound,622272,3_franquias_3_lojas.txt
+3,3,2,Força Bruta,764365,3_franquias_3_lojas.txt
+3,3,2,Branch and Bound,729115,3_franquias_3_lojas.txt
+3,3,4,Força Bruta,738578,3_franquias_3_lojas.txt
+3,3,4,Branch and Bound,927166,3_franquias_3_lojas.txt
+3,3,8,Força Bruta,776440,3_franquias_3_lojas.txt
+3,3,8,Branch and Bound,675054,3_franquias_3_lojas.txt
+3,3,16,Força Bruta,885507,3_franquias_3_lojas.txt
+3,3,16,Branch and Bound,679270,3_franquias_3_lojas.txt
+3,3,32,Força Bruta,638739,3_franquias_3_lojas.txt
+3,3,32,Branch and Bound,739073,3_franquias_3_lojas.txt
+3,3,64,Força Bruta,639200,3_franquias_3_lojas.txt
+3,3,64,Branch and Bound,832538,3_franquias_3_lojas.txt
+3,3,128,Força Bruta,858927,3_franquias_3_lojas.txt
+3,3,128,Branch and Bound,673611,3_franquias_3_lojas.txt
+3,3,256,Força Bruta,5999472,3_franquias_3_lojas.txt
+3,3,256,Branch and Bound,6613795,3_franquias_3_lojas.txt
+3,3,512,Força Bruta,42698306,3_franquias_3_lojas.txt
+3,3,512,Branch and Bound,7016220,3_franquias_3_lojas.txt
+3,3,1024,Força Bruta,207760866,3_franquias_3_lojas.txt
+3,3,1024,Branch and Bound,5914188,3_franquias_3_lojas.txt
+5,2,0,Força Bruta,904888,5_franquias_2_lojas.txt
+5,2,0,Branch and Bound,746799,5_franquias_2_lojas.txt
+5,2,1,Força Bruta,845285,5_franquias_2_lojas.txt
+5,2,1,Branch and Bound,646327,5_franquias_2_lojas.txt
+5,2,2,Força Bruta,779017,5_franquias_2_lojas.txt
+5,2,2,Branch and Bound,773992,5_franquias_2_lojas.txt
+5,2,4,Força Bruta,655859,5_franquias_2_lojas.txt
+5,2,4,Branch and Bound,625165,5_franquias_2_lojas.txt
+5,2,8,Força Bruta,636228,5_franquias_2_lojas.txt
+5,2,8,Branch and Bound,658355,5_franquias_2_lojas.txt
+5,2,16,Força Bruta,635015,5_franquias_2_lojas.txt
+5,2,16,Branch and Bound,814979,5_franquias_2_lojas.txt
+5,2,32,Força Bruta,675905,5_franquias_2_lojas.txt
+5,2,32,Branch and Bound,833263,5_franquias_2_lojas.txt
+5,2,64,Força Bruta,685932,5_franquias_2_lojas.txt
+5,2,64,Branch and Bound,743279,5_franquias_2_lojas.txt
+5,2,128,Força Bruta,1440921,5_franquias_2_lojas.txt
+5,2,128,Branch and Bound,9864259,5_franquias_2_lojas.txt
+5,2,256,Força Bruta,6810868,5_franquias_2_lojas.txt
+5,2,256,Branch and Bound,10247636,5_franquias_2_lojas.txt
+5,2,512,Força Bruta,115948085,5_franquias_2_lojas.txt
+5,2,512,Branch and Bound,11478066,5_franquias_2_lojas.txt
+5,2,1024,Força Bruta,450083564,5_franquias_2_lojas.txt
+5,2,1024,Branch and Bound,9032445,5_franquias_2_lojas.txt
+,,0,Força Bruta,682760,exemplo_professor.txt
+,,0,Branch and Bound,894689,exemplo_professor.txt
+,,1,Força Bruta,1026462,exemplo_professor.txt
+,,1,Branch and Bound,815185,exemplo_professor.txt
+,,2,Força Bruta,679936,exemplo_professor.txt
+,,2,Branch and Bound,920777,exemplo_professor.txt
+,,4,Força Bruta,654479,exemplo_professor.txt
+,,4,Branch and Bound,775402,exemplo_professor.txt
+,,8,Força Bruta,665553,exemplo_professor.txt
+,,8,Branch and Bound,816922,exemplo_professor.txt
+,,16,Força Bruta,669961,exemplo_professor.txt
+,,16,Branch and Bound,637989,exemplo_professor.txt
+,,32,Força Bruta,1711249,exemplo_professor.txt
+,,32,Branch and Bound,17244915,exemplo_professor.txt
+,,64,Força Bruta,13062181,exemplo_professor.txt
+,,64,Branch and Bound,9964959,exemplo_professor.txt
+,,128,Força Bruta,104389941,exemplo_professor.txt
+,,128,Branch and Bound,10030340,exemplo_professor.txt
+,,256,Força Bruta,460762892,exemplo_professor.txt
+,,256,Branch and Bound,9450591,exemplo_professor.txt
+,,512,Força Bruta,861045830,exemplo_professor.txt
+,,512,Branch and Bound,8660426,exemplo_professor.txt
+,,1024,Força Bruta,870819652,exemplo_professor.txt
+,,1024,Branch and Bound,10766754,exemplo_professor.txt
+2,2,0,Força Bruta,490313,2_franquias_2_lojas.txt
+2,2,0,Branch and Bound,539973,2_franquias_2_lojas.txt
+2,2,1,Força Bruta,579641,2_franquias_2_lojas.txt
+2,2,1,Branch and Bound,595937,2_franquias_2_lojas.txt
+2,2,2,Força Bruta,528527,2_franquias_2_lojas.txt
+2,2,2,Branch and Bound,589647,2_franquias_2_lojas.txt
+2,2,4,Força Bruta,542231,2_franquias_2_lojas.txt
+2,2,4,Branch and Bound,520484,2_franquias_2_lojas.txt
+2,2,8,Força Bruta,540224,2_franquias_2_lojas.txt
+2,2,8,Branch and Bound,603543,2_franquias_2_lojas.txt
+2,2,16,Força Bruta,616294,2_franquias_2_lojas.txt
+2,2,16,Branch and Bound,1027305,2_franquias_2_lojas.txt
+2,2,32,Força Bruta,593444,2_franquias_2_lojas.txt
+2,2,32,Branch and Bound,1168112,2_franquias_2_lojas.txt
+2,2,64,Força Bruta,595222,2_franquias_2_lojas.txt
+2,2,64,Branch and Bound,933762,2_franquias_2_lojas.txt
+2,2,128,Força Bruta,628533,2_franquias_2_lojas.txt
+2,2,128,Branch and Bound,970945,2_franquias_2_lojas.txt
+2,2,256,Força Bruta,633859,2_franquias_2_lojas.txt
+2,2,256,Branch and Bound,968839,2_franquias_2_lojas.txt
+2,2,512,Força Bruta,761894,2_franquias_2_lojas.txt
+2,2,512,Branch and Bound,1046392,2_franquias_2_lojas.txt
+2,2,1024,Força Bruta,999439,2_franquias_2_lojas.txt
+2,2,1024,Branch and Bound,878824,2_franquias_2_lojas.txt
+2,5,0,Força Bruta,717597,2_franquias_5_lojas.txt
+2,5,0,Branch and Bound,816813,2_franquias_5_lojas.txt
+2,5,1,Força Bruta,865555,2_franquias_5_lojas.txt
+2,5,1,Branch and Bound,862690,2_franquias_5_lojas.txt
+2,5,2,Força Bruta,628270,2_franquias_5_lojas.txt
+2,5,2,Branch and Bound,635940,2_franquias_5_lojas.txt
+2,5,4,Força Bruta,721340,2_franquias_5_lojas.txt
+2,5,4,Branch and Bound,672086,2_franquias_5_lojas.txt
+2,5,8,Força Bruta,689658,2_franquias_5_lojas.txt
+2,5,8,Branch and Bound,705956,2_franquias_5_lojas.txt
+2,5,16,Força Bruta,617106,2_franquias_5_lojas.txt
+2,5,16,Branch and Bound,848440,2_franquias_5_lojas.txt
+2,5,32,Força Bruta,620098,2_franquias_5_lojas.txt
+2,5,32,Branch and Bound,750483,2_franquias_5_lojas.txt
+2,5,64,Força Bruta,911710,2_franquias_5_lojas.txt
+2,5,64,Branch and Bound,626864,2_franquias_5_lojas.txt
+2,5,128,Força Bruta,619803,2_franquias_5_lojas.txt
+2,5,128,Branch and Bound,1046934,2_franquias_5_lojas.txt
+2,5,256,Força Bruta,45876472,2_franquias_5_lojas.txt
+2,5,256,Branch and Bound,10548921,2_franquias_5_lojas.txt
+2,5,512,Força Bruta,238765368,2_franquias_5_lojas.txt
+2,5,512,Branch and Bound,8868079,2_franquias_5_lojas.txt
+2,5,1024,Força Bruta,862677981,2_franquias_5_lojas.txt
+2,5,1024,Branch and Bound,12145621,2_franquias_5_lojas.txt
+3,3,0,Força Bruta,649045,3_franquias_3_lojas.txt
+3,3,0,Branch and Bound,828115,3_franquias_3_lojas.txt
+3,3,1,Força Bruta,981791,3_franquias_3_lojas.txt
+3,3,1,Branch and Bound,865286,3_franquias_3_lojas.txt
+3,3,2,Força Bruta,635251,3_franquias_3_lojas.txt
+3,3,2,Branch and Bound,716352,3_franquias_3_lojas.txt
+3,3,4,Força Bruta,736965,3_franquias_3_lojas.txt
+3,3,4,Branch and Bound,842576,3_franquias_3_lojas.txt
+3,3,8,Força Bruta,755627,3_franquias_3_lojas.txt
+3,3,8,Branch and Bound,705320,3_franquias_3_lojas.txt
+3,3,16,Força Bruta,611625,3_franquias_3_lojas.txt
+3,3,16,Branch and Bound,690442,3_franquias_3_lojas.txt
+3,3,32,Força Bruta,605625,3_franquias_3_lojas.txt
+3,3,32,Branch and Bound,630478,3_franquias_3_lojas.txt
+3,3,64,Força Bruta,587946,3_franquias_3_lojas.txt
+3,3,64,Branch and Bound,717820,3_franquias_3_lojas.txt
+3,3,128,Força Bruta,769436,3_franquias_3_lojas.txt
+3,3,128,Branch and Bound,629267,3_franquias_3_lojas.txt
+3,3,256,Força Bruta,5158709,3_franquias_3_lojas.txt
+3,3,256,Branch and Bound,7742353,3_franquias_3_lojas.txt
+3,3,512,Força Bruta,53338940,3_franquias_3_lojas.txt
+3,3,512,Branch and Bound,6185287,3_franquias_3_lojas.txt
+3,3,1024,Força Bruta,215526691,3_franquias_3_lojas.txt
+3,3,1024,Branch and Bound,8410089,3_franquias_3_lojas.txt
+5,2,0,Força Bruta,893528,5_franquias_2_lojas.txt
+5,2,0,Branch and Bound,742227,5_franquias_2_lojas.txt
+5,2,1,Força Bruta,670314,5_franquias_2_lojas.txt
+5,2,1,Branch and Bound,734829,5_franquias_2_lojas.txt
+5,2,2,Força Bruta,721959,5_franquias_2_lojas.txt
+5,2,2,Branch and Bound,667666,5_franquias_2_lojas.txt
+5,2,4,Força Bruta,730770,5_franquias_2_lojas.txt
+5,2,4,Branch and Bound,826309,5_franquias_2_lojas.txt
+5,2,8,Força Bruta,660852,5_franquias_2_lojas.txt
+5,2,8,Branch and Bound,994120,5_franquias_2_lojas.txt
+5,2,16,Força Bruta,826182,5_franquias_2_lojas.txt
+5,2,16,Branch and Bound,709438,5_franquias_2_lojas.txt
+5,2,32,Força Bruta,928370,5_franquias_2_lojas.txt
+5,2,32,Branch and Bound,708400,5_franquias_2_lojas.txt
+5,2,64,Força Bruta,643198,5_franquias_2_lojas.txt
+5,2,64,Branch and Bound,899116,5_franquias_2_lojas.txt
+5,2,128,Força Bruta,1169804,5_franquias_2_lojas.txt
+5,2,128,Branch and Bound,10117283,5_franquias_2_lojas.txt
+5,2,256,Força Bruta,8337192,5_franquias_2_lojas.txt
+5,2,256,Branch and Bound,10396247,5_franquias_2_lojas.txt
+5,2,512,Força Bruta,133402470,5_franquias_2_lojas.txt
+5,2,512,Branch and Bound,11692310,5_franquias_2_lojas.txt
+5,2,1024,Força Bruta,503536343,5_franquias_2_lojas.txt
+5,2,1024,Branch and Bound,13458337,5_franquias_2_lojas.txt
+,,0,Força Bruta,698309,exemplo_professor.txt
+,,0,Branch and Bound,762305,exemplo_professor.txt
+,,1,Força Bruta,711622,exemplo_professor.txt
+,,1,Branch and Bound,635866,exemplo_professor.txt
+,,2,Força Bruta,729529,exemplo_professor.txt
+,,2,Branch and Bound,677947,exemplo_professor.txt
+,,4,Força Bruta,691579,exemplo_professor.txt
+,,4,Branch and Bound,789445,exemplo_professor.txt
+,,8,Força Bruta,642281,exemplo_professor.txt
+,,8,Branch and Bound,682897,exemplo_professor.txt
+,,16,Força Bruta,795428,exemplo_professor.txt
+,,16,Branch and Bound,685510,exemplo_professor.txt
+,,32,Força Bruta,1397916,exemplo_professor.txt
+,,32,Branch and Bound,8497145,exemplo_professor.txt
+,,64,Força Bruta,7720150,exemplo_professor.txt
+,,64,Branch and Bound,14954634,exemplo_professor.txt
+,,128,Força Bruta,134091872,exemplo_professor.txt
+,,128,Branch and Bound,9512625,exemplo_professor.txt
+,,256,Força Bruta,507620011,exemplo_professor.txt
+,,256,Branch and Bound,11700470,exemplo_professor.txt
+,,512,Força Bruta,870001082,exemplo_professor.txt
+,,512,Branch and Bound,10164135,exemplo_professor.txt
+,,1024,Força Bruta,1011598235,exemplo_professor.txt
+,,1024,Branch and Bound,12484638,exemplo_professor.txt
