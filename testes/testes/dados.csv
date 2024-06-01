@@ -1,0 +1,341 @@
+Número de Franquias,Número de Cidades,Distância Mínima,Algoritmo,Tempo de Execução,Arquivo de Dados
+2,4,1,Força Bruta,,2_franquia_4_cidades.txt
+2,4,1,Branch and Bound,,2_franquia_4_cidades.txt
+2,5,1,Força Bruta,,2_franquia_5_cidades.txt
+2,5,1,Branch and Bound,,2_franquia_5_cidades.txt
+2,6,1,Força Bruta,,2_franquia_6_cidades.txt
+2,6,1,Branch and Bound,,2_franquia_6_cidades.txt
+2,7,1,Força Bruta,,2_franquia_7_cidades.txt
+2,7,1,Branch and Bound,,2_franquia_7_cidades.txt
+2,8,1,Força Bruta,,2_franquia_8_cidades.txt
+2,8,1,Branch and Bound,,2_franquia_8_cidades.txt
+2,9,1,Força Bruta,,2_franquia_9_cidades.txt
+2,9,1,Branch and Bound,,2_franquia_9_cidades.txt
+2,10,1,Força Bruta,,2_franquia_10_cidades.txt
+2,10,1,Branch and Bound,,2_franquia_10_cidades.txt
+2,11,1,Força Bruta,,2_franquia_11_cidades.txt
+2,11,1,Branch and Bound,,2_franquia_11_cidades.txt
+2,12,1,Força Bruta,,2_franquia_12_cidades.txt
+2,12,1,Branch and Bound,,2_franquia_12_cidades.txt
+2,13,1,Força Bruta,,2_franquia_13_cidades.txt
+2,13,1,Branch and Bound,,2_franquia_13_cidades.txt
+2,14,1,Força Bruta,,2_franquia_14_cidades.txt
+2,14,1,Branch and Bound,,2_franquia_14_cidades.txt
+2,15,1,Força Bruta,,2_franquia_15_cidades.txt
+2,15,1,Branch and Bound,,2_franquia_15_cidades.txt
+2,16,1,Força Bruta,,2_franquia_16_cidades.txt
+2,16,1,Branch and Bound,,2_franquia_16_cidades.txt
+2,17,1,Força Bruta,,2_franquia_17_cidades.txt
+2,17,1,Branch and Bound,,2_franquia_17_cidades.txt
+2,18,1,Força Bruta,,2_franquia_18_cidades.txt
+2,18,1,Branch and Bound,,2_franquia_18_cidades.txt
+2,19,1,Força Bruta,,2_franquia_19_cidades.txt
+2,19,1,Branch and Bound,,2_franquia_19_cidades.txt
+2,20,1,Força Bruta,,2_franquia_20_cidades.txt
+2,20,1,Branch and Bound,,2_franquia_20_cidades.txt
+2,4,1,Força Bruta,,2_franquia_4_cidades.txt
+2,4,1,Branch and Bound,,2_franquia_4_cidades.txt
+2,5,1,Força Bruta,,2_franquia_5_cidades.txt
+2,5,1,Branch and Bound,,2_franquia_5_cidades.txt
+2,6,1,Força Bruta,,2_franquia_6_cidades.txt
+2,6,1,Branch and Bound,,2_franquia_6_cidades.txt
+2,7,1,Força Bruta,,2_franquia_7_cidades.txt
+2,7,1,Branch and Bound,,2_franquia_7_cidades.txt
+2,8,1,Força Bruta,,2_franquia_8_cidades.txt
+2,8,1,Branch and Bound,,2_franquia_8_cidades.txt
+2,9,1,Força Bruta,,2_franquia_9_cidades.txt
+2,9,1,Branch and Bound,,2_franquia_9_cidades.txt
+2,10,1,Força Bruta,,2_franquia_10_cidades.txt
+2,10,1,Branch and Bound,,2_franquia_10_cidades.txt
+2,11,1,Força Bruta,,2_franquia_11_cidades.txt
+2,11,1,Branch and Bound,,2_franquia_11_cidades.txt
+2,12,1,Força Bruta,,2_franquia_12_cidades.txt
+2,12,1,Branch and Bound,,2_franquia_12_cidades.txt
+2,13,1,Força Bruta,,2_franquia_13_cidades.txt
+2,13,1,Branch and Bound,,2_franquia_13_cidades.txt
+2,14,1,Força Bruta,,2_franquia_14_cidades.txt
+2,14,1,Branch and Bound,,2_franquia_14_cidades.txt
+2,15,1,Força Bruta,,2_franquia_15_cidades.txt
+2,15,1,Branch and Bound,,2_franquia_15_cidades.txt
+2,16,1,Força Bruta,,2_franquia_16_cidades.txt
+2,16,1,Branch and Bound,,2_franquia_16_cidades.txt
+2,17,1,Força Bruta,,2_franquia_17_cidades.txt
+2,17,1,Branch and Bound,,2_franquia_17_cidades.txt
+2,18,1,Força Bruta,,2_franquia_18_cidades.txt
+2,18,1,Branch and Bound,,2_franquia_18_cidades.txt
+2,19,1,Força Bruta,,2_franquia_19_cidades.txt
+2,19,1,Branch and Bound,,2_franquia_19_cidades.txt
+2,20,1,Força Bruta,,2_franquia_20_cidades.txt
+2,20,1,Branch and Bound,,2_franquia_20_cidades.txt
+2,4,1,Força Bruta,,2_franquia_4_cidades.txt
+2,4,1,Branch and Bound,,2_franquia_4_cidades.txt
+2,5,1,Força Bruta,,2_franquia_5_cidades.txt
+2,5,1,Branch and Bound,,2_franquia_5_cidades.txt
+2,6,1,Força Bruta,,2_franquia_6_cidades.txt
+2,6,1,Branch and Bound,,2_franquia_6_cidades.txt
+2,7,1,Força Bruta,,2_franquia_7_cidades.txt
+2,7,1,Branch and Bound,,2_franquia_7_cidades.txt
+2,8,1,Força Bruta,,2_franquia_8_cidades.txt
+2,8,1,Branch and Bound,,2_franquia_8_cidades.txt
+2,9,1,Força Bruta,,2_franquia_9_cidades.txt
+2,9,1,Branch and Bound,,2_franquia_9_cidades.txt
+2,10,1,Força Bruta,,2_franquia_10_cidades.txt
+2,10,1,Branch and Bound,,2_franquia_10_cidades.txt
+2,11,1,Força Bruta,,2_franquia_11_cidades.txt
+2,11,1,Branch and Bound,,2_franquia_11_cidades.txt
+2,12,1,Força Bruta,,2_franquia_12_cidades.txt
+2,12,1,Branch and Bound,,2_franquia_12_cidades.txt
+2,13,1,Força Bruta,,2_franquia_13_cidades.txt
+2,13,1,Branch and Bound,,2_franquia_13_cidades.txt
+2,14,1,Força Bruta,,2_franquia_14_cidades.txt
+2,14,1,Branch and Bound,,2_franquia_14_cidades.txt
+2,15,1,Força Bruta,,2_franquia_15_cidades.txt
+2,15,1,Branch and Bound,,2_franquia_15_cidades.txt
+2,16,1,Força Bruta,,2_franquia_16_cidades.txt
+2,16,1,Branch and Bound,,2_franquia_16_cidades.txt
+2,17,1,Força Bruta,,2_franquia_17_cidades.txt
+2,17,1,Branch and Bound,,2_franquia_17_cidades.txt
+2,18,1,Força Bruta,,2_franquia_18_cidades.txt
+2,18,1,Branch and Bound,,2_franquia_18_cidades.txt
+2,19,1,Força Bruta,,2_franquia_19_cidades.txt
+2,19,1,Branch and Bound,,2_franquia_19_cidades.txt
+2,20,1,Força Bruta,,2_franquia_20_cidades.txt
+2,20,1,Branch and Bound,,2_franquia_20_cidades.txt
+2,4,1,Força Bruta,,2_franquia_4_cidades.txt
+2,4,1,Branch and Bound,,2_franquia_4_cidades.txt
+2,5,1,Força Bruta,,2_franquia_5_cidades.txt
+2,5,1,Branch and Bound,,2_franquia_5_cidades.txt
+2,6,1,Força Bruta,,2_franquia_6_cidades.txt
+2,6,1,Branch and Bound,,2_franquia_6_cidades.txt
+2,7,1,Força Bruta,,2_franquia_7_cidades.txt
+2,7,1,Branch and Bound,,2_franquia_7_cidades.txt
+2,8,1,Força Bruta,,2_franquia_8_cidades.txt
+2,8,1,Branch and Bound,,2_franquia_8_cidades.txt
+2,9,1,Força Bruta,,2_franquia_9_cidades.txt
+2,9,1,Branch and Bound,,2_franquia_9_cidades.txt
+2,10,1,Força Bruta,,2_franquia_10_cidades.txt
+2,10,1,Branch and Bound,,2_franquia_10_cidades.txt
+2,11,1,Força Bruta,,2_franquia_11_cidades.txt
+2,11,1,Branch and Bound,,2_franquia_11_cidades.txt
+2,12,1,Força Bruta,,2_franquia_12_cidades.txt
+2,12,1,Branch and Bound,,2_franquia_12_cidades.txt
+2,13,1,Força Bruta,,2_franquia_13_cidades.txt
+2,13,1,Branch and Bound,,2_franquia_13_cidades.txt
+2,14,1,Força Bruta,,2_franquia_14_cidades.txt
+2,14,1,Branch and Bound,,2_franquia_14_cidades.txt
+2,15,1,Força Bruta,,2_franquia_15_cidades.txt
+2,15,1,Branch and Bound,,2_franquia_15_cidades.txt
+2,16,1,Força Bruta,,2_franquia_16_cidades.txt
+2,16,1,Branch and Bound,,2_franquia_16_cidades.txt
+2,17,1,Força Bruta,,2_franquia_17_cidades.txt
+2,17,1,Branch and Bound,,2_franquia_17_cidades.txt
+2,18,1,Força Bruta,,2_franquia_18_cidades.txt
+2,18,1,Branch and Bound,,2_franquia_18_cidades.txt
+2,19,1,Força Bruta,,2_franquia_19_cidades.txt
+2,19,1,Branch and Bound,,2_franquia_19_cidades.txt
+2,20,1,Força Bruta,,2_franquia_20_cidades.txt
+2,20,1,Branch and Bound,,2_franquia_20_cidades.txt
+2,4,1,Força Bruta,,2_franquia_4_cidades.txt
+2,4,1,Branch and Bound,,2_franquia_4_cidades.txt
+2,5,1,Força Bruta,,2_franquia_5_cidades.txt
+2,5,1,Branch and Bound,,2_franquia_5_cidades.txt
+2,6,1,Força Bruta,,2_franquia_6_cidades.txt
+2,6,1,Branch and Bound,,2_franquia_6_cidades.txt
+2,7,1,Força Bruta,,2_franquia_7_cidades.txt
+2,7,1,Branch and Bound,,2_franquia_7_cidades.txt
+2,8,1,Força Bruta,,2_franquia_8_cidades.txt
+2,8,1,Branch and Bound,,2_franquia_8_cidades.txt
+2,9,1,Força Bruta,,2_franquia_9_cidades.txt
+2,9,1,Branch and Bound,,2_franquia_9_cidades.txt
+2,10,1,Força Bruta,,2_franquia_10_cidades.txt
+2,10,1,Branch and Bound,,2_franquia_10_cidades.txt
+2,11,1,Força Bruta,,2_franquia_11_cidades.txt
+2,11,1,Branch and Bound,,2_franquia_11_cidades.txt
+2,12,1,Força Bruta,,2_franquia_12_cidades.txt
+2,12,1,Branch and Bound,,2_franquia_12_cidades.txt
+2,13,1,Força Bruta,,2_franquia_13_cidades.txt
+2,13,1,Branch and Bound,,2_franquia_13_cidades.txt
+2,14,1,Força Bruta,,2_franquia_14_cidades.txt
+2,14,1,Branch and Bound,,2_franquia_14_cidades.txt
+2,15,1,Força Bruta,,2_franquia_15_cidades.txt
+2,15,1,Branch and Bound,,2_franquia_15_cidades.txt
+2,16,1,Força Bruta,,2_franquia_16_cidades.txt
+2,16,1,Branch and Bound,,2_franquia_16_cidades.txt
+2,17,1,Força Bruta,,2_franquia_17_cidades.txt
+2,17,1,Branch and Bound,,2_franquia_17_cidades.txt
+2,18,1,Força Bruta,,2_franquia_18_cidades.txt
+2,18,1,Branch and Bound,,2_franquia_18_cidades.txt
+2,19,1,Força Bruta,,2_franquia_19_cidades.txt
+2,19,1,Branch and Bound,,2_franquia_19_cidades.txt
+2,20,1,Força Bruta,,2_franquia_20_cidades.txt
+2,20,1,Branch and Bound,,2_franquia_20_cidades.txt
+2,4,1,Força Bruta,,2_franquia_4_cidades.txt
+2,4,1,Branch and Bound,,2_franquia_4_cidades.txt
+2,5,1,Força Bruta,,2_franquia_5_cidades.txt
+2,5,1,Branch and Bound,,2_franquia_5_cidades.txt
+2,6,1,Força Bruta,,2_franquia_6_cidades.txt
+2,6,1,Branch and Bound,,2_franquia_6_cidades.txt
+2,7,1,Força Bruta,,2_franquia_7_cidades.txt
+2,7,1,Branch and Bound,,2_franquia_7_cidades.txt
+2,8,1,Força Bruta,,2_franquia_8_cidades.txt
+2,8,1,Branch and Bound,,2_franquia_8_cidades.txt
+2,9,1,Força Bruta,,2_franquia_9_cidades.txt
+2,9,1,Branch and Bound,,2_franquia_9_cidades.txt
+2,10,1,Força Bruta,,2_franquia_10_cidades.txt
+2,10,1,Branch and Bound,,2_franquia_10_cidades.txt
+2,11,1,Força Bruta,,2_franquia_11_cidades.txt
+2,11,1,Branch and Bound,,2_franquia_11_cidades.txt
+2,12,1,Força Bruta,,2_franquia_12_cidades.txt
+2,12,1,Branch and Bound,,2_franquia_12_cidades.txt
+2,13,1,Força Bruta,,2_franquia_13_cidades.txt
+2,13,1,Branch and Bound,,2_franquia_13_cidades.txt
+2,14,1,Força Bruta,,2_franquia_14_cidades.txt
+2,14,1,Branch and Bound,,2_franquia_14_cidades.txt
+2,15,1,Força Bruta,,2_franquia_15_cidades.txt
+2,15,1,Branch and Bound,,2_franquia_15_cidades.txt
+2,16,1,Força Bruta,,2_franquia_16_cidades.txt
+2,16,1,Branch and Bound,,2_franquia_16_cidades.txt
+2,17,1,Força Bruta,,2_franquia_17_cidades.txt
+2,17,1,Branch and Bound,,2_franquia_17_cidades.txt
+2,18,1,Força Bruta,,2_franquia_18_cidades.txt
+2,18,1,Branch and Bound,,2_franquia_18_cidades.txt
+2,19,1,Força Bruta,,2_franquia_19_cidades.txt
+2,19,1,Branch and Bound,,2_franquia_19_cidades.txt
+2,20,1,Força Bruta,,2_franquia_20_cidades.txt
+2,20,1,Branch and Bound,,2_franquia_20_cidades.txt
+2,4,1,Força Bruta,,2_franquia_4_cidades.txt
+2,4,1,Branch and Bound,,2_franquia_4_cidades.txt
+2,5,1,Força Bruta,,2_franquia_5_cidades.txt
+2,5,1,Branch and Bound,,2_franquia_5_cidades.txt
+2,6,1,Força Bruta,,2_franquia_6_cidades.txt
+2,6,1,Branch and Bound,,2_franquia_6_cidades.txt
+2,7,1,Força Bruta,,2_franquia_7_cidades.txt
+2,7,1,Branch and Bound,,2_franquia_7_cidades.txt
+2,8,1,Força Bruta,,2_franquia_8_cidades.txt
+2,8,1,Branch and Bound,,2_franquia_8_cidades.txt
+2,9,1,Força Bruta,,2_franquia_9_cidades.txt
+2,9,1,Branch and Bound,,2_franquia_9_cidades.txt
+2,10,1,Força Bruta,,2_franquia_10_cidades.txt
+2,10,1,Branch and Bound,,2_franquia_10_cidades.txt
+2,11,1,Força Bruta,,2_franquia_11_cidades.txt
+2,11,1,Branch and Bound,,2_franquia_11_cidades.txt
+2,12,1,Força Bruta,,2_franquia_12_cidades.txt
+2,12,1,Branch and Bound,,2_franquia_12_cidades.txt
+2,13,1,Força Bruta,,2_franquia_13_cidades.txt
+2,13,1,Branch and Bound,,2_franquia_13_cidades.txt
+2,14,1,Força Bruta,,2_franquia_14_cidades.txt
+2,14,1,Branch and Bound,,2_franquia_14_cidades.txt
+2,15,1,Força Bruta,,2_franquia_15_cidades.txt
+2,15,1,Branch and Bound,,2_franquia_15_cidades.txt
+2,16,1,Força Bruta,,2_franquia_16_cidades.txt
+2,16,1,Branch and Bound,,2_franquia_16_cidades.txt
+2,17,1,Força Bruta,,2_franquia_17_cidades.txt
+2,17,1,Branch and Bound,,2_franquia_17_cidades.txt
+2,18,1,Força Bruta,,2_franquia_18_cidades.txt
+2,18,1,Branch and Bound,,2_franquia_18_cidades.txt
+2,19,1,Força Bruta,,2_franquia_19_cidades.txt
+2,19,1,Branch and Bound,,2_franquia_19_cidades.txt
+2,20,1,Força Bruta,,2_franquia_20_cidades.txt
+2,20,1,Branch and Bound,,2_franquia_20_cidades.txt
+2,4,1,Força Bruta,,2_franquia_4_cidades.txt
+2,4,1,Branch and Bound,,2_franquia_4_cidades.txt
+2,5,1,Força Bruta,,2_franquia_5_cidades.txt
+2,5,1,Branch and Bound,,2_franquia_5_cidades.txt
+2,6,1,Força Bruta,,2_franquia_6_cidades.txt
+2,6,1,Branch and Bound,,2_franquia_6_cidades.txt
+2,7,1,Força Bruta,,2_franquia_7_cidades.txt
+2,7,1,Branch and Bound,,2_franquia_7_cidades.txt
+2,8,1,Força Bruta,,2_franquia_8_cidades.txt
+2,8,1,Branch and Bound,,2_franquia_8_cidades.txt
+2,9,1,Força Bruta,,2_franquia_9_cidades.txt
+2,9,1,Branch and Bound,,2_franquia_9_cidades.txt
+2,10,1,Força Bruta,,2_franquia_10_cidades.txt
+2,10,1,Branch and Bound,,2_franquia_10_cidades.txt
+2,11,1,Força Bruta,,2_franquia_11_cidades.txt
+2,11,1,Branch and Bound,,2_franquia_11_cidades.txt
+2,12,1,Força Bruta,,2_franquia_12_cidades.txt
+2,12,1,Branch and Bound,,2_franquia_12_cidades.txt
+2,13,1,Força Bruta,,2_franquia_13_cidades.txt
+2,13,1,Branch and Bound,,2_franquia_13_cidades.txt
+2,14,1,Força Bruta,,2_franquia_14_cidades.txt
+2,14,1,Branch and Bound,,2_franquia_14_cidades.txt
+2,15,1,Força Bruta,,2_franquia_15_cidades.txt
+2,15,1,Branch and Bound,,2_franquia_15_cidades.txt
+2,16,1,Força Bruta,,2_franquia_16_cidades.txt
+2,16,1,Branch and Bound,,2_franquia_16_cidades.txt
+2,17,1,Força Bruta,,2_franquia_17_cidades.txt
+2,17,1,Branch and Bound,,2_franquia_17_cidades.txt
+2,18,1,Força Bruta,,2_franquia_18_cidades.txt
+2,18,1,Branch and Bound,,2_franquia_18_cidades.txt
+2,19,1,Força Bruta,,2_franquia_19_cidades.txt
+2,19,1,Branch and Bound,,2_franquia_19_cidades.txt
+2,20,1,Força Bruta,,2_franquia_20_cidades.txt
+2,20,1,Branch and Bound,,2_franquia_20_cidades.txt
+2,4,1,Força Bruta,,2_franquia_4_cidades.txt
+2,4,1,Branch and Bound,,2_franquia_4_cidades.txt
+2,5,1,Força Bruta,,2_franquia_5_cidades.txt
+2,5,1,Branch and Bound,,2_franquia_5_cidades.txt
+2,6,1,Força Bruta,,2_franquia_6_cidades.txt
+2,6,1,Branch and Bound,,2_franquia_6_cidades.txt
+2,7,1,Força Bruta,,2_franquia_7_cidades.txt
+2,7,1,Branch and Bound,,2_franquia_7_cidades.txt
+2,8,1,Força Bruta,,2_franquia_8_cidades.txt
+2,8,1,Branch and Bound,,2_franquia_8_cidades.txt
+2,9,1,Força Bruta,,2_franquia_9_cidades.txt
+2,9,1,Branch and Bound,,2_franquia_9_cidades.txt
+2,10,1,Força Bruta,,2_franquia_10_cidades.txt
+2,10,1,Branch and Bound,,2_franquia_10_cidades.txt
+2,11,1,Força Bruta,,2_franquia_11_cidades.txt
+2,11,1,Branch and Bound,,2_franquia_11_cidades.txt
+2,12,1,Força Bruta,,2_franquia_12_cidades.txt
+2,12,1,Branch and Bound,,2_franquia_12_cidades.txt
+2,13,1,Força Bruta,,2_franquia_13_cidades.txt
+2,13,1,Branch and Bound,,2_franquia_13_cidades.txt
+2,14,1,Força Bruta,,2_franquia_14_cidades.txt
+2,14,1,Branch and Bound,,2_franquia_14_cidades.txt
+2,15,1,Força Bruta,,2_franquia_15_cidades.txt
+2,15,1,Branch and Bound,,2_franquia_15_cidades.txt
+2,16,1,Força Bruta,,2_franquia_16_cidades.txt
+2,16,1,Branch and Bound,,2_franquia_16_cidades.txt
+2,17,1,Força Bruta,,2_franquia_17_cidades.txt
+2,17,1,Branch and Bound,,2_franquia_17_cidades.txt
+2,18,1,Força Bruta,,2_franquia_18_cidades.txt
+2,18,1,Branch and Bound,,2_franquia_18_cidades.txt
+2,19,1,Força Bruta,,2_franquia_19_cidades.txt
+2,19,1,Branch and Bound,,2_franquia_19_cidades.txt
+2,20,1,Força Bruta,,2_franquia_20_cidades.txt
+2,20,1,Branch and Bound,,2_franquia_20_cidades.txt
+2,4,1,Força Bruta,,2_franquia_4_cidades.txt
+2,4,1,Branch and Bound,,2_franquia_4_cidades.txt
+2,5,1,Força Bruta,,2_franquia_5_cidades.txt
+2,5,1,Branch and Bound,,2_franquia_5_cidades.txt
+2,6,1,Força Bruta,,2_franquia_6_cidades.txt
+2,6,1,Branch and Bound,,2_franquia_6_cidades.txt
+2,7,1,Força Bruta,,2_franquia_7_cidades.txt
+2,7,1,Branch and Bound,,2_franquia_7_cidades.txt
+2,8,1,Força Bruta,,2_franquia_8_cidades.txt
+2,8,1,Branch and Bound,,2_franquia_8_cidades.txt
+2,9,1,Força Bruta,,2_franquia_9_cidades.txt
+2,9,1,Branch and Bound,,2_franquia_9_cidades.txt
+2,10,1,Força Bruta,,2_franquia_10_cidades.txt
+2,10,1,Branch and Bound,,2_franquia_10_cidades.txt
+2,11,1,Força Bruta,,2_franquia_11_cidades.txt
+2,11,1,Branch and Bound,,2_franquia_11_cidades.txt
+2,12,1,Força Bruta,,2_franquia_12_cidades.txt
+2,12,1,Branch and Bound,,2_franquia_12_cidades.txt
+2,13,1,Força Bruta,,2_franquia_13_cidades.txt
+2,13,1,Branch and Bound,,2_franquia_13_cidades.txt
+2,14,1,Força Bruta,,2_franquia_14_cidades.txt
+2,14,1,Branch and Bound,,2_franquia_14_cidades.txt
+2,15,1,Força Bruta,,2_franquia_15_cidades.txt
+2,15,1,Branch and Bound,,2_franquia_15_cidades.txt
+2,16,1,Força Bruta,,2_franquia_16_cidades.txt
+2,16,1,Branch and Bound,,2_franquia_16_cidades.txt
+2,17,1,Força Bruta,,2_franquia_17_cidades.txt
+2,17,1,Branch and Bound,,2_franquia_17_cidades.txt
+2,18,1,Força Bruta,,2_franquia_18_cidades.txt
+2,18,1,Branch and Bound,,2_franquia_18_cidades.txt
+2,19,1,Força Bruta,,2_franquia_19_cidades.txt
+2,19,1,Branch and Bound,,2_franquia_19_cidades.txt
+2,20,1,Força Bruta,,2_franquia_20_cidades.txt
+2,20,1,Branch and Bound,,2_franquia_20_cidades.txt
