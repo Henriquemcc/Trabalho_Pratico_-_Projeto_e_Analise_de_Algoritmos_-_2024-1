@@ -93,7 +93,7 @@ public class Solucao {
      * @return Quantidade de pontos escolhidos.
      */
     public int getQuantidadePontos() {
-        return pontosCandidatosEscolhidos.size();
+        return pontosCandidatosEscolhidos.keySet().size();
     }
 
     /**

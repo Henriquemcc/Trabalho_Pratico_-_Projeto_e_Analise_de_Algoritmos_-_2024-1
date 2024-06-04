@@ -2,7 +2,7 @@ package paa.tp.modelo.algoritmo.otimizacao;
 
 import paa.tp.modelo.PontoCandidato;
 
-import java.util.ArrayList;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Stack;
 
@@ -23,37 +23,47 @@ public class BranchAndBound extends Algoritmo{
     public void executar() {
 
         // Pilhas que serão utilizadas para transformar o problema recursivo em iterativo
-        final Stack<List<PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
+        final Stack<Hashtable<Integer, PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
         final Stack<Integer> pilhaIndice = new Stack<>();
 
         // Adicionando primeiros elementos na pilha
-        pilhaPontosEscolhidos.push(new ArrayList<>(listaPontosCandidatos));
+        pilhaPontosEscolhidos.push(new Hashtable<>());
         pilhaIndice.push(0);
 
-        // Enquanto as pilhas não estiverem vazias serão analisados os elementos
-        while (!pilhaIndice.isEmpty() || ! pilhaPontosEscolhidos.isEmpty()) {
+        // Enquanto as pilhas não estiverem vazias. (As pilhas são manipuladas juntas)
+        while (!pilhaIndice.isEmpty()) {
+
+            // Desempilhando
             final int indice = pilhaIndice.pop();
-            final List<PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
+            final Hashtable<Integer,PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
 
             final Solucao solucao = new Solucao(pontosEscolhidos);
 
             // Fim da (pseudo) recursão
-            if (solucao.getDistanciaMinima() >= distanciaMinima && (melhorSolucao == null || solucao.getPontosCandidatosEscolhidos().size() > melhorSolucao.getPontosCandidatosEscolhidos().size() || (solucao.getPontosCandidatosEscolhidos().size() == melhorSolucao.getPontosCandidatosEscolhidos().size() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal())))
-                melhorSolucao = solucao;
+            if (indice > listaPontosCandidatos.size()) {
 
-            // Removendo pontos
-            else if (indice < listaPontosCandidatos.size()) {
+                // Adicionando melhor solução
+                if (solucao.getDistanciaMinima() >= distanciaMinima)
+                    melhorSolucao = solucao;
+            }
 
-                // Removendo o elemento atual
-                final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
-                novosPontosEscolhidos.remove(listaPontosCandidatos.get(indice));
-                pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+            // Adicionando pontos
+            else
+            {
+                // Adicionando elemento i na mochila
+                final Hashtable<Integer, PontoCandidato> novosPontosEscolhidos = new Hashtable<>(pontosEscolhidos);
+                novosPontosEscolhidos.put(listaPontosCandidatos.get(indice).getNumeroFranquia(), listaPontosCandidatos.get(indice));
+                final Solucao novaSolucao = new Solucao(novosPontosEscolhidos);
+                if (novaSolucao.getQuantidadePontos() > solucao.getQuantidadePontos() || (novaSolucao.getQuantidadePontos() == solucao.getQuantidadePontos() && novaSolucao.getCustoTotal() < solucao.getCustoTotal()))
+                {
+                    // Adicionando elementos na pilha
+                    pilhaIndice.push(indice+1);
+                    pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+                }
+
+                // Não adicionando elemento i na mochila
                 pilhaIndice.push(indice+1);
-
-                // Não removendo o elemento atual
                 pilhaPontosEscolhidos.push(pontosEscolhidos);
-                pilhaIndice.push(indice+1);
-
             }
         }
 
