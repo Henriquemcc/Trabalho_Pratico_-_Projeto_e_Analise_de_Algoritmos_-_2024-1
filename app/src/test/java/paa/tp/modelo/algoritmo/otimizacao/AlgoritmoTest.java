@@ -124,17 +124,14 @@ public class AlgoritmoTest extends TestCase {
         branchAndBound.executar();
         final long tempoFimBranchAndBound = System.nanoTime();
 
-        // Verificando se a solução do Branch and Bound está correta
-        assertEquals(branchAndBound.getMelhorSolucao().getPontosCandidatosEscolhidos(), pontosCandidatos);
-
         // Executando o Força Bruta
         final ForcaBruta forcaBruta = new ForcaBruta(pontosCandidatos, distanciaMinima);
         final long tempoInicioForcaBruta = System.nanoTime();
         forcaBruta.executar();
         final long tempoFimForcaBruta = System.nanoTime();
 
-        // Verificando se a solução do Força Bruta está correta
-        assertEquals(forcaBruta.getMelhorSolucao().getPontosCandidatosEscolhidos(), pontosCandidatos);
+        // Verificando se a solução dos dois algoritmos são iguais
+        assertEquals(forcaBruta.getMelhorSolucao().getPontosCandidatosEscolhidos(), branchAndBound.getMelhorSolucao().getPontosCandidatosEscolhidos());
 
         // Verificando se o tempo de execução do Branch and Bound é menor que o Força Bruta
         final long tempoGastoBranchAndBound = tempoFimBranchAndBound - tempoInicioBranchAndBound;

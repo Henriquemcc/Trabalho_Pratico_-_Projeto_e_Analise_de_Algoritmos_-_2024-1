@@ -40,10 +40,10 @@ public class BranchAndBound extends Algoritmo{
             final Solucao solucao = new Solucao(pontosEscolhidos);
 
             // Fim da (pseudo) recursão
-            if (indice > listaPontosCandidatos.size()) {
+            if (indice >= listaPontosCandidatos.size()) {
 
                 // Adicionando melhor solução
-                if (solucao.getDistanciaMinima() >= distanciaMinima)
+                if (solucao.getDistanciaMinima() >= distanciaMinima && (melhorSolucao == null || solucao.getPontosCandidatosEscolhidos().size() > melhorSolucao.getPontosCandidatosEscolhidos().size() || (solucao.getPontosCandidatosEscolhidos().size() == melhorSolucao.getPontosCandidatosEscolhidos().size() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal())))
                     melhorSolucao = solucao;
             }
 

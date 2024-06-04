@@ -43,7 +43,7 @@ public class ForcaBruta extends Algoritmo {
                 final Hashtable<Integer,PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
 
                 // Fim da (pseudo) recursão
-                if (indice == listaPontosCandidatos.size()) {
+                if (indice >= listaPontosCandidatos.size()) {
                     final Solucao solucao = new Solucao(pontosEscolhidos);
 
                     // Adicionando melhor solução

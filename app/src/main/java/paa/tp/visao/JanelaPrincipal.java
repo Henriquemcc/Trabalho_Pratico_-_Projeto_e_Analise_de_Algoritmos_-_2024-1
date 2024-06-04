@@ -113,7 +113,7 @@ public class JanelaPrincipal extends JFrame
 
             final Solucao solucao = controladorJanela.getSolucao();
             if (solucao != null) {
-                final List<PontoCandidato> pontosCandidatosEscolhidos = solucao.getPontosCandidatosEscolhidos();
+                final List<PontoCandidato> pontosCandidatosEscolhidos = solucao.pontosCandidatosToList();
 
                 // Franquias
                 final ArrayList<Integer> franquias = new ArrayList<>();

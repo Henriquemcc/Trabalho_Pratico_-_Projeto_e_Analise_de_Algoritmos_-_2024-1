@@ -139,4 +139,17 @@ public class Solucao {
     public int hashCode() {
         return Objects.hash(pontosCandidatosEscolhidos, custoTotal, distanciaMinima);
     }
+
+    /**
+     * Converte os pontos candidatos de um HashTable para uma lista
+     * @return Lista dos pontos candidatos.
+     */
+    public List<PontoCandidato> pontosCandidatosToList() {
+        final List<PontoCandidato> lista = new ArrayList<>(pontosCandidatosEscolhidos.size());
+        final Enumeration<Integer> keys = pontosCandidatosEscolhidos.keys();
+        while (keys.hasMoreElements()) {
+            lista.add(pontosCandidatosEscolhidos.get(keys.nextElement()));
+        }
+        return lista;
+    }
 }

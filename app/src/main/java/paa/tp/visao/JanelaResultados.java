@@ -35,7 +35,7 @@ public class JanelaResultados extends JFrame {
 
         // Criando a tabela da solução
         final String[] nomesColunas = {"Número franquia", "Coordenada X", "Coordenada Y", "Custo", "Cor"};
-        final List<PontoCandidato> pontosCandidatosEscolhidos = solucao.getPontosCandidatosEscolhidos();
+        final List<PontoCandidato> pontosCandidatosEscolhidos = solucao.pontosCandidatosToList();
         final Object[][] dados = new Object[pontosCandidatosEscolhidos.size()][5];
         for (int i = 0; i < pontosCandidatosEscolhidos.size(); i++) {
             dados[i][0] = String.valueOf(pontosCandidatosEscolhidos.get(i).getNumeroFranquia());
