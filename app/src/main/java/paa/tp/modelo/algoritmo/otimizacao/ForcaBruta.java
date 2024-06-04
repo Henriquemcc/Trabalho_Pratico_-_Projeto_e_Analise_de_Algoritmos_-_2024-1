@@ -28,29 +28,45 @@ public class ForcaBruta extends Algoritmo {
         for (int tamanhoCombinacao = listaPontosCandidatos.size(); tamanhoCombinacao > 0 && melhorSolucao == null; tamanhoCombinacao--) {
 
             // Pilha que será utilizada para transformar o problema recursivo em iterativo
-            final Stack<List<PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
+            final Stack<Hashtable<Integer,PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
+            final Stack<Integer> pilhaIndice = new Stack<>();
 
-            // Adicionando primeiros elementos na pilha
-            pilhaPontosEscolhidos.push(new ArrayList<>(listaPontosCandidatos));
+            // Adicionando tabela hash vazia
+            pilhaPontosEscolhidos.push(new Hashtable<>());
+            pilhaIndice.push(0);
 
-            // Enquanto as pilhas não estiverem vazias serão geradas as combinações
-            while (!pilhaPontosEscolhidos.isEmpty()) {
-                final List<PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
+            // Enquanto as pilhas não estiverem vazias. (As pilhas são manipuladas juntas)
+            while (!pilhaIndice.isEmpty()) {
+
+                // Desempilhando
+                final int indice = pilhaIndice.pop();
+                final Hashtable<Integer,PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
 
                 // Fim da (pseudo) recursão
-                if (pontosEscolhidos.size() == tamanhoCombinacao) {
+                if (indice == listaPontosCandidatos.size()) {
                     final Solucao solucao = new Solucao(pontosEscolhidos);
+
+                    // Adicionando melhor solução
                     if (solucao.getDistanciaMinima() >= distanciaMinima && (melhorSolucao == null || solucao.getPontosCandidatosEscolhidos().size() > melhorSolucao.getPontosCandidatosEscolhidos().size() || (solucao.getPontosCandidatosEscolhidos().size() == melhorSolucao.getPontosCandidatosEscolhidos().size() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal())))
                         melhorSolucao = solucao;
                 }
 
-                // Removendo pontos
-                else if (!pontosEscolhidos.isEmpty()) for (int i = 0; i < pontosEscolhidos.size(); i++) {
-                    final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
-                    novosPontosEscolhidos.remove(novosPontosEscolhidos.get(i));
-                    pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+                // Adicionando pontos
+                else {
+                    for (int i = indice; i < listaPontosCandidatos.size(); i++){
+
+                        // Nova tabela hash
+                        final Hashtable<Integer, PontoCandidato> novosPontosEscolhidos = new Hashtable<>(pontosEscolhidos);
+                        novosPontosEscolhidos.put(listaPontosCandidatos.get(i).getNumeroFranquia(), listaPontosCandidatos.get(i));
+
+                        // Adicionando elementos na pilha
+                        pilhaIndice.push(indice+1);
+                        pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+                    }
                 }
+
             }
+
         }
     }
 

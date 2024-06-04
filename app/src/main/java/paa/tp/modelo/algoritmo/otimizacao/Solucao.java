@@ -2,10 +2,7 @@ package paa.tp.modelo.algoritmo.otimizacao;
 
 import paa.tp.modelo.PontoCandidato;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Uma Solução do problema de otimização.
@@ -14,7 +11,7 @@ public class Solucao {
     /**
      * Lista de pontos candidatos que foram escolhidos
      */
-    private final List<PontoCandidato> pontosCandidatosEscolhidos;
+    private final Hashtable<Integer, PontoCandidato> pontosCandidatosEscolhidos;
 
     /**
      * Custo total dessa solução.
@@ -30,7 +27,8 @@ public class Solucao {
      * Constrói uma nova instância da classe Solucao.
      * @param pontosCandidatosEscolhidos Pontos candidatos escolhidos para resolver o problema.
      */
-    public Solucao(final List<PontoCandidato> pontosCandidatosEscolhidos) {
+    public Solucao(final Hashtable<Integer, PontoCandidato> pontosCandidatosEscolhidos) {
+
         this.pontosCandidatosEscolhidos = pontosCandidatosEscolhidos;
         gerarCustoTotal();
         gerarDistanciaMinima();
@@ -40,53 +38,37 @@ public class Solucao {
      * Gera o valor da variável custo total.
      */
     private void gerarCustoTotal() {
-        for (PontoCandidato pontoCandidato: pontosCandidatosEscolhidos)
-            custoTotal += pontoCandidato.getCustoInstalacao();
+        final Enumeration<Integer> chaves = pontosCandidatosEscolhidos.keys();
+        while (chaves.hasMoreElements()) {
+            custoTotal += pontosCandidatosEscolhidos.get(chaves.nextElement()).getCustoInstalacao();
+        }
     }
 
     /**
      * Gera o valor da variável distância mínima.
      */
     private void gerarDistanciaMinima() {
-        for (int i = 0; i < pontosCandidatosEscolhidos.size(); i++)
-            for (int j = 0; j < pontosCandidatosEscolhidos.size(); j++)
-                if (i != j)
-                {
-                    final double distancia = Math.sqrt(Math.pow(pontosCandidatosEscolhidos.get(i).getCoordenadaX() - pontosCandidatosEscolhidos.get(j).getCoordenadaX(), 2) + Math.pow(pontosCandidatosEscolhidos.get(i).getCoordenadaY() - pontosCandidatosEscolhidos.get(j).getCoordenadaY(), 2));
-                    if (distancia < distanciaMinima)
-                        distanciaMinima = distancia;
-                }
-    }
 
-    /**
-     * Verifica se contém apenas um ponto candidato por franquia.
-     * @return Se contém apenas um ponto candidato por franquia.
-     */
-    private boolean contemApenasUmPontoCandidatoPorFranquia() {
+        final ArrayList<PontoCandidato> array = new ArrayList<>(pontosCandidatosEscolhidos.size());
+        final Enumeration<Integer> keys = pontosCandidatosEscolhidos.keys();
+        while (keys.hasMoreElements()) {
+            array.add(pontosCandidatosEscolhidos.get(keys.nextElement()));
+        }
 
-        // Criando array para contar a quantidade de pontos candidatos por franquias
-        final int[] franquias = new int[pontosCandidatosEscolhidos.size()];
-
-        // Preenchendo o array com zeros
-        Arrays.fill(franquias, 0);
-
-        // Contando a quantidade de pontos candidatos por franquia
-        for (final PontoCandidato pontoCandidato: pontosCandidatosEscolhidos)
-            franquias[pontoCandidato.getNumeroFranquia()]++;
-
-        // Verificando se existe mais de um ponto candidato por franquia
-        for (int franquia: franquias)
-            if (franquia > 1)
-                return false;
-
-        return true;
+        for (int i = 0; i < array.size(); i++)
+            for (int j = i+1; j < array.size(); j++)
+            {
+                final double distancia = Math.sqrt(Math.pow(array.get(i).getCoordenadaX() - array.get(j).getCoordenadaX(), 2) + Math.pow(array.get(i).getCoordenadaY() - array.get(j).getCoordenadaY(), 2));
+                if (distancia < distanciaMinima)
+                    distanciaMinima = distancia;
+            }
     }
 
     /**
      * Obtém os pontos candidatos escolhidos.
      * @return Pontos candidatos escolhidos.
      */
-    public List<PontoCandidato> getPontosCandidatosEscolhidos() {
+    public Hashtable<Integer, PontoCandidato> getPontosCandidatosEscolhidos() {
         return pontosCandidatosEscolhidos;
     }
 
