@@ -2,10 +2,7 @@ package paa.tp.modelo.algoritmo.otimizacao;
 
 import paa.tp.modelo.PontoCandidato;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Uma Solução do problema de otimização.
@@ -62,22 +59,21 @@ public class Solucao {
      * Verifica se contém apenas um ponto candidato por franquia.
      * @return Se contém apenas um ponto candidato por franquia.
      */
-    private boolean contemApenasUmPontoCandidatoPorFranquia() {
+    public boolean contemApenasUmPontoCandidatoPorFranquia() {
 
         // Criando array para contar a quantidade de pontos candidatos por franquias
-        final int[] franquias = new int[pontosCandidatosEscolhidos.size()];
-
-        // Preenchendo o array com zeros
-        Arrays.fill(franquias, 0);
+        final Hashtable<Integer, Integer> franquias = new Hashtable<>();
 
         // Contando a quantidade de pontos candidatos por franquia
         for (final PontoCandidato pontoCandidato: pontosCandidatosEscolhidos)
-            franquias[pontoCandidato.getNumeroFranquia()]++;
+            franquias.merge(pontoCandidato.getNumeroFranquia(), 1, Integer::sum);
 
         // Verificando se existe mais de um ponto candidato por franquia
-        for (int franquia: franquias)
-            if (franquia > 1)
+        final Enumeration<Integer> chaves = franquias.keys();
+        while (chaves.hasMoreElements()) {
+            if (franquias.get(chaves.nextElement()) > 1)
                 return false;
+        }
 
         return true;
     }

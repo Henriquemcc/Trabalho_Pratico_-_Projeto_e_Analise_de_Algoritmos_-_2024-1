@@ -26,36 +26,67 @@ public class BranchAndBound extends Algoritmo{
         final Stack<List<PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
         final Stack<Integer> pilhaIndice = new Stack<>();
 
+
         // Adicionando primeiros elementos na pilha
-        pilhaPontosEscolhidos.push(new ArrayList<>(listaPontosCandidatos));
+        pilhaPontosEscolhidos.push(new ArrayList<>());
         pilhaIndice.push(0);
 
         // Enquanto as pilhas não estiverem vazias serão analisados os elementos
-        while (!pilhaIndice.isEmpty() || ! pilhaPontosEscolhidos.isEmpty()) {
+        while (!pilhaIndice.isEmpty()) {
             final int indice = pilhaIndice.pop();
             final List<PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
 
             final Solucao solucao = new Solucao(pontosEscolhidos);
 
             // Fim da (pseudo) recursão
-            if (solucao.getDistanciaMinima() >= distanciaMinima && (melhorSolucao == null || solucao.getPontosCandidatosEscolhidos().size() > melhorSolucao.getPontosCandidatosEscolhidos().size() || (solucao.getPontosCandidatosEscolhidos().size() == melhorSolucao.getPontosCandidatosEscolhidos().size() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal())))
+            if (indice >= listaPontosCandidatos.size()) {
                 melhorSolucao = solucao;
+            }
 
-            // Removendo pontos
-            else if (indice < listaPontosCandidatos.size()) {
+            // Adicionando ponto na posição indice
+            else {
+                // Verificando restrição
+                if (solucao.getDistanciaMinima() >= distanciaMinima && solucao.contemApenasUmPontoCandidatoPorFranquia()) {
 
-                // Removendo o elemento atual
-                final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
-                novosPontosEscolhidos.remove(listaPontosCandidatos.get(indice));
-                pilhaPontosEscolhidos.push(novosPontosEscolhidos);
-                pilhaIndice.push(indice+1);
+                    final ArrayList<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
+                    novosPontosEscolhidos.add(listaPontosCandidatos.get(indice));
+                    final Solucao novaSolucao = new Solucao(novosPontosEscolhidos);
+                    final double ubNovaSolucao = getUb(novaSolucao);
 
-                // Não removendo o elemento atual
-                pilhaPontosEscolhidos.push(pontosEscolhidos);
-                pilhaIndice.push(indice+1);
+                    // Adicionando elemento
+                    // Verificando otimização
+                    if (ubNovaSolucao > melhorSolucao.getQuantidadePontos()) {
+                        pilhaIndice.push(indice+1);
+                        pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+                    }
 
+                    // Não adicionando elemento
+                    // Verificando otimização
+                    final double ubSolucao = getUb(solucao);
+                    if (ubSolucao > melhorSolucao.getQuantidadePontos()) {
+                        pilhaIndice.push(indice+1);
+                        pilhaPontosEscolhidos.push(pontosEscolhidos);
+                    }
+                }
             }
         }
 
+    }
+
+    private double getUb(Solucao solucao) {
+        final ArrayList<Double> ganhos = new ArrayList<>();
+        for (final PontoCandidato pontoCandidato: listaPontosCandidatos) {
+            if (!solucao.getPontosCandidatosEscolhidos().contains(pontoCandidato)) {
+                ganhos.add(1.0 / pontoCandidato.getCustoInstalacao());
+            }
+        }
+        double ganhoMaximo = ganhos.get(0);
+        for (final double ganho: ganhos) {
+            if (ganho > ganhoMaximo)
+                ganhoMaximo = ganho;
+        }
+
+        final double ub = solucao.getQuantidadePontos() + (-1* solucao.getCustoTotal()) * ganhoMaximo;
+        return ub;
     }
 }
