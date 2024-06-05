@@ -55,7 +55,7 @@ public class BranchAndBound extends Algoritmo{
 
                     // Adicionando elemento
                     // Verificando otimização
-                    if (ubNovaSolucao > melhorSolucao.getQuantidadePontos()) {
+                    if (melhorSolucao == null || ubNovaSolucao > melhorSolucao.getQuantidadePontos()) {
                         pilhaIndice.push(indice+1);
                         pilhaPontosEscolhidos.push(novosPontosEscolhidos);
                     }
@@ -63,7 +63,7 @@ public class BranchAndBound extends Algoritmo{
                     // Não adicionando elemento
                     // Verificando otimização
                     final double ubSolucao = getUb(solucao);
-                    if (ubSolucao > melhorSolucao.getQuantidadePontos()) {
+                    if (melhorSolucao == null || ubSolucao > melhorSolucao.getQuantidadePontos()) {
                         pilhaIndice.push(indice+1);
                         pilhaPontosEscolhidos.push(pontosEscolhidos);
                     }
