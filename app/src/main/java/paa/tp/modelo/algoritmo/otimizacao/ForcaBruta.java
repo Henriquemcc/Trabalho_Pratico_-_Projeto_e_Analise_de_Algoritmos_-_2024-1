@@ -28,28 +28,41 @@ public class ForcaBruta extends Algoritmo {
         for (int tamanhoCombinacao = listaPontosCandidatos.size(); tamanhoCombinacao > 0 && melhorSolucao == null; tamanhoCombinacao--) {
 
             // Pilha que será utilizada para transformar o problema recursivo em iterativo
+            final Stack<Integer> pilhaIndice = new Stack<>();
             final Stack<List<PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
 
             // Adicionando primeiros elementos na pilha
-            pilhaPontosEscolhidos.push(new ArrayList<>(listaPontosCandidatos));
+            pilhaIndice.push(0);
+            pilhaPontosEscolhidos.push(new ArrayList<>());
 
             // Enquanto as pilhas não estiverem vazias serão geradas as combinações
-            while (!pilhaPontosEscolhidos.isEmpty()) {
+            while (!pilhaIndice.isEmpty()) {
                 final List<PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
+                final int indice = pilhaIndice.pop();
+                final Solucao solucao = new Solucao(pontosEscolhidos);
 
-                // Fim da (pseudo) recursão
-                if (pontosEscolhidos.size() == tamanhoCombinacao) {
-                    final Solucao solucao = new Solucao(pontosEscolhidos);
-                    if (solucao.getDistanciaMinima() >= distanciaMinima && (melhorSolucao == null || solucao.getPontosCandidatosEscolhidos().size() > melhorSolucao.getPontosCandidatosEscolhidos().size() || (solucao.getPontosCandidatosEscolhidos().size() == melhorSolucao.getPontosCandidatosEscolhidos().size() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal())))
+                // Adicionando à melhor solução
+                // Verificando restrição
+                if (solucao.getDistanciaMinima() >= distanciaMinima && solucao.contemApenasUmPontoCandidatoPorFranquia()) {
+                    // Verificando otimização
+                    if (melhorSolucao == null || solucao.getQuantidadePontos() > melhorSolucao.getQuantidadePontos() || (solucao.getQuantidadePontos() == melhorSolucao.getQuantidadePontos() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal()))
                         melhorSolucao = solucao;
                 }
 
-                // Removendo pontos
-                else if (!pontosEscolhidos.isEmpty()) for (int i = 0; i < pontosEscolhidos.size(); i++) {
-                    final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
-                    novosPontosEscolhidos.remove(novosPontosEscolhidos.get(i));
-                    pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+                // (pseudo) recursão
+                if (indice < listaPontosCandidatos.size())
+                {
+                    for (int i = indice; i < listaPontosCandidatos.size(); i++)
+                    {
+                        final ArrayList<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
+                        novosPontosEscolhidos.add(listaPontosCandidatos.get(i));
+                        pilhaIndice.push(indice+1);
+                        pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+                    }
                 }
+
+
+
             }
         }
     }
