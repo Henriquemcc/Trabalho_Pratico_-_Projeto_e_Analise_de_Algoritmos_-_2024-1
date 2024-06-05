@@ -23,13 +23,13 @@ public class BranchAndBound extends Algoritmo{
     public void executar() {
 
         // Pilhas que serão utilizadas para transformar o problema recursivo em iterativo
-        final Stack<List<PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
         final Stack<Integer> pilhaIndice = new Stack<>();
+        final Stack<List<PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
 
 
         // Adicionando primeiros elementos na pilha
-        pilhaPontosEscolhidos.push(new ArrayList<>());
         pilhaIndice.push(0);
+        pilhaPontosEscolhidos.push(new ArrayList<>());
 
         // Enquanto as pilhas não estiverem vazias serão analisados os elementos
         while (!pilhaIndice.isEmpty()) {
