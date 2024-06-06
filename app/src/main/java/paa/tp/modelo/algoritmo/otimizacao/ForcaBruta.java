@@ -42,8 +42,8 @@ public class ForcaBruta extends Algoritmo {
                 final Solucao solucao = new Solucao(pontosEscolhidos);
 
                 // Adicionando à melhor solução
-                // Verificando restrição
                 if (indice >= listaPontosCandidatos.size()) {
+                    // Verificando restrição
                     if (solucao.getMenorDistancia() >= distanciaMinimaPermitida && solucao.contemApenasUmPontoCandidatoPorFranquia()) {
                         // Verificando otimização
                         if (melhorSolucao == null || solucao.getQuantidadePontos() > melhorSolucao.getQuantidadePontos() || (solucao.getQuantidadePontos() == melhorSolucao.getQuantidadePontos() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal()))
