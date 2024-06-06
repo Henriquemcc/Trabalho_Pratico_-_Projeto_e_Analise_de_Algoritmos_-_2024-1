@@ -46,4 +46,22 @@ public abstract class Algoritmo {
     public Solucao getMelhorSolucao() {
         return melhorSolucao;
     }
+
+    /**
+     * Verifica se a restrição está sendo cumprida
+     * @param solucao Solução a ser analisada.
+     * @return Valor booleano indicando se a restrição está sendo cumprida.
+     */
+    protected boolean verificarRestricao(final Solucao solucao) {
+        return solucao.getMenorDistancia() >= distanciaMinimaPermitida && solucao.contemApenasUmPontoCandidatoPorFranquia();
+    }
+
+    /**
+     * Verifica se a solução é melhor que a melhor solução encontrada até o momento.
+     * @param solucao Solução a ser analisada.
+     * @return Valor booleano indicando se a solução é melhor que a melhor solução encontrada até o momento.
+     */
+    protected boolean verificarOtimizacao(final Solucao solucao) {
+        return melhorSolucao == null || solucao.getQuantidadeFranquia() > melhorSolucao.getQuantidadeFranquia() || (solucao.getQuantidadeFranquia() == melhorSolucao.getQuantidadeFranquia() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal());
+    }
 }

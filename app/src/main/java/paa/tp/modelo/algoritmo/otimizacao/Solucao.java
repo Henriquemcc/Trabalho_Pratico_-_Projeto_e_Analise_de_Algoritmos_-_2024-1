@@ -2,8 +2,7 @@ package paa.tp.modelo.algoritmo.otimizacao;
 
 import paa.tp.modelo.PontoCandidato;
 
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Uma Solução do problema de otimização.
@@ -122,5 +121,41 @@ public class Solucao {
     @Override
     public int hashCode() {
         return Objects.hash(pontosCandidatosEscolhidos, custoTotal, menorDistancia);
+    }
+
+    /**
+     * Verifica se contém apenas um ponto candidato por franquia.
+     * @return Se contém apenas um ponto candidato por franquia.
+     */
+    public boolean contemApenasUmPontoCandidatoPorFranquia() {
+
+        // Criando array para contar a quantidade de pontos candidatos por franquias
+        final ArrayList<Integer> franquias = new ArrayList<>();
+
+        // Verificando se o número da franquia não se repete
+        for (final PontoCandidato pontoCandidato: pontosCandidatosEscolhidos)
+            if (franquias.contains(pontoCandidato.getNumeroFranquia()))
+                return false;
+            else
+                franquias.add(pontoCandidato.getNumeroFranquia());
+
+        return true;
+    }
+
+    /**
+     * Obtém a quantidade de franquias.
+     * @return Quantidade de franquias.
+     */
+    public int getQuantidadeFranquia() {
+
+        // Criando array para contar a quantidade de pontos
+        final ArrayList<Integer> franquias = new ArrayList<>();
+
+        // Contando a quantidade de pontos
+        for (final PontoCandidato pontoCandidato: pontosCandidatosEscolhidos)
+            if (!franquias.contains(pontoCandidato.getNumeroFranquia()))
+                franquias.add(pontoCandidato.getNumeroFranquia());
+
+        return franquias.size();
     }
 }
