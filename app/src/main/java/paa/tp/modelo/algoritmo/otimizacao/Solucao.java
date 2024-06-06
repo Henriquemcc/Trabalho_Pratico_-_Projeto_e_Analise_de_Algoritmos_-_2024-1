@@ -98,7 +98,7 @@ public class Solucao {
      * Obtém a distância mínima.
      * @return Distância mínima.
      */
-    public double getDistanciaMinima() {
+    public double getMenorDistancia() {
         return distanciaMinima;
     }
 

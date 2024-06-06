@@ -10,6 +10,7 @@ import java.util.Stack;
  * Algoritmo Branch and Bound.
  */
 public class BranchAndBound extends Algoritmo{
+
     /**
      * Constrói uma nova instância de Branch and Bound de Algoritmo.
      * @param listaPontosCandidatos Lista de pontos candidatos a serem filiais.
@@ -19,7 +20,8 @@ public class BranchAndBound extends Algoritmo{
         super(listaPontosCandidatos, distanciaMinima);
     }
 
-    @Override
+
+        @Override
     public void executar() {
 
         // Pilhas que serão utilizadas para transformar o problema recursivo em iterativo
@@ -40,53 +42,54 @@ public class BranchAndBound extends Algoritmo{
 
             // Fim da (pseudo) recursão
             if (indice >= listaPontosCandidatos.size()) {
-                melhorSolucao = solucao;
+                // Verificando restrição
+                if (solucao.getMenorDistancia() >= distanciaMinimaPermitida && solucao.contemApenasUmPontoCandidatoPorFranquia()) {
+                    // Verificando otimização
+                    if (melhorSolucao == null || solucao.getQuantidadePontos() > melhorSolucao.getQuantidadePontos() || (solucao.getQuantidadePontos() == melhorSolucao.getQuantidadePontos() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal())) {
+                        melhorSolucao = solucao;
+                    }
+                }
             }
 
             // Adicionando ponto na posição indice
             else {
                 // Verificando restrição
-                if (solucao.getDistanciaMinima() >= distanciaMinima && solucao.contemApenasUmPontoCandidatoPorFranquia()) {
+                if (solucao.getMenorDistancia() >= distanciaMinimaPermitida && solucao.contemApenasUmPontoCandidatoPorFranquia()) {
 
                     final ArrayList<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
                     novosPontosEscolhidos.add(listaPontosCandidatos.get(indice));
                     final Solucao novaSolucao = new Solucao(novosPontosEscolhidos);
-                    final double ubNovaSolucao = getUb(novaSolucao);
 
                     // Adicionando elemento
-                    // Verificando otimização
-                    if (melhorSolucao == null || ubNovaSolucao > melhorSolucao.getQuantidadePontos()) {
-                        pilhaIndice.push(indice+1);
-                        pilhaPontosEscolhidos.push(novosPontosEscolhidos);
-                    }
+                    pilhaIndice.push(indice+1);
+                    pilhaPontosEscolhidos.push(novosPontosEscolhidos);
 
                     // Não adicionando elemento
-                    // Verificando otimização
-                    final double ubSolucao = getUb(solucao);
-                    if (melhorSolucao == null || ubSolucao > melhorSolucao.getQuantidadePontos()) {
-                        pilhaIndice.push(indice+1);
-                        pilhaPontosEscolhidos.push(pontosEscolhidos);
-                    }
+                    pilhaIndice.push(indice + 1);
+                    pilhaPontosEscolhidos.push(pontosEscolhidos);
                 }
             }
         }
 
     }
 
-    private double getUb(Solucao solucao) {
-        final ArrayList<Double> ganhos = new ArrayList<>();
-        for (final PontoCandidato pontoCandidato: listaPontosCandidatos) {
-            if (!solucao.getPontosCandidatosEscolhidos().contains(pontoCandidato)) {
-                ganhos.add(1.0 / pontoCandidato.getCustoInstalacao());
+
+    private double obterUpperBound(final Solucao solucao, final int indice) {
+        // g(n) = custo até chegar ao ponto atual
+        final int g_n = solucao.getCustoTotal();
+
+        // h(n) = estimativa do custo até o final (melhor caso)
+        int menorCusto = Integer.MAX_VALUE;
+        for (int i = indice; i < listaPontosCandidatos.size(); i++)
+        {
+            if (listaPontosCandidatos.get(i).getCustoInstalacao() < menorCusto)
+            {
+                menorCusto = listaPontosCandidatos.get(i).getCustoInstalacao();
             }
         }
-        double ganhoMaximo = ganhos.get(0);
-        for (final double ganho: ganhos) {
-            if (ganho > ganhoMaximo)
-                ganhoMaximo = ganho;
-        }
+        final double h_n = (listaPontosCandidatos.size() - solucao.getQuantidadePontos()) * menorCusto;
 
-        final double ub = solucao.getQuantidadePontos() + (-1* solucao.getCustoTotal()) * ganhoMaximo;
-        return ub;
+        // f(n) = g(n) + h(n)
+        return g_n + h_n;
     }
 }

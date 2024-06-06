@@ -43,26 +43,28 @@ public class ForcaBruta extends Algoritmo {
 
                 // Adicionando à melhor solução
                 // Verificando restrição
-                if (solucao.getDistanciaMinima() >= distanciaMinima && solucao.contemApenasUmPontoCandidatoPorFranquia()) {
-                    // Verificando otimização
-                    if (melhorSolucao == null || solucao.getQuantidadePontos() > melhorSolucao.getQuantidadePontos() || (solucao.getQuantidadePontos() == melhorSolucao.getQuantidadePontos() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal()))
-                        melhorSolucao = solucao;
-                }
-
-                // (pseudo) recursão
-                if (indice < listaPontosCandidatos.size())
-                {
-                    for (int i = indice; i < listaPontosCandidatos.size(); i++)
-                    {
-                        final ArrayList<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
-                        novosPontosEscolhidos.add(listaPontosCandidatos.get(i));
-                        pilhaIndice.push(indice+1);
-                        pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+                if (indice >= listaPontosCandidatos.size()) {
+                    if (solucao.getMenorDistancia() >= distanciaMinimaPermitida && solucao.contemApenasUmPontoCandidatoPorFranquia()) {
+                        // Verificando otimização
+                        if (melhorSolucao == null || solucao.getQuantidadePontos() > melhorSolucao.getQuantidadePontos() || (solucao.getQuantidadePontos() == melhorSolucao.getQuantidadePontos() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal()))
+                            melhorSolucao = solucao;
                     }
                 }
 
+                // (pseudo) recursão
+                else
+                {
+                    final ArrayList<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
+                    novosPontosEscolhidos.add(listaPontosCandidatos.get(indice));
 
+                    // Adicionando elemento
+                    pilhaIndice.push(indice+1);
+                    pilhaPontosEscolhidos.push(novosPontosEscolhidos);
 
+                    // Não adicionando elemento
+                    pilhaIndice.push(indice + 1);
+                    pilhaPontosEscolhidos.push(pontosEscolhidos);
+                }
             }
         }
     }
