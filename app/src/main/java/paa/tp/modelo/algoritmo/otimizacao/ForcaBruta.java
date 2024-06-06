@@ -24,44 +24,39 @@ public class ForcaBruta extends Algoritmo {
     @Override
     public void executar() {
 
-        // Iterando sobre diferentes tamanho de soluções
-        for (int tamanhoCombinacao = listaPontosCandidatos.size(); tamanhoCombinacao > 0 && melhorSolucao == null; tamanhoCombinacao--) {
+        // Pilha que será utilizada para transformar o problema recursivo em iterativo
+        final Stack<Integer> pilhaIndice = new Stack<>();
+        final Stack<List<PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
 
-            // Pilha que será utilizada para transformar o problema recursivo em iterativo
-            final Stack<Integer> pilhaIndice = new Stack<>();
-            final Stack<List<PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
+        // Adicionando primeiros elementos na pilha
+        pilhaIndice.push(0);
+        pilhaPontosEscolhidos.push(new ArrayList<>());
 
-            // Adicionando primeiros elementos na pilha
-            pilhaIndice.push(0);
-            pilhaPontosEscolhidos.push(new ArrayList<>());
+        // Enquanto as pilhas não estiverem vazias serão geradas as combinações
+        while (!pilhaIndice.isEmpty()) {
+            final List<PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
+            final int indice = pilhaIndice.pop();
+            final Solucao solucao = new Solucao(pontosEscolhidos);
 
-            // Enquanto as pilhas não estiverem vazias serão geradas as combinações
-            while (!pilhaIndice.isEmpty()) {
-                final List<PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
-                final int indice = pilhaIndice.pop();
-                final Solucao solucao = new Solucao(pontosEscolhidos);
-
-                // Adicionando à melhor solução
+            // Verificando a restrição
+            if (verificarRestricao(solucao))
+            {
+                // Fim da (pseudo) recursão
                 if (indice >= listaPontosCandidatos.size()) {
-                    // Verificando restrição
-                    if (solucao.getMenorDistancia() >= distanciaMinimaPermitida && solucao.contemApenasUmPontoCandidatoPorFranquia()) {
-                        // Verificando otimização
-                        if (melhorSolucao == null || solucao.getQuantidadePontos() > melhorSolucao.getQuantidadePontos() || (solucao.getQuantidadePontos() == melhorSolucao.getQuantidadePontos() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal()))
-                            melhorSolucao = solucao;
+                    if (verificarOtimizacao(solucao)) {
+                        melhorSolucao = solucao;
                     }
                 }
 
-                // (pseudo) recursão
-                else
-                {
-                    final ArrayList<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
+                // Adicionando elementos
+                else {
+                    // Adicionando elemento indice
+                    final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
                     novosPontosEscolhidos.add(listaPontosCandidatos.get(indice));
-
-                    // Adicionando elemento
-                    pilhaIndice.push(indice+1);
+                    pilhaIndice.push(indice + 1);
                     pilhaPontosEscolhidos.push(novosPontosEscolhidos);
 
-                    // Não adicionando elemento
+                    // Não adicionando elemento indice
                     pilhaIndice.push(indice + 1);
                     pilhaPontosEscolhidos.push(pontosEscolhidos);
                 }
