@@ -2,6 +2,8 @@ package paa.tp.modelo.algoritmo.otimizacao;
 
 import paa.tp.modelo.PontoCandidato;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -30,7 +32,14 @@ public abstract class Algoritmo {
      * @param distanciaMinimaPermitida Distância mínima permitida entre cada filial.
      */
     public Algoritmo(final List<PontoCandidato> listaPontosCandidatos, final double distanciaMinimaPermitida) {
-        this.listaPontosCandidatos = listaPontosCandidatos;
+        this.listaPontosCandidatos = new ArrayList<>(listaPontosCandidatos);
+        final Comparator<PontoCandidato> comparatorPontoCandidato = new Comparator<PontoCandidato>() {
+            @Override
+            public int compare(PontoCandidato pontoCandidato, PontoCandidato t1) {
+                return Integer.compare(pontoCandidato.getCustoInstalacao(), t1.getCustoInstalacao());
+            }
+        };
+        listaPontosCandidatos.sort(comparatorPontoCandidato);
         this.distanciaMinimaPermitida = distanciaMinimaPermitida;
     }
 
