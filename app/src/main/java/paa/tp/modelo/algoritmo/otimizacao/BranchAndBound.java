@@ -55,14 +55,55 @@ public class BranchAndBound extends Algoritmo {
                     // Adicionando elemento indice
                     final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
                     novosPontosEscolhidos.add(listaPontosCandidatos.get(indice));
-                    pilhaIndice.push(indice + 1);
-                    pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+                    final Solucao novaSolucao = new Solucao(novosPontosEscolhidos);
+                    if (melhorSolucao == null || calcularGanho(novaSolucao, indice) >= calcularGanho(melhorSolucao, indice)) {
+                        pilhaIndice.push(indice + 1);
+                        pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+                    }
 
                     // Não adicionando elemento indice
-                    pilhaIndice.push(indice + 1);
-                    pilhaPontosEscolhidos.push(pontosEscolhidos);
+                    if (melhorSolucao == null || calcularGanho(solucao, indice) >= calcularGanho(melhorSolucao, indice)) {
+                        pilhaIndice.push(indice + 1);
+                        pilhaPontosEscolhidos.push(pontosEscolhidos);
+                    }
                 }
             }
         }
     }
+
+    /**
+     * Calcula o ganho de cada ramificação do Branch and Bound
+     * @param solucao Solução da ramificação.
+     * @param indice Índice
+     * @return Ganho da ramificação.
+     */
+    private double calcularGanho(final Solucao solucao, final int indice) {
+
+        // Calculando o somatório do valor
+        final int somatorioValor = indice+1;
+
+        // Calculando o somatório do custo
+        int somatorioCusto = 0;
+        for (int i = 0; i < indice; i++)
+            somatorioCusto += listaPontosCandidatos.get(i).getCustoInstalacao();
+
+        // Calculando o custo máximo
+        int custoMaximo = Integer.MIN_VALUE;
+        for (final PontoCandidato pontoCandidato : listaPontosCandidatos)
+            if (pontoCandidato.getCustoInstalacao() > custoMaximo)
+                custoMaximo = pontoCandidato.getCustoInstalacao();
+
+        // Calculando a maxima relação de valor por custo dos pontos que ainda não foram incluídos
+        double maximaRelacao = Double.MIN_VALUE;
+        for (final PontoCandidato pontoCandidato : listaPontosCandidatos)
+            if (!solucao.getPontosCandidatosEscolhidos().contains(pontoCandidato)) {
+                final double relacao = 1.0 / pontoCandidato.getCustoInstalacao();
+                if (relacao > maximaRelacao)
+                    maximaRelacao = relacao;
+            }
+
+        // Gerando o ganho
+        return somatorioValor + (double)(custoMaximo - somatorioCusto) * maximaRelacao;
+    }
+
 }
