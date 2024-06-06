@@ -3,6 +3,7 @@ package paa.tp.modelo.algoritmo.otimizacao;
 import paa.tp.modelo.PontoCandidato;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Stack;
 
@@ -18,7 +19,14 @@ public class BranchAndBound extends Algoritmo {
      * @param distanciaMinima       Distância mínima permitida entre cada filial.
      */
     public BranchAndBound(List<PontoCandidato> listaPontosCandidatos, double distanciaMinima) {
-        super(listaPontosCandidatos, distanciaMinima);
+        super(new ArrayList<>(listaPontosCandidatos), distanciaMinima);
+        final Comparator<PontoCandidato> comparatorPontoCandidato = new Comparator<PontoCandidato>() {
+            @Override
+            public int compare(PontoCandidato pontoCandidato, PontoCandidato t1) {
+                return Integer.compare(pontoCandidato.getCustoInstalacao(), t1.getCustoInstalacao());
+            }
+        };
+        listaPontosCandidatos.sort(comparatorPontoCandidato);
     }
 
     /**
