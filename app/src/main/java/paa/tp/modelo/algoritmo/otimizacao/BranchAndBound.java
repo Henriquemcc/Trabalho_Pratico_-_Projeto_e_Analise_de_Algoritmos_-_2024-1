@@ -42,6 +42,7 @@ public class BranchAndBound extends Algoritmo {
         // Adicionando primeiros elementos na pilha
         pilhaIndice.push(0);
         pilhaPontosEscolhidos.push(new ArrayList<>());
+        double ganhoMelhorSolucao = 0;
 
         // Enquanto as pilhas não estiverem vazias serão geradas as combinações
         while (!pilhaIndice.isEmpty()) {
@@ -55,6 +56,7 @@ public class BranchAndBound extends Algoritmo {
                 if (indice >= listaPontosCandidatos.size()) {
                     if (verificarOtimizacao(solucao)) {
                         melhorSolucao = solucao;
+                        ganhoMelhorSolucao = melhorSolucao.getQuantidadePontos();
                     }
                 }
 
@@ -64,13 +66,13 @@ public class BranchAndBound extends Algoritmo {
                     final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
                     novosPontosEscolhidos.add(listaPontosCandidatos.get(indice));
                     final Solucao novaSolucao = new Solucao(novosPontosEscolhidos);
-                    if (melhorSolucao == null || calcularGanho(novaSolucao, indice) >= calcularGanho(melhorSolucao, indice)) {
+                    if (melhorSolucao == null || calcularGanho(novaSolucao, indice) > ganhoMelhorSolucao) {
                         pilhaIndice.push(indice + 1);
                         pilhaPontosEscolhidos.push(novosPontosEscolhidos);
                     }
 
                     // Não adicionando elemento indice
-                    if (melhorSolucao == null || calcularGanho(solucao, indice) >= calcularGanho(melhorSolucao, indice)) {
+                    if (melhorSolucao == null || calcularGanho(solucao, indice) > ganhoMelhorSolucao) {
                         pilhaIndice.push(indice + 1);
                         pilhaPontosEscolhidos.push(pontosEscolhidos);
                     }
@@ -111,7 +113,7 @@ public class BranchAndBound extends Algoritmo {
             }
 
         // Gerando o ganho
-        return somatorioValor + (double)(custoMaximo - somatorioCusto) * maximaRelacao;
+        return somatorioValor + (double)(listaPontosCandidatos.size() - solucao.getQuantidadePontos()) * maximaRelacao;
     }
 
 }

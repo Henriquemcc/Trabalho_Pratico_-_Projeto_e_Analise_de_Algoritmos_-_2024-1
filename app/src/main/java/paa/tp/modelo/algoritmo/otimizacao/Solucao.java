@@ -29,6 +29,13 @@ public class Solucao {
      */
     public Solucao(final List<PontoCandidato> pontosCandidatosEscolhidos) {
         this.pontosCandidatosEscolhidos = pontosCandidatosEscolhidos;
+        final Comparator<PontoCandidato> comparatorPontoCandidato = new Comparator<PontoCandidato>() {
+            @Override
+            public int compare(PontoCandidato pontoCandidato, PontoCandidato t1) {
+                return Integer.compare(pontoCandidato.getCustoInstalacao(), t1.getCustoInstalacao());
+            }
+        };
+        pontosCandidatosEscolhidos.sort(comparatorPontoCandidato);
         gerarCustoTotal();
         gerarDistanciaMinima();
     }
