@@ -22,7 +22,7 @@ public class Solucao {
     /**
      * Distância mínima entre duas filiais dessa solução.
      */
-    private double distanciaMinima = Double.POSITIVE_INFINITY;
+    private double menorDistancia = Double.POSITIVE_INFINITY;
 
     /**
      * Constrói uma nova instância da classe Solucao.
@@ -31,7 +31,7 @@ public class Solucao {
     public Solucao(final List<PontoCandidato> pontosCandidatosEscolhidos) {
         this.pontosCandidatosEscolhidos = pontosCandidatosEscolhidos;
         gerarCustoTotal();
-        gerarDistanciaMinima();
+        gerarMenorDistancia();
     }
 
     /**
@@ -45,14 +45,14 @@ public class Solucao {
     /**
      * Gera o valor da variável distância mínima.
      */
-    private void gerarDistanciaMinima() {
+    private void gerarMenorDistancia() {
         for (int i = 0; i < pontosCandidatosEscolhidos.size(); i++)
             for (int j = 0; j < pontosCandidatosEscolhidos.size(); j++)
                 if (i != j)
                 {
                     final double distancia = Math.sqrt(Math.pow(pontosCandidatosEscolhidos.get(i).getCoordenadaX() - pontosCandidatosEscolhidos.get(j).getCoordenadaX(), 2) + Math.pow(pontosCandidatosEscolhidos.get(i).getCoordenadaY() - pontosCandidatosEscolhidos.get(j).getCoordenadaY(), 2));
-                    if (distancia < distanciaMinima)
-                        distanciaMinima = distancia;
+                    if (distancia < menorDistancia)
+                        menorDistancia = distancia;
                 }
     }
 
@@ -76,16 +76,8 @@ public class Solucao {
      * Obtém a distância mínima.
      * @return Distância mínima.
      */
-    public double getDistanciaMinima() {
-        return distanciaMinima;
-    }
-
-    /**
-     * Obtém a quantidade de pontos escolhidos.
-     * @return Quantidade de pontos escolhidos.
-     */
-    public int getQuantidadePontos() {
-        return pontosCandidatosEscolhidos.size();
+    public double getMenorDistancia() {
+        return menorDistancia;
     }
 
     /**
@@ -97,7 +89,7 @@ public class Solucao {
         return "Solucao{" +
                 "pontosCandidatosEscolhidos=" + pontosCandidatosEscolhidos +
                 ", custoTotal=" + custoTotal +
-                ", distanciaMinima=" + distanciaMinima +
+                ", distanciaMinima=" + menorDistancia +
                 '}';
     }
 
@@ -112,7 +104,7 @@ public class Solucao {
         if (o == null || getClass() != o.getClass()) return false;
         Solucao solucao = (Solucao) o;
         boolean equals = true;
-        if (custoTotal != solucao.custoTotal || Double.compare(distanciaMinima, solucao.distanciaMinima) != 0 || pontosCandidatosEscolhidos.size() != solucao.pontosCandidatosEscolhidos.size())
+        if (custoTotal != solucao.custoTotal || Double.compare(menorDistancia, solucao.menorDistancia) != 0 || pontosCandidatosEscolhidos.size() != solucao.pontosCandidatosEscolhidos.size())
             equals = false;
         else for (int i = 0; i < pontosCandidatosEscolhidos.size(); i++) {
             if (!pontosCandidatosEscolhidos.get(i).equals(solucao.getPontosCandidatosEscolhidos().get(i))) {
@@ -129,6 +121,6 @@ public class Solucao {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(pontosCandidatosEscolhidos, custoTotal, distanciaMinima);
+        return Objects.hash(pontosCandidatosEscolhidos, custoTotal, menorDistancia);
     }
 }

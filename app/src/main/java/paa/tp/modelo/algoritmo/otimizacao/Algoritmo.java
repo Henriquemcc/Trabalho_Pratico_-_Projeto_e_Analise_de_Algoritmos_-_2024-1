@@ -17,7 +17,7 @@ public abstract class Algoritmo {
     /**
      * Distância mínima permitida entre cada filial.
      */
-    protected final double distanciaMinima;
+    protected final double distanciaMinimaPermitida;
 
     /**
      * Melhor solução encontrada para o problema.
@@ -27,11 +27,11 @@ public abstract class Algoritmo {
     /**
      * Constrói uma nova instância das classes herdeiras de Algoritmo.
      * @param listaPontosCandidatos Lista de pontos candidatos a serem filiais.
-     * @param distanciaMinima Distância mínima permitida entre cada filial.
+     * @param distanciaMinimaPermitida Distância mínima permitida entre cada filial.
      */
-    public Algoritmo(final List<PontoCandidato> listaPontosCandidatos, final double distanciaMinima) {
+    public Algoritmo(final List<PontoCandidato> listaPontosCandidatos, final double distanciaMinimaPermitida) {
         this.listaPontosCandidatos = listaPontosCandidatos;
-        this.distanciaMinima = distanciaMinima;
+        this.distanciaMinimaPermitida = distanciaMinimaPermitida;
     }
 
     /**

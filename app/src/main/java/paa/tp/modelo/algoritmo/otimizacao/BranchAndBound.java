@@ -38,7 +38,7 @@ public class BranchAndBound extends Algoritmo{
             final Solucao solucao = new Solucao(pontosEscolhidos);
 
             // Fim da (pseudo) recursão
-            if (solucao.getDistanciaMinima() >= distanciaMinima && (melhorSolucao == null || solucao.getPontosCandidatosEscolhidos().size() > melhorSolucao.getPontosCandidatosEscolhidos().size() || (solucao.getPontosCandidatosEscolhidos().size() == melhorSolucao.getPontosCandidatosEscolhidos().size() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal())))
+            if (solucao.getMenorDistancia() >= distanciaMinimaPermitida && (melhorSolucao == null || solucao.getPontosCandidatosEscolhidos().size() > melhorSolucao.getPontosCandidatosEscolhidos().size() || (solucao.getPontosCandidatosEscolhidos().size() == melhorSolucao.getPontosCandidatosEscolhidos().size() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal())))
                 melhorSolucao = solucao;
 
             // Removendo pontos
