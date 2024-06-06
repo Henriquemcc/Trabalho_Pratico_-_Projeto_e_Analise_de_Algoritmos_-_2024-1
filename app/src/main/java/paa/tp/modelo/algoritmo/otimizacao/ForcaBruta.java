@@ -11,8 +11,9 @@ public class ForcaBruta extends Algoritmo {
 
     /**
      * Constrói uma nova instância da classe ForcaBruta.
+     *
      * @param listaPontosCandidatos Lista de pontos candidatos a serem filiais.
-     * @param distanciaMinima Distância mínima permitida entre cada filial.
+     * @param distanciaMinima       Distância mínima permitida entre cada filial.
      */
     public ForcaBruta(List<PontoCandidato> listaPontosCandidatos, double distanciaMinima) {
         super(listaPontosCandidatos, distanciaMinima);
@@ -24,35 +25,37 @@ public class ForcaBruta extends Algoritmo {
     @Override
     public void executar() {
 
-        // Iterando sobre diferentes tamanho de soluções
-        for (int tamanhoCombinacao = listaPontosCandidatos.size(); tamanhoCombinacao > 0 && melhorSolucao == null; tamanhoCombinacao--) {
+        // Pilha que será utilizada para transformar o problema recursivo em iterativo
+        final Stack<Integer> pilhaIndice = new Stack<>();
+        final Stack<List<PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
 
-            // Pilha que será utilizada para transformar o problema recursivo em iterativo
-            final Stack<List<PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
+        // Adicionando primeiros elementos na pilha
+        pilhaIndice.push(0);
+        pilhaPontosEscolhidos.push(new ArrayList<>(listaPontosCandidatos));
 
-            // Adicionando primeiros elementos na pilha
-            pilhaPontosEscolhidos.push(new ArrayList<>(listaPontosCandidatos));
+        // Enquanto as pilhas não estiverem vazias serão geradas as combinações
+        while (!pilhaIndice.isEmpty()) {
+            final List<PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
+            final int indice = pilhaIndice.pop();
+            final Solucao solucao = new Solucao(pontosEscolhidos);
 
-            // Enquanto as pilhas não estiverem vazias serão geradas as combinações
-            while (!pilhaPontosEscolhidos.isEmpty()) {
-                final List<PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
+            // Verificando a restrição
+            if (verificarRestricao(solucao) && verificarOtimizacao(solucao)) {
+                melhorSolucao = solucao;
+            }
 
-                // Fim da (pseudo) recursão
-                if (pontosEscolhidos.size() == tamanhoCombinacao) {
-                    final Solucao solucao = new Solucao(pontosEscolhidos);
-                    if (solucao.getMenorDistancia() >= distanciaMinimaPermitida && (melhorSolucao == null || solucao.getPontosCandidatosEscolhidos().size() > melhorSolucao.getPontosCandidatosEscolhidos().size() || (solucao.getPontosCandidatosEscolhidos().size() == melhorSolucao.getPontosCandidatosEscolhidos().size() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal())))
-                        melhorSolucao = solucao;
-                }
+            // Removendo elementos
+            if (indice < listaPontosCandidatos.size()) {
+                // Removendo elemento indice
+                final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
+                novosPontosEscolhidos.remove(listaPontosCandidatos.get(indice));
+                pilhaIndice.push(indice + 1);
+                pilhaPontosEscolhidos.push(novosPontosEscolhidos);
 
-                // Removendo pontos
-                else if (!pontosEscolhidos.isEmpty()) for (int i = 0; i < pontosEscolhidos.size(); i++) {
-                    final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
-                    novosPontosEscolhidos.remove(novosPontosEscolhidos.get(i));
-                    pilhaPontosEscolhidos.push(novosPontosEscolhidos);
-                }
+                // Não removendo elemento indice
+                pilhaIndice.push(indice + 1);
+                pilhaPontosEscolhidos.push(pontosEscolhidos);
             }
         }
     }
-
-
 }
