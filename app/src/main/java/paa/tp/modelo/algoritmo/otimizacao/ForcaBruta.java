@@ -30,7 +30,7 @@ public class ForcaBruta extends Algoritmo {
 
         // Adicionando primeiros elementos na pilha
         pilhaIndice.push(0);
-        pilhaPontosEscolhidos.push(new ArrayList<>());
+        pilhaPontosEscolhidos.push(new ArrayList<>(listaPontosCandidatos));
 
         // Enquanto as pilhas não estiverem vazias serão geradas as combinações
         while (!pilhaIndice.isEmpty()) {
@@ -50,13 +50,13 @@ public class ForcaBruta extends Algoritmo {
 
                 // Adicionando elementos
                 else {
-                    // Adicionando elemento indice
+                    // Removendo elemento indice
                     final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
-                    novosPontosEscolhidos.add(listaPontosCandidatos.get(indice));
+                    novosPontosEscolhidos.remove(listaPontosCandidatos.get(indice));
                     pilhaIndice.push(indice + 1);
                     pilhaPontosEscolhidos.push(novosPontosEscolhidos);
 
-                    // Não adicionando elemento indice
+                    // Não removendo elemento indice
                     pilhaIndice.push(indice + 1);
                     pilhaPontosEscolhidos.push(pontosEscolhidos);
                 }
