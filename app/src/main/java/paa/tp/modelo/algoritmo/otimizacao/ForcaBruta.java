@@ -11,12 +11,11 @@ public class ForcaBruta extends Algoritmo {
 
     /**
      * Constrói uma nova instância da classe ForcaBruta.
-     *
-     * @param listaPontosCandidatos Lista de pontos candidatos a serem filiais.
-     * @param distanciaMinima       Distância mínima permitida entre cada filial.
+     * @param dicionarioPontosCandidatos Dicionário de pontos candidatos a serem filiais.
+     * @param distanciaMinima Distância mínima permitida entre cada filial.
      */
-    public ForcaBruta(List<PontoCandidato> listaPontosCandidatos, double distanciaMinima) {
-        super(listaPontosCandidatos, distanciaMinima);
+    public ForcaBruta(Dictionary<Integer, List<PontoCandidato>> dicionarioPontosCandidatos, double distanciaMinima) {
+        super(dicionarioPontosCandidatos, distanciaMinima);
     }
 
     /**
@@ -31,7 +30,10 @@ public class ForcaBruta extends Algoritmo {
 
         // Adicionando primeiros elementos na pilha
         pilhaIndice.push(0);
-        pilhaPontosEscolhidos.push(new ArrayList<>(listaPontosCandidatos));
+        pilhaPontosEscolhidos.push(new ArrayList<>());
+
+        // Chaves dos pontos candidatos
+        final List<Integer> chaves = Collections.list(dicionarioPontosCandidatos.keys());
 
         // Enquanto as pilhas não estiverem vazias serão geradas as combinações
         while (!pilhaIndice.isEmpty()) {
@@ -45,14 +47,17 @@ public class ForcaBruta extends Algoritmo {
             }
 
             // Removendo elementos
-            if (indice < listaPontosCandidatos.size()) {
-                // Removendo elemento indice
-                final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
-                novosPontosEscolhidos.remove(listaPontosCandidatos.get(indice));
-                pilhaIndice.push(indice + 1);
-                pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+            if (indice < chaves.size()) {
+                for (PontoCandidato pontoCandidato : dicionarioPontosCandidatos.get(chaves.get(indice))) {
 
-                // Não removendo elemento indice
+                    // Adicionando pontoCandidato
+                    final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
+                    novosPontosEscolhidos.add(pontoCandidato);
+                    pilhaIndice.push(indice + 1);
+                    pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+                }
+
+                // Não adicionando pontoCandidato
                 pilhaIndice.push(indice + 1);
                 pilhaPontosEscolhidos.push(pontosEscolhidos);
             }

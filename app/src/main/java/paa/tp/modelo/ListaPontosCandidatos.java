@@ -1,9 +1,7 @@
 package paa.tp.modelo;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * Classe que armazena os pontos candidatos.
@@ -13,7 +11,7 @@ public class ListaPontosCandidatos {
     /**
      * Array list dos pontos candidatos.
      */
-    private ArrayList<PontoCandidato> pontosCandidatos = new ArrayList<>();
+    private Dictionary<Integer, List<PontoCandidato>> pontosCandidatos = new Hashtable<>();
 
     /**
      * Abre arquivo contendo os pontos candidatos.
@@ -25,11 +23,11 @@ public class ListaPontosCandidatos {
             try(final BufferedReader bufferedReader = new BufferedReader(fileReader)) {
                 String line = bufferedReader.readLine();
                 if (line != null)
-                    pontosCandidatos.clear();
+                    pontosCandidatos = new Hashtable<>();
                 while (line != null) {
                     final String[] dadosPontoCandidato = line.split(" ");
                     final PontoCandidato pontoCandidato = new PontoCandidato(Integer.parseInt(dadosPontoCandidato[0]), Integer.parseInt(dadosPontoCandidato[1]), Integer.parseInt(dadosPontoCandidato[2]), Integer.parseInt(dadosPontoCandidato[3]));
-                    pontosCandidatos.add(pontoCandidato);
+                    pontosCandidatos.get(pontoCandidato.getNumeroFranquia()).add(pontoCandidato);
                     line = bufferedReader.readLine();
                 }
             }
@@ -44,8 +42,13 @@ public class ListaPontosCandidatos {
     public void salvarArquivo(final File arquivo) throws IOException {
         try(final FileWriter fileWriter = new FileWriter(arquivo)) {
             try(final BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
-                for (final PontoCandidato pontoCandidato: pontosCandidatos) {
-                    bufferedWriter.write(String.format("%d %d %d %d\n", pontoCandidato.getNumeroFranquia(), pontoCandidato.getCoordenadaX(), pontoCandidato.getCoordenadaY(), pontoCandidato.getCustoInstalacao()));
+                final Enumeration<Integer> keys = pontosCandidatos.keys();
+                while (keys.hasMoreElements()) {
+                    final Integer key = keys.nextElement();
+                    final List<PontoCandidato> pontoCandidatosMesmaFranquia = pontosCandidatos.get(key);
+                    for (final PontoCandidato pontoCandidato : pontoCandidatosMesmaFranquia) {
+                        bufferedWriter.write(String.format("%d %d %d %d\n", pontoCandidato.getNumeroFranquia(), pontoCandidato.getCoordenadaX(), pontoCandidato.getCoordenadaY(), pontoCandidato.getCustoInstalacao()));
+                    }
                 }
             }
         }
@@ -59,22 +62,22 @@ public class ListaPontosCandidatos {
      */
     public void gerarArquivo(final int quantidadeFranquias, final int quantidadeLojasPorFranquia, final Random random)
     {
-        final ArrayList<PontoCandidato> pontoCandidatosGerados = new ArrayList<>(quantidadeFranquias * quantidadeLojasPorFranquia);
+        pontosCandidatos = new Hashtable<>();
         for (int franquia = 0; franquia < quantidadeFranquias; franquia++)
         {
+            pontosCandidatos.put(franquia+1, new ArrayList<>());
             for (int loja = 0; loja < quantidadeLojasPorFranquia; loja++)
             {
-                pontoCandidatosGerados.add(new PontoCandidato(franquia+1, random.nextInt(500), random.nextInt(500), random.nextInt(1000000)));
+                pontosCandidatos.get(franquia+1).add(new PontoCandidato(franquia+1, random.nextInt(500), random.nextInt(500), random.nextInt(1000000)));
             }
         }
-        pontosCandidatos = pontoCandidatosGerados;
     }
 
     /**
      * Obtém todos os pontos candidatos.
-     * @return Lista com todos os pontos candidatos.
+     * @return Dicionário com todos os pontos candidatos.
      */
-    public List<PontoCandidato> getPontosCandidatos() {
+    public Dictionary<Integer, List<PontoCandidato>> getPontosCandidatos() {
         return pontosCandidatos;
     }
 }

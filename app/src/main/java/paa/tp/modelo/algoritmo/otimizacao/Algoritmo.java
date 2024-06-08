@@ -1,10 +1,9 @@
 package paa.tp.modelo.algoritmo.otimizacao;
 
+import paa.tp.modelo.DictionaryPontosCandidatos;
 import paa.tp.modelo.PontoCandidato;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Classe abstrata do algoritmo para resolver o problema de otimização.
@@ -12,9 +11,9 @@ import java.util.List;
 public abstract class Algoritmo {
 
     /**
-     * Lista de pontos candidatos a serem filiais.
+     * Dicionário de pontos candidatos a serem filiais.
      */
-    protected final List<PontoCandidato> listaPontosCandidatos;
+    protected final Dictionary<Integer, List<PontoCandidato>> dicionarioPontosCandidatos;
 
     /**
      * Distância mínima permitida entre cada filial.
@@ -28,12 +27,11 @@ public abstract class Algoritmo {
 
     /**
      * Constrói uma nova instância das classes herdeiras de Algoritmo.
-     * @param listaPontosCandidatos Lista de pontos candidatos a serem filiais.
+     * @param dicionarioPontosCandidatos Dicionário de pontos candidatos a serem filiais.
      * @param distanciaMinimaPermitida Distância mínima permitida entre cada filial.
      */
-    public Algoritmo(final List<PontoCandidato> listaPontosCandidatos, final double distanciaMinimaPermitida) {
-        this.listaPontosCandidatos = new ArrayList<>(listaPontosCandidatos);
-        listaPontosCandidatos.sort(PontoCandidato::compareTo);
+    public Algoritmo(final Dictionary<Integer, List<PontoCandidato>> dicionarioPontosCandidatos, final double distanciaMinimaPermitida) {
+        this.dicionarioPontosCandidatos = DictionaryPontosCandidatos.clone(dicionarioPontosCandidatos);
         this.distanciaMinimaPermitida = distanciaMinimaPermitida;
     }
 
@@ -66,5 +64,13 @@ public abstract class Algoritmo {
      */
     protected boolean verificarOtimizacao(final Solucao solucao) {
         return melhorSolucao == null || solucao.getQuantidadeFranquia() > melhorSolucao.getQuantidadeFranquia() || (solucao.getQuantidadeFranquia() == melhorSolucao.getQuantidadeFranquia() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal());
+    }
+
+    /**
+     * Obtém a quantidade de franquias do dicionário de pontos candidatos.
+     * @return Quantidade de franquias.
+     */
+    protected int quantidadeFranquias() {
+        return dicionarioPontosCandidatos.size();
     }
 }

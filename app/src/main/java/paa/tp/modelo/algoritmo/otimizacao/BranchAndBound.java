@@ -2,9 +2,7 @@ package paa.tp.modelo.algoritmo.otimizacao;
 
 import paa.tp.modelo.PontoCandidato;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Algoritmo Branch and Bound.
@@ -13,11 +11,11 @@ public class BranchAndBound extends Algoritmo {
     /**
      * Constrói uma nova instância de Branch and Bound de Algoritmo.
      *
-     * @param listaPontosCandidatos Lista de pontos candidatos a serem filiais.
+     * @param dicionarioPontosCandidatos Lista de pontos candidatos a serem filiais.
      * @param distanciaMinima       Distância mínima permitida entre cada filial.
      */
-    public BranchAndBound(List<PontoCandidato> listaPontosCandidatos, double distanciaMinima) {
-        super(listaPontosCandidatos, distanciaMinima);
+    public BranchAndBound(Dictionary<Integer, List<PontoCandidato>> dicionarioPontosCandidatos, double distanciaMinima) {
+        super(dicionarioPontosCandidatos, distanciaMinima);
     }
 
     @Override
@@ -29,7 +27,10 @@ public class BranchAndBound extends Algoritmo {
 
         // Adicionando primeiros elementos na pilha
         pilhaIndice.push(0);
-        pilhaPontosEscolhidos.push(new ArrayList<>(listaPontosCandidatos));
+        pilhaPontosEscolhidos.push(new ArrayList<>());
+
+        // Chaves dos pontos candidatos
+        final List<Integer> chaves = Collections.list(dicionarioPontosCandidatos.keys());
 
         // Enquanto as pilhas não estiverem vazias serão geradas as combinações
         while (!pilhaIndice.isEmpty()) {
@@ -37,28 +38,25 @@ public class BranchAndBound extends Algoritmo {
             final int indice = pilhaIndice.pop();
             final Solucao solucao = new Solucao(pontosEscolhidos);
 
-            // Podando este nó caso ele não seja melhor que a melhor solução
-            if (verificarOtimizacao(solucao)) {
+            // Verificando a restrição
+            if (verificarRestricao(solucao) && verificarOtimizacao(solucao)) {
+                melhorSolucao = solucao;
+            }
 
-                // Fim da (pesudo) recursão
-                if (indice >= listaPontosCandidatos.size()) {
-                    if (verificarRestricao(solucao)) {
-                        melhorSolucao = solucao;
-                    }
-                }
+            // Removendo elementos
+            if (indice < dicionarioPontosCandidatos.size()) {
+                for (PontoCandidato pontoCandidato : dicionarioPontosCandidatos.get(chaves.get(indice))) {
 
-                // Removendo elementos
-                else {
-                    // Removendo elemento em indice
+                    // Adicionando pontoCandidato
                     final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
-                    novosPontosEscolhidos.remove(listaPontosCandidatos.get(indice));
+                    novosPontosEscolhidos.add(pontoCandidato);
                     pilhaIndice.push(indice + 1);
                     pilhaPontosEscolhidos.push(novosPontosEscolhidos);
-
-                    // Não removendo elemento em indice
-                    pilhaIndice.push(indice + 1);
-                    pilhaPontosEscolhidos.push(pontosEscolhidos);
                 }
+
+                // Não adicionando pontoCandidato
+                pilhaIndice.push(indice + 1);
+                pilhaPontosEscolhidos.push(pontosEscolhidos);
             }
         }
     }
