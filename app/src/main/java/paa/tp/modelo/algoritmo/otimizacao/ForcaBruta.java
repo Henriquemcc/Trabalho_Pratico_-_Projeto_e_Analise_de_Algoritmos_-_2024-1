@@ -47,7 +47,7 @@ public class ForcaBruta extends Algoritmo {
             }
 
             // Removendo elementos
-            if (indice < chaves.size()) {
+            if (indice < quantidadeFranquias()) {
                 for (PontoCandidato pontoCandidato : dicionarioPontosCandidatos.get(chaves.get(indice))) {
 
                     // Adicionando pontoCandidato

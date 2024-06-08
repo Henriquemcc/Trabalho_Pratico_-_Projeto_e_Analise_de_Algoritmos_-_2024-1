@@ -44,7 +44,7 @@ public class BranchAndBound extends Algoritmo {
             }
 
             // Removendo elementos
-            if (indice < dicionarioPontosCandidatos.size()) {
+            if (indice < quantidadeFranquias()) {
                 for (PontoCandidato pontoCandidato : dicionarioPontosCandidatos.get(chaves.get(indice))) {
 
                     // Adicionando pontoCandidato
