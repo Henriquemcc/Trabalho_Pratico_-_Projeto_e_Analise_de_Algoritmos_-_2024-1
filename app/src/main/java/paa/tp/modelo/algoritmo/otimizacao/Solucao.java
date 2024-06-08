@@ -21,7 +21,12 @@ public class Solucao {
     /**
      * Distância mínima entre duas filiais dessa solução.
      */
-    private double menorDistancia = Double.POSITIVE_INFINITY;
+    private double menorDistancia;
+
+    /**
+     * Custo máximo de uma franquia da solução.
+     */
+    private double custoMaximo;
 
     /**
      * Constrói uma nova instância da classe Solucao.
@@ -32,6 +37,14 @@ public class Solucao {
         this.pontosCandidatosEscolhidos.sort(PontoCandidato::compareTo);
         gerarCustoTotal();
         gerarMenorDistancia();
+        gerarCustoMaximo();
+    }
+
+    /**
+     * Gera o custo máximo de uma franquia da solução.
+     */
+    private void gerarCustoMaximo() {
+        this.custoMaximo = pontosCandidatosEscolhidos.stream().mapToDouble(PontoCandidato::getCustoInstalacao).max().orElse(0);
     }
 
     /**
@@ -47,13 +60,10 @@ public class Solucao {
      */
     private void gerarMenorDistancia() {
         for (int i = 0; i < pontosCandidatosEscolhidos.size(); i++)
-            for (int j = 0; j < pontosCandidatosEscolhidos.size(); j++)
-                if (i != j)
-                {
-                    final double distancia = Math.sqrt(Math.pow(pontosCandidatosEscolhidos.get(i).getCoordenadaX() - pontosCandidatosEscolhidos.get(j).getCoordenadaX(), 2) + Math.pow(pontosCandidatosEscolhidos.get(i).getCoordenadaY() - pontosCandidatosEscolhidos.get(j).getCoordenadaY(), 2));
-                    if (distancia < menorDistancia)
-                        menorDistancia = distancia;
-                }
+            for (int j = i + 1; j < pontosCandidatosEscolhidos.size(); j++) {
+                final double distancia = Math.sqrt(Math.pow(pontosCandidatosEscolhidos.get(i).getCoordenadaX() - pontosCandidatosEscolhidos.get(j).getCoordenadaX(), 2) + Math.pow(pontosCandidatosEscolhidos.get(i).getCoordenadaY() - pontosCandidatosEscolhidos.get(j).getCoordenadaY(), 2));
+                menorDistancia = Math.min(distancia, menorDistancia);
+            }
     }
 
     /**
@@ -78,6 +88,14 @@ public class Solucao {
      */
     public double getMenorDistancia() {
         return menorDistancia;
+    }
+
+    /**
+     * Obtém o custo máximo.
+     * @return Custo máximo.
+     */
+    public double getCustoMaximo() {
+        return custoMaximo;
     }
 
     /**
