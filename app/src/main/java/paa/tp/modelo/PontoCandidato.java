@@ -1,12 +1,15 @@
 package paa.tp.modelo;
 
+import com.sun.istack.internal.NotNull;
+
 import java.io.Serializable;
+import java.util.Comparator;
 import java.util.Objects;
 
 /**
  * Classe que armazena todos os dados de um ponto candidato.
  */
-public class PontoCandidato implements Serializable {
+public class PontoCandidato implements Serializable, Comparable {
 
     /**
      * Número da franquia.
@@ -109,5 +112,30 @@ public class PontoCandidato implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(numeroFranquia, coordenadaX, coordenadaY, custoInstalacao);
+    }
+
+    /**
+     * Compara este objeto com outro.
+     * @param outroPontoCandidato Objeto a ser comparado.
+     * @return Valor inteiro indicando a ordem dos objetos.
+     */
+    @Override
+    public int compareTo(Object outroPontoCandidato) {
+        if (outroPontoCandidato == null)
+            return Integer.MAX_VALUE;
+        if (outroPontoCandidato instanceof PontoCandidato)
+            return this.compareTo((PontoCandidato)outroPontoCandidato);
+        return Integer.MAX_VALUE;
+    }
+
+    /**
+     * Compara esta instância de PontoCandidato com outra.
+     * @param outroPontoCandidato Outra instância da Pontocandidato a ser comparada.
+     * @return Valor inteiro indicando a ordem dos objetos.
+     */
+    @NotNull
+    public int compareTo(PontoCandidato outroPontoCandidato) {
+        Comparator<PontoCandidato> comparadorPontoCandidato = Comparator.comparing(PontoCandidato::getCustoInstalacao).thenComparing(PontoCandidato::getNumeroFranquia).thenComparing(PontoCandidato::getCoordenadaX).thenComparing(PontoCandidato::getCoordenadaY);
+        return comparadorPontoCandidato.compare(this, outroPontoCandidato);
     }
 }
