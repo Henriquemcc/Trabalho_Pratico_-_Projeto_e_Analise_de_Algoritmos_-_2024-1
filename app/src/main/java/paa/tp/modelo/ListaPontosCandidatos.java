@@ -19,19 +19,22 @@ public class ListaPontosCandidatos {
      * @throws IOException Exceção lançada caso ocorra erro de IO.
      */
     public void abrirArquivo(final File arquivo) throws IOException {
+        final Hashtable<Integer, List<PontoCandidato>> novosPontosCandidatos = new Hashtable<>();
         try(final FileReader fileReader = new FileReader(arquivo)) {
             try(final BufferedReader bufferedReader = new BufferedReader(fileReader)) {
                 String line = bufferedReader.readLine();
-                if (line != null)
-                    pontosCandidatos = new Hashtable<>();
                 while (line != null) {
                     final String[] dadosPontoCandidato = line.split(" ");
                     final PontoCandidato pontoCandidato = new PontoCandidato(Integer.parseInt(dadosPontoCandidato[0]), Integer.parseInt(dadosPontoCandidato[1]), Integer.parseInt(dadosPontoCandidato[2]), Integer.parseInt(dadosPontoCandidato[3]));
-                    pontosCandidatos.get(pontoCandidato.getNumeroFranquia()).add(pontoCandidato);
+                    if (!novosPontosCandidatos.containsKey(pontoCandidato.getNumeroFranquia())) {
+                        novosPontosCandidatos.put(pontoCandidato.getNumeroFranquia(), new ArrayList<>());
+                    }
+                    novosPontosCandidatos.get(pontoCandidato.getNumeroFranquia()).add(pontoCandidato);
                     line = bufferedReader.readLine();
                 }
             }
         }
+        pontosCandidatos = novosPontosCandidatos;
     }
 
     /**
