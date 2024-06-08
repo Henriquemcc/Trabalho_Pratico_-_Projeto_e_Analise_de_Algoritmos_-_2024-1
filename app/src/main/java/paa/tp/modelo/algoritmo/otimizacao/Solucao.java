@@ -90,6 +90,7 @@ public class Solucao {
                 "pontosCandidatosEscolhidos=" + pontosCandidatosEscolhidos +
                 ", custoTotal=" + custoTotal +
                 ", distanciaMinima=" + menorDistancia +
+                ", quantidadeFranquia=" + getQuantidadeFranquia() +
                 '}';
     }
 
