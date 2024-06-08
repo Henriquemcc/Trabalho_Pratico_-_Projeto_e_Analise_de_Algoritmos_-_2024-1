@@ -40,23 +40,24 @@ public class BranchAndBound extends Algoritmo {
 
             // Verificando a restrição
             if (verificarRestricao(solucao)) {
+
+                // Fim da (pseudo) recursão
                 if (indice >= quantidadeFranquias()) {
                     if (verificarOtimizacao(solucao)) {
                         melhorSolucao = solucao;
                     }
                 }
 
-                // Removendo elementos
                 else {
 
                     // Não adicionando pontoCandidato
                     pilhaIndice.push(indice + 1);
                     pilhaPontosEscolhidos.push(pontosEscolhidos);
 
+                    // Adicionando pontoCandidato
                     // Para cada ponto candidato de mesma franquia
                     for (PontoCandidato pontoCandidato : dicionarioPontosCandidatos.get(chaves.get(indice))) {
 
-                        // Adicionando pontoCandidato
                         final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
                         novosPontosEscolhidos.add(pontoCandidato);
                         final Solucao novaSolucao = new Solucao(novosPontosEscolhidos);
