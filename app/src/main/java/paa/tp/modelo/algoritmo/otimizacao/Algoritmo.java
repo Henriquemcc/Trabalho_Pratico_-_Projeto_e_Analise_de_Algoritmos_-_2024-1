@@ -32,7 +32,8 @@ public abstract class Algoritmo {
      * @param distanciaMinimaPermitida Distância mínima permitida entre cada filial.
      */
     public Algoritmo(final List<PontoCandidato> listaPontosCandidatos, final double distanciaMinimaPermitida) {
-        this.listaPontosCandidatos = listaPontosCandidatos;
+        this.listaPontosCandidatos = new ArrayList<>(listaPontosCandidatos);
+        listaPontosCandidatos.sort(PontoCandidato::compareTo);
         this.distanciaMinimaPermitida = distanciaMinimaPermitida;
     }
 
