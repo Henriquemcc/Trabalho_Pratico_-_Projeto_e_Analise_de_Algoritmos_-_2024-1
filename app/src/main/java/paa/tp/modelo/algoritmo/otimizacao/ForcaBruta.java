@@ -46,20 +46,21 @@ public class ForcaBruta extends Algoritmo {
                 melhorSolucao = solucao;
             }
 
-            // Removendo elementos
             if (indice < quantidadeFranquias()) {
+
+                // Não adicionando pontoCandidato
+                pilhaIndice.push(indice + 1);
+                pilhaPontosEscolhidos.push(pontosEscolhidos);
+
+                // Adicionando pontoCandidato
+                // Para cada ponto candidato de mesma franquia
                 for (PontoCandidato pontoCandidato : dicionarioPontosCandidatos.get(chaves.get(indice))) {
 
-                    // Adicionando pontoCandidato
                     final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
                     novosPontosEscolhidos.add(pontoCandidato);
                     pilhaIndice.push(indice + 1);
                     pilhaPontosEscolhidos.push(novosPontosEscolhidos);
                 }
-
-                // Não adicionando pontoCandidato
-                pilhaIndice.push(indice + 1);
-                pilhaPontosEscolhidos.push(pontosEscolhidos);
             }
         }
     }
