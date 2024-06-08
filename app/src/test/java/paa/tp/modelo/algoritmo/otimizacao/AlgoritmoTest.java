@@ -22,7 +22,7 @@ public class AlgoritmoTest extends TestCase {
         final int numeroFranquias = 5;
         final int numeroFiliaisPorFranquia = 2;
         for (int franquia = 0; franquia < numeroFranquias; franquia++) {
-            pontosCandidatos.put(franquia, new ArrayList<>());
+            pontosCandidatos.put(franquia+1, new ArrayList<>());
             for (int filial = 0; filial < numeroFiliaisPorFranquia; filial++)
             {
                 pontosCandidatos.get(franquia+1).add(new PontoCandidato(franquia + 1, random.nextInt(1000), random.nextInt(1000), random.nextInt(1000000)));
