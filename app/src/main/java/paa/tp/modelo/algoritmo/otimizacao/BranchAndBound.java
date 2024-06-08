@@ -50,8 +50,11 @@ public class BranchAndBound extends Algoritmo {
                     // Adicionando pontoCandidato
                     final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
                     novosPontosEscolhidos.add(pontoCandidato);
-                    pilhaIndice.push(indice + 1);
-                    pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+                    final Solucao novaSolucao = new Solucao(novosPontosEscolhidos);
+                    if (verificarRestricao(novaSolucao) && verificarOtimizacao(novaSolucao)) {
+                        pilhaIndice.push(indice + 1);
+                        pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+                    }
                 }
 
                 // Não adicionando pontoCandidato

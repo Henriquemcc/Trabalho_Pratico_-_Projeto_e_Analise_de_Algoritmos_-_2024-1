@@ -28,7 +28,8 @@ public class Solucao {
      * @param pontosCandidatosEscolhidos Pontos candidatos escolhidos para resolver o problema.
      */
     public Solucao(final List<PontoCandidato> pontosCandidatosEscolhidos) {
-        this.pontosCandidatosEscolhidos = pontosCandidatosEscolhidos;
+        this.pontosCandidatosEscolhidos = new ArrayList<>(pontosCandidatosEscolhidos);
+        this.pontosCandidatosEscolhidos.sort(PontoCandidato::compareTo);
         gerarCustoTotal();
         gerarMenorDistancia();
     }
