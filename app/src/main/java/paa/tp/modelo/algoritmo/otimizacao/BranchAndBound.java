@@ -39,28 +39,55 @@ public class BranchAndBound extends Algoritmo {
             final Solucao solucao = new Solucao(pontosEscolhidos);
 
             // Verificando a restrição
-            if (verificarRestricao(solucao) && verificarOtimizacao(solucao)) {
-                melhorSolucao = solucao;
+            if (indice >= quantidadeFranquias()) {
+                if (verificarRestricao(solucao) && verificarOtimizacao(solucao)) {
+                    melhorSolucao = solucao;
+                }
             }
 
             // Removendo elementos
-            if (indice < quantidadeFranquias()) {
+            else {
+
+                // Não adicionando pontoCandidato
+                pilhaIndice.push(indice + 1);
+                pilhaPontosEscolhidos.push(pontosEscolhidos);
+
+                // Para cada ponto candidato de mesma franquia
                 for (PontoCandidato pontoCandidato : dicionarioPontosCandidatos.get(chaves.get(indice))) {
 
                     // Adicionando pontoCandidato
                     final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
                     novosPontosEscolhidos.add(pontoCandidato);
                     final Solucao novaSolucao = new Solucao(novosPontosEscolhidos);
-                    if (verificarRestricao(novaSolucao)) {
+                    if (verificarRestricao(novaSolucao) && (melhorSolucao == null || heuristica(novaSolucao) < heuristica(melhorSolucao))) {
                         pilhaIndice.push(indice + 1);
                         pilhaPontosEscolhidos.push(novosPontosEscolhidos);
                     }
                 }
-
-                // Não adicionando pontoCandidato
-                pilhaIndice.push(indice + 1);
-                pilhaPontosEscolhidos.push(pontosEscolhidos);
             }
         }
+    }
+
+    /**
+     * Heurística utilizada para podar as branchs.
+     * @param solucao Solução a ser analisada.
+     * @return Valor da heurística
+     */
+    private double heuristica(Solucao solucao) {
+
+        // Obtendo o custo mínimo
+        double custoMinimoRestante = Double.MAX_VALUE;
+        double custoMaximo = Double.MIN_VALUE;
+        final List<Integer> chaves = Collections.list(dicionarioPontosCandidatos.keys());
+        for (Integer chave: chaves) {
+            for (PontoCandidato pontoCandidato: dicionarioPontosCandidatos.get(chave)) {
+                if (!solucao.getPontosCandidatosEscolhidos().contains(pontoCandidato)) {
+                    custoMinimoRestante = Math.min(custoMinimoRestante, pontoCandidato.getCustoInstalacao());
+                }
+                custoMaximo = Math.max(custoMaximo, pontoCandidato.getCustoInstalacao());
+            }
+        }
+
+        return solucao.getCustoTotal() + (quantidadeFranquias() - solucao.getQuantidadeFranquia()) * custoMinimoRestante;
     }
 }
