@@ -61,7 +61,7 @@ public class BranchAndBound extends Algoritmo {
                         final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
                         novosPontosEscolhidos.add(pontoCandidato);
                         final Solucao novaSolucao = new Solucao(novosPontosEscolhidos);
-                        if (melhorSolucao == null || heuristica(novaSolucao) < heuristica(melhorSolucao)) {
+                        if (melhorSolucao == null || heuristicaOtimista(novaSolucao) < heuristicaPessimista(melhorSolucao)) {
                             pilhaIndice.push(indice + 1);
                             pilhaPontosEscolhidos.push(novosPontosEscolhidos);
                         }
@@ -78,7 +78,31 @@ public class BranchAndBound extends Algoritmo {
      * @param solucao Solução a ser analisada.
      * @return Valor da heurística
      */
-    private double heuristica(Solucao solucao) {
+    private double heuristicaPessimista(Solucao solucao) {
+
+        // Obtendo o custo mínimo
+        double custoMaximoRestante = Double.MIN_VALUE;
+        double custoMaximo = Double.MIN_VALUE;
+        final List<Integer> chaves = Collections.list(dicionarioPontosCandidatos.keys());
+        for (Integer chave : chaves) {
+            for (PontoCandidato pontoCandidato : dicionarioPontosCandidatos.get(chave)) {
+                if (!solucao.getPontosCandidatosEscolhidos().contains(pontoCandidato)) {
+                    custoMaximoRestante = Math.max(custoMaximoRestante, pontoCandidato.getCustoInstalacao());
+                }
+                custoMaximo = Math.max(custoMaximo, pontoCandidato.getCustoInstalacao());
+            }
+        }
+
+        return solucao.getCustoTotal() + (quantidadeFranquias() - solucao.getQuantidadeFranquia()) * custoMaximoRestante;
+    }
+
+    /**
+     * Heurística utilizada para podar as branchs.
+     *
+     * @param solucao Solução a ser analisada.
+     * @return Valor da heurística
+     */
+    private double heuristicaOtimista(Solucao solucao) {
 
         // Obtendo o custo mínimo
         double custoMinimoRestante = Double.MAX_VALUE;
