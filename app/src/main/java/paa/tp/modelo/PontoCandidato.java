@@ -1,7 +1,5 @@
 package paa.tp.modelo;
 
-import com.sun.istack.internal.NotNull;
-
 import java.io.Serializable;
 import java.util.Comparator;
 import java.util.Objects;
@@ -138,7 +136,6 @@ public class PontoCandidato implements Serializable, Comparable {
      * @param outroPontoCandidato Outra instância da Pontocandidato a ser comparada.
      * @return Valor inteiro indicando a ordem dos objetos.
      */
-    @NotNull
     public int compareTo(PontoCandidato outroPontoCandidato) {
         return comparadorPontoCandidato.compare(this, outroPontoCandidato);
     }
