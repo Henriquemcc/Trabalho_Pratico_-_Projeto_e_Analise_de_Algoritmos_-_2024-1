@@ -12,6 +12,11 @@ import java.util.Objects;
 public class PontoCandidato implements Serializable, Comparable {
 
     /**
+     * Compara duas instâncias de PontoCandidato.
+     */
+    public static final Comparator<PontoCandidato> comparadorPontoCandidato = Comparator.comparing(PontoCandidato::getCustoInstalacao).thenComparing(PontoCandidato::getNumeroFranquia).thenComparing(PontoCandidato::getCoordenadaX).thenComparing(PontoCandidato::getCoordenadaY);
+
+    /**
      * Número da franquia.
      */
     private final int numeroFranquia;
@@ -135,7 +140,6 @@ public class PontoCandidato implements Serializable, Comparable {
      */
     @NotNull
     public int compareTo(PontoCandidato outroPontoCandidato) {
-        Comparator<PontoCandidato> comparadorPontoCandidato = Comparator.comparing(PontoCandidato::getCustoInstalacao).thenComparing(PontoCandidato::getNumeroFranquia).thenComparing(PontoCandidato::getCoordenadaX).thenComparing(PontoCandidato::getCoordenadaY);
         return comparadorPontoCandidato.compare(this, outroPontoCandidato);
     }
 }
