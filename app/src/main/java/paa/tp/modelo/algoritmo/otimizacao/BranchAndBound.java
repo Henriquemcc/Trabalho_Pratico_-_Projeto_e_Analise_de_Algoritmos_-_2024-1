@@ -12,7 +12,7 @@ public class BranchAndBound extends Algoritmo {
      * Constrói uma nova instância de Branch and Bound de Algoritmo.
      *
      * @param dicionarioPontosCandidatos Lista de pontos candidatos a serem filiais.
-     * @param distanciaMinima       Distância mínima permitida entre cada filial.
+     * @param distanciaMinima            Distância mínima permitida entre cada filial.
      */
     public BranchAndBound(Dictionary<Integer, List<PontoCandidato>> dicionarioPontosCandidatos, double distanciaMinima) {
         super(dicionarioPontosCandidatos, distanciaMinima);
@@ -39,37 +39,41 @@ public class BranchAndBound extends Algoritmo {
             final Solucao solucao = new Solucao(pontosEscolhidos);
 
             // Verificando a restrição
-            if (indice >= quantidadeFranquias()) {
-                if (verificarRestricao(solucao) && verificarOtimizacao(solucao)) {
-                    melhorSolucao = solucao;
-                }
-            }
-
-            // Removendo elementos
-            else {
-
-                // Não adicionando pontoCandidato
-                pilhaIndice.push(indice + 1);
-                pilhaPontosEscolhidos.push(pontosEscolhidos);
-
-                // Para cada ponto candidato de mesma franquia
-                for (PontoCandidato pontoCandidato : dicionarioPontosCandidatos.get(chaves.get(indice))) {
-
-                    // Adicionando pontoCandidato
-                    final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
-                    novosPontosEscolhidos.add(pontoCandidato);
-                    final Solucao novaSolucao = new Solucao(novosPontosEscolhidos);
-                    if (verificarRestricao(novaSolucao) && (melhorSolucao == null || heuristica(novaSolucao) < heuristica(melhorSolucao))) {
-                        pilhaIndice.push(indice + 1);
-                        pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+            if (verificarRestricao(solucao)) {
+                if (indice >= quantidadeFranquias()) {
+                    if (verificarOtimizacao(solucao)) {
+                        melhorSolucao = solucao;
                     }
                 }
+
+                // Removendo elementos
+                else {
+
+                    // Não adicionando pontoCandidato
+                    pilhaIndice.push(indice + 1);
+                    pilhaPontosEscolhidos.push(pontosEscolhidos);
+
+                    // Para cada ponto candidato de mesma franquia
+                    for (PontoCandidato pontoCandidato : dicionarioPontosCandidatos.get(chaves.get(indice))) {
+
+                        // Adicionando pontoCandidato
+                        final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
+                        novosPontosEscolhidos.add(pontoCandidato);
+                        final Solucao novaSolucao = new Solucao(novosPontosEscolhidos);
+                        if (melhorSolucao == null || heuristica(novaSolucao) < heuristica(melhorSolucao)) {
+                            pilhaIndice.push(indice + 1);
+                            pilhaPontosEscolhidos.push(novosPontosEscolhidos);
+                        }
+                    }
+                }
+
             }
         }
     }
 
     /**
      * Heurística utilizada para podar as branchs.
+     *
      * @param solucao Solução a ser analisada.
      * @return Valor da heurística
      */
@@ -79,8 +83,8 @@ public class BranchAndBound extends Algoritmo {
         double custoMinimoRestante = Double.MAX_VALUE;
         double custoMaximo = Double.MIN_VALUE;
         final List<Integer> chaves = Collections.list(dicionarioPontosCandidatos.keys());
-        for (Integer chave: chaves) {
-            for (PontoCandidato pontoCandidato: dicionarioPontosCandidatos.get(chave)) {
+        for (Integer chave : chaves) {
+            for (PontoCandidato pontoCandidato : dicionarioPontosCandidatos.get(chave)) {
                 if (!solucao.getPontosCandidatosEscolhidos().contains(pontoCandidato)) {
                     custoMinimoRestante = Math.min(custoMinimoRestante, pontoCandidato.getCustoInstalacao());
                 }
