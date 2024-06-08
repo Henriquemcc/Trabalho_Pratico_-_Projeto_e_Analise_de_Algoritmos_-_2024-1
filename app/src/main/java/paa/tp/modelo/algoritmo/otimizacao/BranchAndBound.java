@@ -51,7 +51,7 @@ public class BranchAndBound extends Algoritmo {
                     final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
                     novosPontosEscolhidos.add(pontoCandidato);
                     final Solucao novaSolucao = new Solucao(novosPontosEscolhidos);
-                    if (verificarRestricao(novaSolucao) && verificarOtimizacao(novaSolucao)) {
+                    if (verificarRestricao(novaSolucao)) {
                         pilhaIndice.push(indice + 1);
                         pilhaPontosEscolhidos.push(novosPontosEscolhidos);
                     }
