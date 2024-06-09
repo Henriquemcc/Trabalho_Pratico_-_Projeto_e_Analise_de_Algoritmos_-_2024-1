@@ -11,11 +11,11 @@ public class ForcaBruta extends Algoritmo {
 
     /**
      * Constrói uma nova instância da classe ForcaBruta.
-     * @param listaPontosCandidatos Lista de pontos candidatos a serem filiais.
+     * @param dicionarioPontosCandidatos Dicionário de pontos candidatos a serem filiais.
      * @param distanciaMinima Distância mínima permitida entre cada filial.
      */
-    public ForcaBruta(List<PontoCandidato> listaPontosCandidatos, double distanciaMinima) {
-        super(listaPontosCandidatos, distanciaMinima);
+    public ForcaBruta(Dictionary<Integer, List<PontoCandidato>> dicionarioPontosCandidatos, double distanciaMinima) {
+        super(dicionarioPontosCandidatos, distanciaMinima);
     }
 
     /**
@@ -24,35 +24,44 @@ public class ForcaBruta extends Algoritmo {
     @Override
     public void executar() {
 
-        // Iterando sobre diferentes tamanho de soluções
-        for (int tamanhoCombinacao = listaPontosCandidatos.size(); tamanhoCombinacao > 0 && melhorSolucao == null; tamanhoCombinacao--) {
+        // Pilha que será utilizada para transformar o problema recursivo em iterativo
+        final Stack<Integer> pilhaIndice = new Stack<>();
+        final Stack<List<PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
 
-            // Pilha que será utilizada para transformar o problema recursivo em iterativo
-            final Stack<List<PontoCandidato>> pilhaPontosEscolhidos = new Stack<>();
+        // Adicionando primeiros elementos na pilha
+        pilhaIndice.push(0);
+        pilhaPontosEscolhidos.push(new ArrayList<>());
 
-            // Adicionando primeiros elementos na pilha
-            pilhaPontosEscolhidos.push(new ArrayList<>(listaPontosCandidatos));
+        // Chaves dos pontos candidatos
+        final List<Integer> chaves = Collections.list(dicionarioPontosCandidatos.keys());
 
-            // Enquanto as pilhas não estiverem vazias serão geradas as combinações
-            while (!pilhaPontosEscolhidos.isEmpty()) {
-                final List<PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
+        // Enquanto as pilhas não estiverem vazias serão geradas as combinações
+        while (!pilhaIndice.isEmpty()) {
+            final List<PontoCandidato> pontosEscolhidos = pilhaPontosEscolhidos.pop();
+            final int indice = pilhaIndice.pop();
+            final Solucao solucao = new Solucao(pontosEscolhidos);
 
-                // Fim da (pseudo) recursão
-                if (pontosEscolhidos.size() == tamanhoCombinacao) {
-                    final Solucao solucao = new Solucao(pontosEscolhidos);
-                    if (solucao.getDistanciaMinima() >= distanciaMinima && (melhorSolucao == null || solucao.getPontosCandidatosEscolhidos().size() > melhorSolucao.getPontosCandidatosEscolhidos().size() || (solucao.getPontosCandidatosEscolhidos().size() == melhorSolucao.getPontosCandidatosEscolhidos().size() && solucao.getCustoTotal() < melhorSolucao.getCustoTotal())))
-                        melhorSolucao = solucao;
-                }
+            // Verificando a restrição
+            if (verificarRestricao(solucao) && verificarOtimizacao(solucao)) {
+                melhorSolucao = solucao;
+            }
 
-                // Removendo pontos
-                else if (!pontosEscolhidos.isEmpty()) for (int i = 0; i < pontosEscolhidos.size(); i++) {
+            if (indice < quantidadeFranquias()) {
+
+                // Não adicionando pontoCandidato
+                pilhaIndice.push(indice + 1);
+                pilhaPontosEscolhidos.push(pontosEscolhidos);
+
+                // Adicionando pontoCandidato
+                // Para cada ponto candidato de mesma franquia
+                for (PontoCandidato pontoCandidato : dicionarioPontosCandidatos.get(chaves.get(indice))) {
+
                     final List<PontoCandidato> novosPontosEscolhidos = new ArrayList<>(pontosEscolhidos);
-                    novosPontosEscolhidos.remove(novosPontosEscolhidos.get(i));
+                    novosPontosEscolhidos.add(pontoCandidato);
+                    pilhaIndice.push(indice + 1);
                     pilhaPontosEscolhidos.push(novosPontosEscolhidos);
                 }
             }
         }
     }
-
-
 }
