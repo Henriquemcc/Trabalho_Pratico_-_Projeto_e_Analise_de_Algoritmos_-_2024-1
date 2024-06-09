@@ -1,0 +1,244 @@
+Número de Franquias,Número de Cidades,Distância Mínima,Algoritmo,Tempo de Execução,Arquivo de Dados
+2,4,1,Força Bruta,12975989,04_cidades.txt
+2,4,1,Branch and Bound,19602455,04_cidades.txt
+2,4,1,Força Bruta,23704332,04_cidades.txt
+2,4,1,Branch and Bound,13378852,04_cidades.txt
+2,4,1,Força Bruta,17054702,04_cidades.txt
+2,4,1,Branch and Bound,14899507,04_cidades.txt
+2,4,1,Força Bruta,11258261,04_cidades.txt
+2,4,1,Branch and Bound,13121332,04_cidades.txt
+2,4,1,Força Bruta,12749901,04_cidades.txt
+2,4,1,Branch and Bound,16074418,04_cidades.txt
+2,4,1,Força Bruta,15148263,04_cidades.txt
+2,4,1,Branch and Bound,15096764,04_cidades.txt
+2,4,1,Força Bruta,11423994,04_cidades.txt
+2,4,1,Branch and Bound,12442171,04_cidades.txt
+2,4,1,Força Bruta,6214655,04_cidades.txt
+2,4,1,Branch and Bound,12001694,04_cidades.txt
+2,4,1,Força Bruta,7536720,04_cidades.txt
+2,4,1,Branch and Bound,13869725,04_cidades.txt
+2,4,1,Força Bruta,12212752,04_cidades.txt
+2,4,1,Branch and Bound,17025801,04_cidades.txt
+2,5,1,Força Bruta,76686813,05_cidades.txt
+2,5,1,Branch and Bound,20319626,05_cidades.txt
+2,5,1,Força Bruta,23661540,05_cidades.txt
+2,5,1,Branch and Bound,22096755,05_cidades.txt
+2,5,1,Força Bruta,16302139,05_cidades.txt
+2,5,1,Branch and Bound,19733540,05_cidades.txt
+2,5,1,Força Bruta,21332463,05_cidades.txt
+2,5,1,Branch and Bound,23610302,05_cidades.txt
+2,5,1,Força Bruta,19106049,05_cidades.txt
+2,5,1,Branch and Bound,14331447,05_cidades.txt
+2,5,1,Força Bruta,24311292,05_cidades.txt
+2,5,1,Branch and Bound,17119584,05_cidades.txt
+2,5,1,Força Bruta,16764641,05_cidades.txt
+2,5,1,Branch and Bound,22067008,05_cidades.txt
+2,5,1,Força Bruta,29671808,05_cidades.txt
+2,5,1,Branch and Bound,18310691,05_cidades.txt
+2,5,1,Força Bruta,18872565,05_cidades.txt
+2,5,1,Branch and Bound,23459406,05_cidades.txt
+2,5,1,Força Bruta,26099241,05_cidades.txt
+2,5,1,Branch and Bound,14223950,05_cidades.txt
+2,6,1,Força Bruta,28151359,06_cidades.txt
+2,6,1,Branch and Bound,23783717,06_cidades.txt
+2,6,1,Força Bruta,43023790,06_cidades.txt
+2,6,1,Branch and Bound,36769668,06_cidades.txt
+2,6,1,Força Bruta,36636292,06_cidades.txt
+2,6,1,Branch and Bound,35963699,06_cidades.txt
+2,6,1,Força Bruta,36030818,06_cidades.txt
+2,6,1,Branch and Bound,43123253,06_cidades.txt
+2,6,1,Força Bruta,25731867,06_cidades.txt
+2,6,1,Branch and Bound,28471227,06_cidades.txt
+2,6,1,Força Bruta,48447580,06_cidades.txt
+2,6,1,Branch and Bound,51006589,06_cidades.txt
+2,6,1,Força Bruta,30509239,06_cidades.txt
+2,6,1,Branch and Bound,26627799,06_cidades.txt
+2,6,1,Força Bruta,56795777,06_cidades.txt
+2,6,1,Branch and Bound,39811095,06_cidades.txt
+2,6,1,Força Bruta,37671457,06_cidades.txt
+2,6,1,Branch and Bound,20083646,06_cidades.txt
+2,6,1,Força Bruta,33365870,06_cidades.txt
+2,6,1,Branch and Bound,38875907,06_cidades.txt
+2,7,1,Força Bruta,55282344,07_cidades.txt
+2,7,1,Branch and Bound,97986089,07_cidades.txt
+2,7,1,Força Bruta,61164423,07_cidades.txt
+2,7,1,Branch and Bound,103751270,07_cidades.txt
+2,7,1,Força Bruta,191139939,07_cidades.txt
+2,7,1,Branch and Bound,127820027,07_cidades.txt
+2,7,1,Força Bruta,80040767,07_cidades.txt
+2,7,1,Branch and Bound,93045804,07_cidades.txt
+2,7,1,Força Bruta,83511856,07_cidades.txt
+2,7,1,Branch and Bound,96168775,07_cidades.txt
+2,7,1,Força Bruta,74379860,07_cidades.txt
+2,7,1,Branch and Bound,66994364,07_cidades.txt
+2,7,1,Força Bruta,59382601,07_cidades.txt
+2,7,1,Branch and Bound,116294515,07_cidades.txt
+2,7,1,Força Bruta,77688538,07_cidades.txt
+2,7,1,Branch and Bound,92765342,07_cidades.txt
+2,7,1,Força Bruta,54186209,07_cidades.txt
+2,7,1,Branch and Bound,94754963,07_cidades.txt
+2,7,1,Força Bruta,56698338,07_cidades.txt
+2,7,1,Branch and Bound,109180316,07_cidades.txt
+2,8,1,Força Bruta,99303319,08_cidades.txt
+2,8,1,Branch and Bound,144778215,08_cidades.txt
+2,8,1,Força Bruta,126908462,08_cidades.txt
+2,8,1,Branch and Bound,129139049,08_cidades.txt
+2,8,1,Força Bruta,128287201,08_cidades.txt
+2,8,1,Branch and Bound,127566524,08_cidades.txt
+2,8,1,Força Bruta,124541477,08_cidades.txt
+2,8,1,Branch and Bound,141878412,08_cidades.txt
+2,8,1,Força Bruta,95986888,08_cidades.txt
+2,8,1,Branch and Bound,158182066,08_cidades.txt
+2,8,1,Força Bruta,105961984,08_cidades.txt
+2,8,1,Branch and Bound,137413083,08_cidades.txt
+2,8,1,Força Bruta,100666398,08_cidades.txt
+2,8,1,Branch and Bound,155843774,08_cidades.txt
+2,8,1,Força Bruta,129136185,08_cidades.txt
+2,8,1,Branch and Bound,129866441,08_cidades.txt
+2,8,1,Força Bruta,134054304,08_cidades.txt
+2,8,1,Branch and Bound,129386730,08_cidades.txt
+2,8,1,Força Bruta,163439885,08_cidades.txt
+2,8,1,Branch and Bound,138107462,08_cidades.txt
+2,9,1,Força Bruta,282748207,09_cidades.txt
+2,9,1,Branch and Bound,240538430,09_cidades.txt
+2,9,1,Força Bruta,304983473,09_cidades.txt
+2,9,1,Branch and Bound,286464911,09_cidades.txt
+2,9,1,Força Bruta,273806229,09_cidades.txt
+2,9,1,Branch and Bound,193251261,09_cidades.txt
+2,9,1,Força Bruta,191702272,09_cidades.txt
+2,9,1,Branch and Bound,228984231,09_cidades.txt
+2,9,1,Força Bruta,249143396,09_cidades.txt
+2,9,1,Branch and Bound,231702943,09_cidades.txt
+2,9,1,Força Bruta,229095297,09_cidades.txt
+2,9,1,Branch and Bound,288614618,09_cidades.txt
+2,9,1,Força Bruta,223885732,09_cidades.txt
+2,9,1,Branch and Bound,201070396,09_cidades.txt
+2,9,1,Força Bruta,267193876,09_cidades.txt
+2,9,1,Branch and Bound,275566839,09_cidades.txt
+2,9,1,Força Bruta,191911054,09_cidades.txt
+2,9,1,Branch and Bound,201278782,09_cidades.txt
+2,9,1,Força Bruta,228286688,09_cidades.txt
+2,9,1,Branch and Bound,197414519,09_cidades.txt
+2,10,1,Força Bruta,430966626,10_cidades.txt
+2,10,1,Branch and Bound,513164917,10_cidades.txt
+2,10,1,Força Bruta,413440696,10_cidades.txt
+2,10,1,Branch and Bound,647443277,10_cidades.txt
+2,10,1,Força Bruta,542393612,10_cidades.txt
+2,10,1,Branch and Bound,570385415,10_cidades.txt
+2,10,1,Força Bruta,409664984,10_cidades.txt
+2,10,1,Branch and Bound,530292929,10_cidades.txt
+2,10,1,Força Bruta,385389496,10_cidades.txt
+2,10,1,Branch and Bound,564715729,10_cidades.txt
+2,10,1,Força Bruta,390281906,10_cidades.txt
+2,10,1,Branch and Bound,536604040,10_cidades.txt
+2,10,1,Força Bruta,538884992,10_cidades.txt
+2,10,1,Branch and Bound,553410437,10_cidades.txt
+2,10,1,Força Bruta,429769068,10_cidades.txt
+2,10,1,Branch and Bound,523138018,10_cidades.txt
+2,10,1,Força Bruta,399860358,10_cidades.txt
+2,10,1,Branch and Bound,561271890,10_cidades.txt
+2,10,1,Força Bruta,431957263,10_cidades.txt
+2,10,1,Branch and Bound,578724407,10_cidades.txt
+2,11,1,Força Bruta,1293900210,11_cidades.txt
+2,11,1,Branch and Bound,1494039862,11_cidades.txt
+2,11,1,Força Bruta,1205107292,11_cidades.txt
+2,11,1,Branch and Bound,1768192988,11_cidades.txt
+2,11,1,Força Bruta,1332178239,11_cidades.txt
+2,11,1,Branch and Bound,1335516076,11_cidades.txt
+2,11,1,Força Bruta,1113754665,11_cidades.txt
+2,11,1,Branch and Bound,1452661330,11_cidades.txt
+2,11,1,Força Bruta,1096106649,11_cidades.txt
+2,11,1,Branch and Bound,1541032252,11_cidades.txt
+2,11,1,Força Bruta,1327304703,11_cidades.txt
+2,11,1,Branch and Bound,1662168916,11_cidades.txt
+2,11,1,Força Bruta,1304410692,11_cidades.txt
+2,11,1,Branch and Bound,1566563119,11_cidades.txt
+2,11,1,Força Bruta,1189795899,11_cidades.txt
+2,11,1,Branch and Bound,1236522442,11_cidades.txt
+2,11,1,Força Bruta,1228343369,11_cidades.txt
+2,11,1,Branch and Bound,1411734268,11_cidades.txt
+2,11,1,Força Bruta,1186111870,11_cidades.txt
+2,11,1,Branch and Bound,1530696295,11_cidades.txt
+2,12,1,Força Bruta,3140867616,12_cidades.txt
+2,12,1,Branch and Bound,3256431709,12_cidades.txt
+2,12,1,Força Bruta,2746920572,12_cidades.txt
+2,12,1,Branch and Bound,2720540854,12_cidades.txt
+2,12,1,Força Bruta,2983764608,12_cidades.txt
+2,12,1,Branch and Bound,3268362861,12_cidades.txt
+2,12,1,Força Bruta,3132207937,12_cidades.txt
+2,12,1,Branch and Bound,3203342991,12_cidades.txt
+2,12,1,Força Bruta,2884394089,12_cidades.txt
+2,12,1,Branch and Bound,3230967339,12_cidades.txt
+2,12,1,Força Bruta,2991872096,12_cidades.txt
+2,12,1,Branch and Bound,2711327888,12_cidades.txt
+2,12,1,Força Bruta,3109667589,12_cidades.txt
+2,12,1,Branch and Bound,3119454525,12_cidades.txt
+2,12,1,Força Bruta,2860721062,12_cidades.txt
+2,12,1,Branch and Bound,2825738283,12_cidades.txt
+2,12,1,Força Bruta,2678650057,12_cidades.txt
+2,12,1,Branch and Bound,3398488554,12_cidades.txt
+2,12,1,Força Bruta,2905682153,12_cidades.txt
+2,12,1,Branch and Bound,5158920785,12_cidades.txt
+2,13,1,Força Bruta,9848437840,13_cidades.txt
+2,13,1,Branch and Bound,12213528678,13_cidades.txt
+2,13,1,Força Bruta,8723010562,13_cidades.txt
+2,13,1,Branch and Bound,14724261663,13_cidades.txt
+2,13,1,Força Bruta,9352797493,13_cidades.txt
+2,13,1,Branch and Bound,15407793649,13_cidades.txt
+2,13,1,Força Bruta,9841511875,13_cidades.txt
+2,13,1,Branch and Bound,12691780828,13_cidades.txt
+2,13,1,Força Bruta,7907668799,13_cidades.txt
+2,13,1,Branch and Bound,12033137431,13_cidades.txt
+2,13,1,Força Bruta,10094952816,13_cidades.txt
+2,13,1,Branch and Bound,11429172344,13_cidades.txt
+2,13,1,Força Bruta,8905285346,13_cidades.txt
+2,13,1,Branch and Bound,15306493285,13_cidades.txt
+2,13,1,Força Bruta,7878866063,13_cidades.txt
+2,13,1,Branch and Bound,12072994581,13_cidades.txt
+2,13,1,Força Bruta,8925735187,13_cidades.txt
+2,13,1,Branch and Bound,13326695698,13_cidades.txt
+2,13,1,Força Bruta,9419524238,13_cidades.txt
+2,13,1,Branch and Bound,13631718224,13_cidades.txt
+2,14,1,Força Bruta,28934833473,14_cidades.txt
+2,14,1,Branch and Bound,25601611961,14_cidades.txt
+2,14,1,Força Bruta,29362239498,14_cidades.txt
+2,14,1,Branch and Bound,25910700577,14_cidades.txt
+2,14,1,Força Bruta,30987891250,14_cidades.txt
+2,14,1,Branch and Bound,27641566157,14_cidades.txt
+2,14,1,Força Bruta,30134065210,14_cidades.txt
+2,14,1,Branch and Bound,26560658005,14_cidades.txt
+2,14,1,Força Bruta,25750626999,14_cidades.txt
+2,14,1,Branch and Bound,24700995932,14_cidades.txt
+2,14,1,Força Bruta,28998340452,14_cidades.txt
+2,14,1,Branch and Bound,31535384934,14_cidades.txt
+2,14,1,Força Bruta,27431265139,14_cidades.txt
+2,14,1,Branch and Bound,27455942592,14_cidades.txt
+2,14,1,Força Bruta,30878798622,14_cidades.txt
+2,14,1,Branch and Bound,26605161681,14_cidades.txt
+2,14,1,Força Bruta,30998935108,14_cidades.txt
+2,14,1,Branch and Bound,24243049638,14_cidades.txt
+2,14,1,Força Bruta,27511722118,14_cidades.txt
+2,14,1,Branch and Bound,24795977733,14_cidades.txt
+2,15,1,Força Bruta,93741338649,15_cidades.txt
+2,15,1,Branch and Bound,99249486036,15_cidades.txt
+2,15,1,Força Bruta,91819432270,15_cidades.txt
+2,15,1,Branch and Bound,89834929864,15_cidades.txt
+2,15,1,Força Bruta,80461296137,15_cidades.txt
+2,15,1,Branch and Bound,91184598983,15_cidades.txt
+2,15,1,Força Bruta,77185271044,15_cidades.txt
+2,15,1,Branch and Bound,94461277667,15_cidades.txt
+2,15,1,Força Bruta,78677239073,15_cidades.txt
+2,15,1,Branch and Bound,97554566468,15_cidades.txt
+2,15,1,Força Bruta,72300505367,15_cidades.txt
+2,15,1,Branch and Bound,89581704162,15_cidades.txt
+2,15,1,Força Bruta,76267508340,15_cidades.txt
+2,15,1,Branch and Bound,87148598226,15_cidades.txt
+2,15,1,Força Bruta,80177180428,15_cidades.txt
+2,15,1,Branch and Bound,91145483162,15_cidades.txt
+2,15,1,Força Bruta,76643322436,15_cidades.txt
+2,15,1,Branch and Bound,88275706385,15_cidades.txt
+2,15,1,Força Bruta,74558651992,15_cidades.txt
+2,15,1,Branch and Bound,73709672893,15_cidades.txt
+2,16,1,Força Bruta,238243021267,16_cidades.txt
+2,16,1,Branch and Bound,291215946748,16_cidades.txt
+2,16,1,Força Bruta,244901807380,16_cidades.txt
