@@ -1,0 +1,72 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+
+\usepackage{graphicx,url}
+
+%\usepackage[brazil]{babel}   
+\usepackage[utf8]{inputenc}  
+
+     
+\sloppy
+
+\title{Trabalho Prático - Projeto e Análise de Algoritmos}
+
+\author{Thiago G. Martins\inst{1}, Henrique M.\inst{2}}
+
+
+\address{Ciências da Computação -- Pontifícia Universidade Católica de Minas Gerais (PUC MG)}
+
+\begin{document} 
+
+\maketitle
+
+\begin{abstract}
+  Optimization problems are common across various sectors, including the planning of industrial or commercial facility locations. This study addresses the challenge faced by a network of stores in opening multiple franchises, minimizing installation costs, and maintaining a minimum distance between stores to avoid internal competition. We implement brute-force and branch-and-bound approaches to explore configurations and eliminate unproductive solutions, respectively. The comparative analysis evaluates the effectiveness and processing times of both strategies for franchise location planning..
+\end{abstract}
+     
+\begin{resumo} 
+  Problemas de otimização são comuns em diversos setores, incluindo o planejamento de localização de instalações industriais ou comerciais. Este estudo aborda o desafio enfrentado por uma rede de lojas na abertura de várias franquias, minimizando custos de instalação e mantendo uma distância mínima entre as lojas para evitar concorrência interna. Implementamos abordagens por força bruta e branch-and-bound para explorar configurações e eliminar soluções improdutivas, respectivamente. A análise comparativa avalia a eficácia e os tempos de processamento de ambas as estratégias para o planejamento de localização de franquias.
+\end{resumo}
+
+
+\section{Introdução}
+
+Otimização de problemas é uma área fundamental em diversos setores, desempenhando um papel crucial no desenvolvimento e na eficiência de processos industriais, comerciais e logísticos. Um dos desafios mais comuns nesse campo é o planejamento da localização de instalações, como lojas, fábricas ou centros de distribuição, dentro de uma determinada região. A decisão de onde posicionar essas instalações pode ter um impacto significativo nos custos operacionais, na eficiência da cadeia de suprimentos e na satisfação do cliente.
+
+Este artigo aborda especificamente o problema de localização de franquias de uma rede de lojas, considerando a minimização dos custos de instalação e a necessidade de manter uma distância mínima entre as lojas para evitar competição interna. A otimização dessa localização é essencial para garantir o sucesso e a sustentabilidade do negócio, equilibrando a acessibilidade para os clientes, os custos de operação e a viabilidade financeira das franquias.
+
+Neste contexto, são apresentadas duas abordagens para resolver o problema de localização das franquias: uma solução por força bruta, que explora todas as configurações possíveis, e um método de branch-and-bound, que busca aprimorar a eficiência da solução por meio da eliminação de soluções improdutivas. Será realizada uma análise comparativa entre esses métodos, avaliando não apenas a qualidade das soluções encontradas, mas também os tempos de processamento e a escalabilidade para problemas de maior complexidade.
+
+Por meio deste estudo, busca-se fornecer insights valiosos para redes de lojas e empresas interessadas em otimizar a localização de suas instalações, contribuindo para a melhoria dos processos de tomada de decisão e para o aumento da eficiência operacional.
+
+\section{Desenvolvimento} \label{sec:firstpage}
+
+\section{References}
+
+Bibliographic references must be unambiguous and uniform.  We recommend giving
+the author names references in brackets, e.g. \cite{knuth:84},
+\cite{boulic:91}, and \cite{smith:99}.
+
+The references must be listed using 12 point font size, with 6 points of space
+before each reference. The first line of each reference should not be
+indented, while the subsequent should be indented by 0.5 cm.
+
+\bibliographystyle{sbc}
+\bibliography{sbc-template}
+
+\end{document}
