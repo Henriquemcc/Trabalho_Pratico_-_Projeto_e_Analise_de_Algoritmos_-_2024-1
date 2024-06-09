@@ -18,11 +18,10 @@
 \usepackage{placeins}
 \usepackage{graphicx,url}
 \renewcommand{\figurename}{}
-
-
-%\usepackage[brazil]{babel}   
+\usepackage{float}
+\usepackage{amsmath}
+\usepackage[brazil]{babel}   
 \usepackage[utf8]{inputenc}  
-
      
 \sloppy
 
@@ -33,7 +32,6 @@
 \address{Ciência da Computação -- Pontifícia Universidade Católica de Minas Gerais (PUC MG)}
 
 \begin{document} 
-
 \maketitle
 
 \begin{abstract}
@@ -51,7 +49,7 @@
 
 \paragraph{}Este artigo aborda especificamente o problema de localização de franquias de uma rede de lojas, considerando a minimização dos custos de instalação e a necessidade de manter uma distância mínima entre as lojas para evitar competição interna. A otimização dessa localização é essencial para garantir o sucesso e a sustentabilidade do negócio, equilibrando a acessibilidade para os clientes, os custos de operação e a viabilidade financeira das franquias.
 
-\paragraph{}Neste contexto, são apresentadas duas abordagens para resolver o problema de localização das franquias: uma solução por força bruta, que explora todas as configurações possı́veis, e um método de branch-and-bound, que busca aprimorar a eficiência da solução por meio da eliminação de soluções improdutivas. Será realizada uma análise comparativa entre esses métodos, avaliando não apenas a qualidade das soluções encontradas, mas também os tempos de processamento e a escalabilidade para problemas de maior complexidade
+\paragraph{}Neste contexto, são apresentadas duas abordagens para resolver o problema de localização das franquias: uma solução por força bruta, que explora todas as configurações possíveis, e um método de branch-and-bound, que busca aprimorar a eficiência da solução por meio da eliminação de soluções improdutivas. Será realizada uma análise comparativa entre esses métodos, avaliando não apenas a qualidade das soluções encontradas, mas também os tempos de processamento e a escalabilidade para problemas de maior complexidade
 
 \paragraph{}Por meio deste estudo, busca-se fornecer insights valiosos para redes de lojas e empresas interessadas em otimizar a localização de suas instalações, contribuindo para a melhoria dos processos de tomada de decisão e para o aumento da eficiência operacional.
 
@@ -64,7 +62,31 @@
 \paragraph{}Outro algoritmo utilizado é o algoritmo Branch and Bound, que consiste em recursivamente gerar subconjuntos do conjunto dos pontos candidatos, por meio da adição e da não adição do elemento analisado. Caso o elemento analisado não atenda a restrição, ele não será adicionado e nem comparado a melhor solução, e nem serão gerados filhos dele. Caso ele atenda a restrição, e tenha terminado a recursão, ele será comparado com a melhor solução até então. Caso ele seja melhor que a melhor solução, ou não exista até então uma melhor solução, ele será considerado como a melhor solução. O algoritmo pára quando o índice de recursão for igual ao número máximo de franquias.
 
 \paragraph{}Na análise do consumo de memória, ambos algoritmos, no pior caso, gastaram 
-\(f(n)=2^n\), que é o espaço gasto para armazenar todas os vetores possíveis. Já no processamento o algoritmo da Força Bruta gastou \(f(n)=2^(^n^+^1^)-2\), e o Branch and Bound \(f(n)=3*2^(^n^-^1^)+1\).
+\(f(n)=2^{n}\), que é o espaço gasto para armazenar todas os vetores possíveis. Já no processamento o algoritmo da Força Bruta gastou \(T(n)=2^{(n+1)}-2\), e o Branch and Bound \(T(n)=3*2^{(n-1)}+1\).
+
+\begin{figure}[H]
+    \centering
+    \begin{equation}
+        \begin{cases}
+        T(n) = 2T(n-1)+2 \\
+        T(1) = 2
+        \end{cases}
+    \end{equation}
+    \caption{Equação de recorrência do tempo de processamento do Força Bruta}
+    \label{fig:eq-1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{equation}
+        \begin{cases}
+            T(n) = 2T(n-1)+1\\
+            T(1) = 2
+        \end{cases}
+    \end{equation}
+    \caption{Equação de recorrência do tempo de processamento do Branch and Bound}
+    \label{fig:eq-2}
+\end{figure}
 
 \section{Implementação}
 
@@ -101,7 +123,7 @@
     \item \textit{ControladorLinhaComando}, responsável por controlar o funcionamento do programa no modo linha de comando.
 \end{itemize}
 
-\paragraph{}O desenvolvimento de interfaces gráficas foi feito por meio do uso das bibliotecas \textit{Java Swing} e \textit{Java Awt}, nativas da linguagem Java. Para este programa foram desenvolvidas seis janelas:
+\paragraph{}O desenvolvimento de interfaces gráficas foi feito por meio do uso das \mbox{bibliotecas} \textit{Java Swing} e \textit{Java Awt}, nativas da linguagem Java. Para este programa foram desenvolvidas seis janelas:
 
 \begin{itemize}
     \item a janela principal, que é a primeira janela a ser exibida para o usuário, e quando gerado a solução nela é desenhado o mapa;
@@ -112,56 +134,56 @@
     \item janela para configuração da mínima distância permitida, que permite o usuário definir a mínima distância permitida entre os pontos escolhidos.
 \end{itemize}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Captura de tela 2024-06-01 110824}
     \caption{Janela principal, quando o programa é iniciado}
     \label{fig:fig-1}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Captura de tela 2024-06-01 110836}
     \caption{Janela para a geração de dados aleatórios}
     \label{fig:fig-2}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Captura de tela 2024-06-01 110914}
     \caption{Janela principal, mostrando o mapa de pontos escolhidos}
     \label{fig:fig-3}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Captura de tela 2024-06-01 110920}
     \caption{Janela de resultados, mostrando a solução encontrada e o tempo gasto}
     \label{fig:fig-4}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Captura de tela 2024-06-01 110931}
     \caption{Janela principal atrás da janela de resultados, mostrando o mapa, a solução encontrada e o tempo gasto}
     \label{fig:fig-5}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Captura de tela 2024-06-01 111051}
     \caption{Janela de abertura de arquivos}
     \label{fig:fig-6}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Captura de tela 2024-06-01 111107}
     \caption{Janela de salvamento de arquivos}
     \label{fig:fig-7}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{Captura de tela 2024-06-01 111132}
     \caption{Janela para a configuração da distância mínima permitida entre os pontos escolhidos}
@@ -173,16 +195,16 @@
 \paragraph{}Os comandos são: 
 
 \begin{itemize}
-    \item \textit{?}, \textit{-h}, ou \textit{\-\-help}, que exibe o menu de ajuda, permitindo o usuário entender o funcionamento o programa por linha de comando.
-    \item \itemit{\-\-calcular-tempo}, que executa a função de cálculo de tempo de execução.
+    \item \textit{?}, \textit{-h}, ou \textit{$--$help}, que exibe o menu de ajuda, permitindo o usuário entender o funcionamento o programa por linha de comando.
+    \item \textit{$--$calcular-tempo}, que executa a função de cálculo de tempo de execução.
 \end{itemize}
 
 \paragraph{}As opções são:
 
 \begin{itemize}
-    \item \textit{\-\-arquivo-dados} <nome-arquivo-dados>, que especifica qual arquivo de dados deve ser aberto pelo programa.
-    \item \textit{\-\-distancia-minima} <distancia-minima>, que especifica a distância mínima permitida entre os pontos escolhidos.
-    \item \textit{\-\-algoritmo} <nome-algoritmo>, que define qual algoritmo de otimização deve ser utilizado: \textit{branch-and-bound} ou \textit{forca-bruta}.
+    \item \textit{$--$arquivo-dados $<$nome-arquivo-dados$>$}, que especifica qual arquivo de dados deve ser aberto pelo programa.
+    \item \textit{$--$distancia-minima $<$distancia-minima$>$}, que especifica a distância mínima permitida entre os pontos escolhidos.
+    \item \textit{$--$algoritmo $<$nome-algoritmo$>$}, que define qual algoritmo de otimização deve ser utilizado: \textit{branch-and-bound} ou \textit{forca-bruta}.
 \end{itemize}
 
 \paragraph{}Para a validação do funcionamento dos algoritmos de otimização e os seus tempos de execução, foram desenvolvidos testes de unidades por meio do JUnit. Dentre os testes desenvolvidos estão:
@@ -201,7 +223,7 @@
 
 \paragraph{}Esse gráfico de barras comparanda a média dos tempos de execução dos algoritmos da Força Bruta e Branch and Bound. Nele é possível ver que o algoritmo Branch and Bound tem um desempenho médio um pouco melhor que o algoritmo da Força Bruta.
 
-\begin{figure}
+\begin{figure}[H]
     \centering
     \includegraphics{comparacao.png}
     \caption{Gráfico de barras comparando a média do tempo de execução do algoritmo da Força Bruta e do Branch and Bound}
@@ -210,13 +232,14 @@
 
 \section{Conclusão}
 
-Neste estudo foi colocado em prática o desenvolvimento e a análise de algoritmos de otimização em um problema da vida cotidiana, demonstrando a importância do estudo, pesquisa e desenvolvimento de algoritmos eficientes para a resolução de problemas do dia a dia.
+\paragraph{}Neste estudo foi colocado em prática o desenvolvimento e a análise de algoritmos de otimização em um problema da vida cotidiana, demonstrando a importância do estudo, pesquisa e desenvolvimento de algoritmos eficientes para a resolução de problemas do dia a dia.
 
-\section{Referencias Bibliográficas}
+\nocite{paaII}
+\nocite{paaIII}
+\nocite{paaIV}
 
-
-
-%\bibliographystyle{sbc}
-%\bibliography{sbc-template}
+\bibliographystyle{sbc}
+\bibliography{bibliografia}
+%\addbibresource{bibliografia.bib}
 
 \end{document}
