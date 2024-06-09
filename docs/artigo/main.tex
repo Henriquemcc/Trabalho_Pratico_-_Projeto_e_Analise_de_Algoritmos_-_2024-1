@@ -62,7 +62,7 @@
 \paragraph{}Outro algoritmo utilizado é o algoritmo Branch and Bound, que consiste em recursivamente gerar subconjuntos do conjunto dos pontos candidatos, por meio da adição e da não adição do elemento analisado. Caso o elemento analisado não atenda a restrição, ele não será adicionado e nem comparado a melhor solução, e nem serão gerados filhos dele. Caso ele atenda a restrição, e tenha terminado a recursão, ele será comparado com a melhor solução até então. Caso ele seja melhor que a melhor solução, ou não exista até então uma melhor solução, ele será considerado como a melhor solução. O algoritmo pára quando o índice de recursão for igual ao número máximo de franquias.
 
 \paragraph{}Na análise do consumo de memória, ambos algoritmos, no pior caso, gastaram 
-\(f(n)=2^{n}\), que é o espaço gasto para armazenar todas os vetores possíveis. Já no processamento o algoritmo da Força Bruta gastou \(f(n)=2^{(n+1)}-2\), e o Branch and Bound \(f(n)=3*2^{(n-1)}+1\).
+\(f(n)=2^{n}\), que é o espaço gasto para armazenar todas os vetores possíveis. Já no processamento o algoritmo da Força Bruta gastou \(T(n)=2^{(n+1)}-2\), e o Branch and Bound \(T(n)=3*2^{(n-1)}+1\).
 
 \begin{figure}[H]
     \centering
@@ -123,7 +123,7 @@
     \item \textit{ControladorLinhaComando}, responsável por controlar o funcionamento do programa no modo linha de comando.
 \end{itemize}
 
-\paragraph{}O desenvolvimento de interfaces gráficas foi feito por meio do uso das bibliotecas \textit{Java Swing} e \textit{Java Awt}, nativas da linguagem Java. Para este programa foram desenvolvidas seis janelas:
+\paragraph{}O desenvolvimento de interfaces gráficas foi feito por meio do uso das \mbox{bibliotecas} \textit{Java Swing} e \textit{Java Awt}, nativas da linguagem Java. Para este programa foram desenvolvidas seis janelas:
 
 \begin{itemize}
     \item a janela principal, que é a primeira janela a ser exibida para o usuário, e quando gerado a solução nela é desenhado o mapa;
