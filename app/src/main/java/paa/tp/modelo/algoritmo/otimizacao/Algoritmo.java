@@ -1,3 +1,8 @@
+/**
+ * @author Henrique Mendonça Castelar Campos
+ * @author Thiago Gomes Martins
+ * */
+
 package paa.tp.modelo.algoritmo.otimizacao;
 
 import paa.tp.modelo.DictionaryPontosCandidatos;

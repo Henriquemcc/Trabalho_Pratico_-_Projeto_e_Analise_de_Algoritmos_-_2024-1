@@ -1,3 +1,8 @@
+/**
+ * @author Henrique Mendonça Castelar Campos
+ * @author Thiago Gomes Martins
+ * */
+
 package paa.tp.modelo.algoritmo.otimizacao;
 
 import paa.tp.modelo.PontoCandidato;
@@ -18,6 +23,9 @@ public class BranchAndBound extends Algoritmo {
         super(dicionarioPontosCandidatos, distanciaMinima);
     }
 
+    /**
+     * Executa o algoritmo Branch and Bound
+     */
     @Override
     public void executar() {
 
@@ -73,8 +81,7 @@ public class BranchAndBound extends Algoritmo {
     }
 
     /**
-     * Heurística utilizada para podar as branchs.
-     *
+     * Heurística pessimista utilizada para podar as branchs.
      * @param solucao Solução a ser analisada.
      * @return Valor da heurística
      */
@@ -97,8 +104,7 @@ public class BranchAndBound extends Algoritmo {
     }
 
     /**
-     * Heurística utilizada para podar as branchs.
-     *
+     * Heurística otimista utilizada para podar as branchs.
      * @param solucao Solução a ser analisada.
      * @return Valor da heurística
      */
