@@ -75,6 +75,46 @@ f) Bibliography according to the ABNT standard.
 
    * Individual presentation
 
+## Screenshots
+
+![A blank window with a menu bar. The menu bar contains the menus (in Portuguese): 'Dados' (Data), 'Parâmetros' (Parameters) and 'Executar' (Run).](screenshots/Captura de tela 2024-06-01 110824.png)
+
+*Main window, when the program starts*
+
+![A window with two areas and two buttons. The areas are: 'Número de Franquias' (Number of Franchises) and 'Número de Lojas por Franquia' (Number of Stores per Franchise). Each area has a field for entering text and buttons for incrementing and decrementing the numerical value of the text field. The buttons are 'Ok' and 'Cancelar' (Cancel).](screenshots/Captura de tela 2024-06-01 110836.png)
+
+*Window for generating random data*
+
+![A window with several dots of different colors spread around the screen. And a menu bar with the menus: 'Dados' (Data) , 'Parâmetros' (Parameters) and 'Executar' (Run).](screenshots/Captura de tela 2024-06-01 110914.png)
+
+*Main window, showing the map of chosen points*
+
+![Window with the title 'Resultado' (Result), a table filled with the following columns: 'Número de franquias' (Number of franchises), 'Coordenada X' (X coordinate), 'Coordenada Y' (Y coordinate), 'Custo' (Cost) and 'Cor' (Color), filled with data, and a lower bar with 'Tempo gasto: 66999ns' (Time spent: 66999ns).](screenshots/Captura de tela 2024-06-01 110920.png)
+
+*Results window, showing the solution found and the time spent*
+
+![Main window and results window. The Main Window: with several dots of different colors spread around the screen; and a menu bar with the menus: 'Dados' (Data), 'Parâmetros' (Parameters) and 'Executar' (Run). And the results window: with the title 'Resultado' (Result), a table filled with the following columns: 'Número franquias' (Number of franchises), 'Coordenada X' (X coordinate), 'Coordenada Y' (Y coordinate), 'Custo' (Cost) and 'Cor' (Color), filled with data, and a bottom bar with 'Tempo gasto: 66999ns' (Time taken: 66999ns).](screenshots/Captura de tela 2024-06-01 110931.png)
+
+*Main window behind the results window, showing the map, the
+solution found and time spent*
+
+![File opening window showing the Windows 'Default' folder, with the title 'Open'. In the upper corner the buttons 'One level up', 'Home', 'Create new folder', 'List', 'Details'. And in the bottom corner: 'File Name:' followed by a text field, and 'Files of Type:' followed by selecting the type of files, showing 'All Files', and below the buttons 'Open' and ' Cancel'.](screenshots/Captura de tela 2024-06-01 111051.png)
+
+*File opening window*
+
+![File save window showing the Windows 'Default' folder, titled 'Save'. In the upper corner the buttons 'One level up', 'Home', 'Create new folder', 'List', 'Details'. And in the bottom corner: 'File Name:' followed by a text field, and 'Files of Type:' followed by selecting the type of files, showing 'All Files', and below the buttons 'Save' and ' Cancel'.](screenshots/Captura de tela 2024-06-01 111107.png)
+
+*File save window*
+
+![Window for configuring the Minimum Distance, with one field and two buttons. The field is 'Distância Mínima' (Minimum Distance), with a text field and increment and decrement buttons. And the buttons are 'Ok' and 'Cancelar' (Cancel).](screenshots/Captura de tela 2024-06-01 111132.png)
+
+*Window for configuring the minimum distance allowed between
+chosen points*
+
+## Download
+
+The program's executable can be downloaded from [releases](https://github.com/Henriquemcc/Trabalho_Pratico_-_Projeto_e_Analise_de_Algoritmos_-_2024-1/releases).
+
 ## Group Members
 
 [Henrique Mendonça Castelar Campos](https://github.com/Henriquemcc)
