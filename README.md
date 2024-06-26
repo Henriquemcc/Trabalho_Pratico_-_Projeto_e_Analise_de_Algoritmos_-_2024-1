@@ -77,36 +77,36 @@ f) Bibliografia segundo o padrão ABNT.
 
 ## Capturas de tela
 
-![Uma janela em branco com uma barra de menu. A barra de menus contém os menus: 'Dados', 'Parâmetros' e 'Executar'.](screenshots/Captura de tela 2024-06-01 110824.png)
+![Uma janela em branco com uma barra de menu. A barra de menus contém os menus: 'Dados', 'Parâmetros' e 'Executar'.](screenshots/Captura_de_tela_2024-06-01_110824.png)
 
 *Janela principal, quando o programa é iniciado*
 
-![Uma janela com duas áreas e dois botões. As áreas são: 'Quantidade Franquias' e 'Quantidade de Lojas por Franquia'. Cada área tem um campo para digitar texto e botões para incrementar e decrementar o valor numérico do campo de texto. Os botões são 'Ok' e 'Cancelar'.](screenshots/Captura de tela 2024-06-01 110836.png)
+![Uma janela com duas áreas e dois botões. As áreas são: 'Quantidade Franquias' e 'Quantidade de Lojas por Franquia'. Cada área tem um campo para digitar texto e botões para incrementar e decrementar o valor numérico do campo de texto. Os botões são 'Ok' e 'Cancelar'.](screenshots/Captura_de_tela_2024-06-01_110836.png)
 
 *Janela para a geração de dados aleatórios*
 
-![Uma janela com vários pontos de diferentes cores espalhados ao redor da tela. E uma barra de menus com os menus: 'Dados', 'Parâmetros' e 'Executar'.](screenshots/Captura de tela 2024-06-01 110914.png)
+![Uma janela com vários pontos de diferentes cores espalhados ao redor da tela. E uma barra de menus com os menus: 'Dados', 'Parâmetros' e 'Executar'.](screenshots/Captura_de_tela_2024-06-01_110914.png)
 
 *Janela principal, mostrando o mapa de pontos escolhidos*
 
-![Janela com o título 'Resultado', uma tabela preenchida com as seguintes colunas: 'Número franquias', 'Coordenada X', 'Coordenada Y', 'Custo' e 'Cor', preenchida com dados, e uma barra inferior com 'Tempo gasto: 66999ns'.](screenshots/Captura de tela 2024-06-01 110920.png)
+![Janela com o título 'Resultado', uma tabela preenchida com as seguintes colunas: 'Número franquias', 'Coordenada X', 'Coordenada Y', 'Custo' e 'Cor', preenchida com dados, e uma barra inferior com 'Tempo gasto: 66999ns'.](screenshots/Captura_de_tela_2024-06-01_110920.png)
 
 *Janela de resultados, mostrando a solução encontrada e o tempo gasto*
 
-![Janela principal e janela de resultados. A Janela principal: com vários pontos de diferentes cores espalhados ao redor da tela; e uma barra de menus com os menus: 'Dados', 'Parâmetros' e 'Executar'. E a janela de resultados: com o título 'Resultado', uma tabela preenchida com as seguintes colunas: 'Número franquias', 'Coordenada X', 'Coordenada Y', 'Custo' e 'Cor', preenchida com dados, e uma barra inferior com 'Tempo gasto: 66999ns'.](screenshots/Captura de tela 2024-06-01 110931.png)
+![Janela principal e janela de resultados. A Janela principal: com vários pontos de diferentes cores espalhados ao redor da tela; e uma barra de menus com os menus: 'Dados', 'Parâmetros' e 'Executar'. E a janela de resultados: com o título 'Resultado', uma tabela preenchida com as seguintes colunas: 'Número franquias', 'Coordenada X', 'Coordenada Y', 'Custo' e 'Cor', preenchida com dados, e uma barra inferior com 'Tempo gasto: 66999ns'.](screenshots/Captura_de_tela_2024-06-01_110931.png)
 
 *Janela principal atrás da janela de resultados, mostrando o mapa, a
 solução encontrada e o tempo gasto*
 
-![Janela de abertura de arquivos mostrando a pasta 'Default' (padrão) do Windows, com o título 'Abrir'. No canto superior os botões 'Um nível acima', 'Início', 'Criar nova pasta', 'Lista', 'Detalhes'. E no canto inferior: 'Nome do Arquivo:' seguido de um campo de texto, e 'Arquivos do Tipo:' seguido da seleção do tipo de arquivos, mostrando 'Todos os Arquivos', e em baixo os botões 'Abrir' e 'Cancelar'.](screenshots/Captura de tela 2024-06-01 111051.png)
+![Janela de abertura de arquivos mostrando a pasta 'Default' (padrão) do Windows, com o título 'Abrir'. No canto superior os botões 'Um nível acima', 'Início', 'Criar nova pasta', 'Lista', 'Detalhes'. E no canto inferior: 'Nome do Arquivo:' seguido de um campo de texto, e 'Arquivos do Tipo:' seguido da seleção do tipo de arquivos, mostrando 'Todos os Arquivos', e em baixo os botões 'Abrir' e 'Cancelar'.](screenshots/Captura_de_tela_2024-06-01_111051.png)
 
 *Janela de abertura de arquivos*
 
-![Janela de salvamento de arquivos mostrando a pasta 'Default' (padrão) do Windows, com o título 'Salvar'. No canto superior os botões 'Um nível acima', 'Início', 'Criar nova pasta', 'Lista', 'Detalhes'. E no canto inferior: 'Nome do Arquivo:' seguido de um campo de texto, e 'Arquivos do Tipo:' seguido da seleção do tipo de arquivos, mostrando 'Todos os Arquivos', e em baixo os botões 'Salvar' e 'Cancelar'.](screenshots/Captura de tela 2024-06-01 111107.png)
+![Janela de salvamento de arquivos mostrando a pasta 'Default' (padrão) do Windows, com o título 'Salvar'. No canto superior os botões 'Um nível acima', 'Início', 'Criar nova pasta', 'Lista', 'Detalhes'. E no canto inferior: 'Nome do Arquivo:' seguido de um campo de texto, e 'Arquivos do Tipo:' seguido da seleção do tipo de arquivos, mostrando 'Todos os Arquivos', e em baixo os botões 'Salvar' e 'Cancelar'.](screenshots/Captura_de_tela_2024-06-01_111107.png)
 
 *Janela de salvamento de arquivos*
 
-![Janela para a configuração da Distância Mínima, com um campo e dois botões. O campo é 'Distância Mínima', com um campo de texto e os botões incrementar e decrementar. E os botões são 'Ok' e 'Cancelar'.](screenshots/Captura de tela 2024-06-01 111132.png)
+![Janela para a configuração da Distância Mínima, com um campo e dois botões. O campo é 'Distância Mínima', com um campo de texto e os botões incrementar e decrementar. E os botões são 'Ok' e 'Cancelar'.](screenshots/Captura_de_tela_2024-06-01_111132.png)
 
 *Janela para a configuração da distância mı́nima permitida entre os
 pontos escolhidos*
